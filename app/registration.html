@@ -20,49 +20,8 @@
 <body>
 
 <div ng-include="'../templates/navbar.html'"></div>
-<main>
-<form class="form-horizontal col-md-8" method="post" action="http://local.host:3000/registry">
-    <fieldset>
-        <div class="form-group">
-            <label for="inputEmail" class="col-lg-2 control-label">Name</label>
-            <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputName" placeholder="Name">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="inputEmail" class="col-lg-2 control-label">Surname</label>
-            <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputSurname" placeholder="Surname">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-            <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputEmail" name="email" placeholder="Email">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-            <div class="col-lg-10">
-                <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="textArea" class="col-lg-2 control-label">About</label>
-            <div class="col-lg-10">
-                <textarea class="form-control" rows="3" id="textArea" placeholder="Tell us about you"></textarea>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-lg-10 col-lg-offset-2">
-                <button type="reset" class="btn">Cancel</button>
-                <button type="submit" class="btn btn-default btn-success">Submit</button>
-            </div>
-        </div>
-    </fieldset>
-</form>
-    <a href="http://local.host:3000/auth/vkontakte"><img src="/app/img/fb-logo.jpg"></a>
-</main>
+<div class="col-md-12" ng-include="'../templates/user_form.html'"></div>
+
 <script src="view1/view1.js"></script>
 <script src="view2/view2.js"></script>
 <script src="components/version/version.js"></script>

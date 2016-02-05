@@ -15,14 +15,45 @@
     <script src="../app/bower_components/angular-route/angular-route.js"></script>
     <script src="../js/app/apl.js"></script>
 </head>
-<body>
-
+<body ng-controller="MyCtr">
+<div class="col-md-12">
 <div ng-include="'navbar.html'"></div>
-<div class="col-md-9" ng-include="'user_form.html'"></div>
+<div class="col-md-9" ng-hide="buttonSettings">
+    <main>
+        <form class="form-horizontal col-md-12">
+            <fieldset>
+                <div class="form-group">
+                    <label for="inputName" class="col-lg-2 control-label">Name</label>
+                    <div class="col-lg-4">
+                        <h4 id="inputName">User_Name</h4>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputSurname" class="col-lg-2 control-label">Surname</label>
+                    <div class="col-lg-4">
+                        <h4 id="inputSurname">User_Surname</h4>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                    <div class="col-lg-4">
+                        <h4 id="inputEmail">User_Email</h4>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="textArea" class="col-lg-2 control-label" >About you</label>
+                    <div class="col-lg-10">
+                        <textarea class="form-control" rows="7" id="textArea" placeholder="I change this place later(Artur)"></textarea>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </main>
+</div>
+<div class="col-md-9" ng-show="buttonSettings" ng-include="'user_form.html'"></div>
 <div class="col-md-3" ng-include="'user_side.html'"></div>
-
-<script src="../app/view1/view1.js"></script>
-<script src="../app/view2/view2.js"></script>
+</div>
+<button class="btn col-md-offset-2" ng-click="changeSettings()">{{changeButton_text}}</button>
 <script src="../app/components/version/version.js"></script>
 <script src="../app/components/version/version-directive.js"></script>
 <script src="../app/components/version/interpolate-filter.js"></script>
