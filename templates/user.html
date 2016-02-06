@@ -19,8 +19,8 @@
 <body>
 <div class="col-md-12">
 <div ng-include="'../templates/navbar.html'"></div>
-<div class="col-md-9" ng-hide="buttonSettings">
-    <main>
+<main>
+    <div class="col-md-9" ng-hide="buttonSettings">
         <form class="form-horizontal col-md-12">
             <fieldset>
                 <div class="form-group">
@@ -49,11 +49,14 @@
                 </div>
             </fieldset>
         </form>
+    </div>
+</main>
+
+<div>
+    <main>
+        <form ng-show="buttonSettings" ng-include="'../templates/user_form.html'" class="form-horizontal col-md-8" method="post" action="http://local.host:3000/registry"></form>
     </main>
 </div>
-<main>
-    <form ng-show="buttonSettings" ng-include="'../templates/user_form.html'" class="form-horizontal col-md-8" method="post" action="http://local.host:3000/registry"></form>
-</main>
 <div class="col-md-3" ng-include="'../templates/user_side.html'"></div>
 </div>
 <button class="btn col-md-offset-2" ng-click="changeSettings()">{{changeButton_text}}</button>
