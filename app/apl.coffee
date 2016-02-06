@@ -1,7 +1,8 @@
-angular.module('myApp', [
+app = angular.module('myApp', [
   'ngRoute'
   'myApp.version'
-]).controller 'MyCtr', ($scope)->
+])
+app.controller 'MyCtr', ($scope)->
   $scope.world = 'Nik'
   $scope.changeButton_text = "Change settings"
   $scope.buttonSettings = false
@@ -14,3 +15,5 @@ angular.module('myApp', [
       $scope.changeButton_text = "Change settings"
     return
   return
+  x = 1
+
