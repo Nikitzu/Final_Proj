@@ -19,7 +19,7 @@
       }
     };
     return;
-    return x = 1;
+    return;
   });
 
 }).call(this);

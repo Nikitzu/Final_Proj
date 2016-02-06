@@ -15,5 +15,3 @@ app.controller 'MyCtr', ($scope)->
       $scope.changeButton_text = "Change settings"
     return
   return
-  x = 1
-
