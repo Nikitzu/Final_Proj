@@ -16,14 +16,13 @@
   <script src="../js/app/app.js"></script>
   <script src="../js/app/controllers/SettingsCtrl.js"></script>
   <script src="../js/app/services/MainRout.js"></script>
-</head>
-<body>
-  <div ng-include="'../templates/navbar.html'"></div>
-  <div class="col-md-9" ng-include="'../templates/content.html'"></div>
-  <div class="col-md-3" ng-include="'../templates/user_side.html'"></div>
-
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
+</head>
+<body ng-view>
+
+
 </body>
 </html>
+

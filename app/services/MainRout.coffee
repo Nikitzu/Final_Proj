@@ -3,7 +3,7 @@ app.config ($routeProvider) ->
   $routeProvider
   .when('/',
     controller: 'MyCtr'
-    templateUrl:'../app/index.html')
+    templateUrl:'../app/main.html')
   .when('/registry',
     controller: 'MyCtr'
     templateUrl: '../app/registration.html')
