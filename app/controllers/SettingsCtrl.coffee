@@ -1,7 +1,4 @@
-app = angular.module('myApp', [
-  'ngRoute'
-  'myApp.version'
-])
+app = angular.module('myApp')
 app.controller 'MyCtr', ($scope)->
   $scope.world = 'Nik'
   $scope.changeButton_text = "Change settings"

@@ -2,10 +2,9 @@
 (function() {
   var app;
 
-  app = angular.module('myApp', ['ngRoute', 'myApp.version']);
+  app = angular.module('myApp');
 
   app.controller('MyCtr', function($scope) {
-    var x;
     $scope.world = 'Nik';
     $scope.changeButton_text = "Change settings";
     $scope.buttonSettings = false;
@@ -18,10 +17,8 @@
         $scope.changeButton_text = "Change settings";
       }
     };
-    return;
-    return;
   });
 
 }).call(this);
 
-//# sourceMappingURL=apl.js.map
+//# sourceMappingURL=SettingsCtrl.js.map

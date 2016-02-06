@@ -13,7 +13,8 @@
     <script src="../app/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="../app/bower_components/angular/angular.js"></script>
     <script src="../app/bower_components/angular-route/angular-route.js"></script>
-    <script src="../js/app/apl.js"></script>
+    <script src="../js/app/app.js"></script>
+    <script src="../js/app/controllers/SettingsCtrl.js"></script>
 </head>
 <body ng-controller="MyCtr">
 <div class="col-md-12">
@@ -50,7 +51,9 @@
         </form>
     </main>
 </div>
-<div class="col-md-9" ng-show="buttonSettings" ng-include="'user_form.html'"></div>
+<main>
+    <form ng-show="buttonSettings" ng-include="'user_form.html'" class="form-horizontal col-md-8" method="post" action="http://local.host:3000/registry"></form>
+</main>
 <div class="col-md-3" ng-include="'user_side.html'"></div>
 </div>
 <button class="btn col-md-offset-2" ng-click="changeSettings()">{{changeButton_text}}</button>
