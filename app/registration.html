@@ -17,57 +17,54 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="../js/app/app.js"></script>
     <script src="../js/app/controllers/SettingsCtrl.js"></script>
+    <script src="components/version/version.js"></script>
+    <script src="components/version/version-directive.js"></script>
+    <script src="components/version/interpolate-filter.js"></script>
 </head>
 <body>
-
-<div ng-include="'../templates/navbar.html'"></div>
-<main>
-    <form class="form-horizontal col-md-8" method="post" action="http://local.host:3000/registry">
-        <fieldset>
-            <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Name</label>
-                <div class="col-lg-4">
-                    <input type="text" class="form-control" id="inputName" placeholder="Name">
+    <div ng-include="'../templates/navbar.html'"></div>
+    <main>
+        <form class="form-horizontal col-md-8" method="post" action="http://local.host:3000/registry">
+            <fieldset>
+                <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Name</label>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control" id="inputName" placeholder="Name">
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Surname</label>
-                <div class="col-lg-4">
-                    <input type="text" class="form-control" id="inputSurname" placeholder="Surname">
+                <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Surname</label>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control" id="inputSurname" placeholder="Surname">
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                <div class="col-lg-6">
-                    <input type="text" class="form-control" id="inputEmail" name="email" placeholder="Email">
+                <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                    <div class="col-lg-6">
+                        <input type="text" class="form-control" id="inputEmail" name="email" placeholder="Email">
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-                <div class="col-lg-6">
-                    <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
+                <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                    <div class="col-lg-6">
+                        <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="textArea" class="col-lg-2 control-label">About</label>
-                <div class="col-lg-10">
-                    <textarea class="form-control" rows="7" id="textArea" placeholder="Tell us about you"></textarea>
+                <div class="form-group">
+                    <label for="textArea" class="col-lg-2 control-label">About</label>
+                    <div class="col-lg-10">
+                        <textarea class="form-control" rows="7" id="textArea" placeholder="Tell us about you"></textarea>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-2">
-                    <button type="reset" class="btn">Cancel</button>
-                    <button type="submit" class="btn btn-default btn-success">Submit</button>
-                    <a class="btn btn-social-icon btn-lg" href="http://local.host:3000/auth/twitter"><span class="fa fa-twitter"></span></a>
-                    <a class="btn btn-social-icon btn-lg" href="http://local.host:3000/auth/facebook"><span class="fa fa-facebook"></span></a>
-                    <a class="btn btn-social-icon btn-lg" href="http://local.host:3000/auth/vkontakte"><span class="fa fa-vk"></span></a>
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="reset" class="btn">Cancel</button>
+                        <button type="submit" class="btn btn-default btn-success">Submit</button>
+                        <a ng-include="'../templates/social_buttons.html'"></a>
+                    </div>
                 </div>
-            </div>
-        </fieldset>
-    </form>
-</main>
-<script src="components/version/version.js"></script>
-<script src="components/version/version-directive.js"></script>
-<script src="components/version/interpolate-filter.js"></script>
+            </fieldset>
+        </form>
+    </main>
 </body>
 </html>
