@@ -15,13 +15,36 @@ app.controller 'userCtrl', ($scope)->
     return
 
   $scope.createButton_text = "Create post"
-  $scope.showPost = false
+  $scope.templatePanel = false
+  $scope.firstPost = false
+  $scope.secondPost = false
+  $scope.thirdPost = false
   $scope.createPost = ->
-    if $scope.showPost == false
-      $scope.showPost = true
+    if $scope.templatePanel == false
+      $scope.templatePanel = true
+      $scope.firstPost = true
       $scope.createButton_text = "Add post"
     else
-      $scope.showPost = false
+      $scope.templatePanel = false
+      $scope.firstPost = false
+      $scope.secondPost = false
+      $scope.thirdPost = false
       $scope.createButton_text = "Create post"
+    return
+
+  $scope.showFirstTemplate = ->
+    $scope.firstPost = true
+    $scope.secondPost = false
+    $scope.thirdPost = false
+    return
+  $scope.showSecondTemplate = ->
+    $scope.firstPost = false
+    $scope.secondPost = true
+    $scope.thirdPost = false
+    return
+  $scope.showThirdTemplate = ->
+    $scope.firstPost = false
+    $scope.secondPost = false
+    $scope.thirdPost = true
     return
   return

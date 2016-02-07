@@ -52,7 +52,10 @@
     </div>
     <form ng-show="showSettings" ng-include="'../templates/user_form.html'" class="form-horizontal col-md-9" method="post" action="http://local.host:3000/registry"></form>
     <div class="col-md-3" ng-include="'../templates/user_side.html'"></div>
-    <form ng-show="showPost" ng-include="'../templates/articleTemplates/photoText.html'" class="form-horizontal col-md-12"></form>
+    <form ng-show="firstPost" ng-include="'../templates/articleTemplates/photoText.html'" class="form-horizontal col-md-10"></form>
+    <form ng-show="secondPost" ng-include="'../templates/articleTemplates/videoText.html'" class="form-horizontal col-md-10"></form>
+    <form ng-show="thirdPost" ng-include="'../templates/articleTemplates/mapText.html'" class="form-horizontal col-md-10"></form>
+    <div ng-show="templatePanel" class="col-md-2" ng-include="'../templates/articleTemplates/templatesExample.html'"></div>
 </main>
 
 

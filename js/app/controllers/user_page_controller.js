@@ -20,15 +20,37 @@
       }
     };
     $scope.createButton_text = "Create post";
-    $scope.showPost = false;
+    $scope.templatePanel = false;
+    $scope.firstPost = false;
+    $scope.secondPost = false;
+    $scope.thirdPost = false;
     $scope.createPost = function() {
-      if ($scope.showPost === false) {
-        $scope.showPost = true;
+      if ($scope.templatePanel === false) {
+        $scope.templatePanel = true;
+        $scope.firstPost = true;
         $scope.createButton_text = "Add post";
       } else {
-        $scope.showPost = false;
+        $scope.templatePanel = false;
+        $scope.firstPost = false;
+        $scope.secondPost = false;
+        $scope.thirdPost = false;
         $scope.createButton_text = "Create post";
       }
+    };
+    $scope.showFirstTemplate = function() {
+      $scope.firstPost = true;
+      $scope.secondPost = false;
+      $scope.thirdPost = false;
+    };
+    $scope.showSecondTemplate = function() {
+      $scope.firstPost = false;
+      $scope.secondPost = true;
+      $scope.thirdPost = false;
+    };
+    $scope.showThirdTemplate = function() {
+      $scope.firstPost = false;
+      $scope.secondPost = false;
+      $scope.thirdPost = true;
     };
   });
 
