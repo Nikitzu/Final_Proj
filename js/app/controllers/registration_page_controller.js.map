@@ -1,7 +1,7 @@
 {
   "version": 3,
   "file": "registration_page_controller.js",
-  "sourceRoot": "..\\..\\..\\app\\controllers",
+  "sourceRoot": "../../../app/controllers",
   "sources": [
     "registration_page_controller.coffee"
   ],

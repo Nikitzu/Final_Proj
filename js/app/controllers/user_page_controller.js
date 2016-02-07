@@ -4,8 +4,7 @@
 
   app = angular.module('myApp');
 
-  app.controller('userCtrl', function($scope, userInfo) {
-    $scope.userInfo = userInfo;
+  app.controller('userCtrl', function($scope) {
     $scope.changeButton_text = "Change settings";
     $scope.buttonSettings = false;
     $scope.changeSettings = function() {

@@ -1,6 +1,5 @@
 app = angular.module('myApp')
-app.controller 'userCtrl', ($scope, userInfo)->
-  $scope.userInfo = userInfo
+app.controller 'userCtrl', ($scope)->
   $scope.changeButton_text = "Change settings"
   $scope.buttonSettings = false
   $scope.changeSettings = ->
