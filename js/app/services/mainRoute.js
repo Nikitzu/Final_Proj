@@ -9,7 +9,7 @@
       controller: 'mainCtrl',
       templateUrl: '../app/main.html'
     }).when('/registry', {
-      controller: 'registrationCtrl',
+      controller: 'RegistrationCtrl',
       templateUrl: '../app/registration.html'
     }).when('/user', {
       controller: 'userCtrl',
@@ -21,4 +21,4 @@
 
 }).call(this);
 
-//# sourceMappingURL=MainRout.js.map
+//# sourceMappingURL=mainRoute.js.map

@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "user_data_controller.js",
+  "sourceRoot": "../../../app/controllers",
+  "sources": [
+    "user_data_controller.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EACN,GAAG,CAAC,UAAJ,CAAe,cAAf,EAA+B,SAAC,MAAD,EAAS,QAAT;IAC7B,QAAQ,CAAC,OAAT,CAAiB,IAAjB,CAAA,CAAuB,SAAA;MACrB,MAAM,CAAC,IAAP,GAAc;IADO,CAAvB;EAD6B,CAA/B;AADA"
+}

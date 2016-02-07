@@ -5,7 +5,7 @@ app.config ($routeProvider) ->
     controller: 'mainCtrl'
     templateUrl:'../app/main.html')
   .when('/registry',
-    controller: 'registrationCtrl'
+    controller: 'RegistrationCtrl'
     templateUrl: '../app/registration.html')
   .when('/user',
     controller: 'userCtrl'

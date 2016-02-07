@@ -4,8 +4,7 @@
 
   app = angular.module('myApp');
 
-  app.controller('mainCtrl', function($scope, userInfo) {
-    $scope.userInfo = userInfo;
+  app.controller('mainCtrl', function($scope) {
     $scope.world = 'Nik';
   });
 

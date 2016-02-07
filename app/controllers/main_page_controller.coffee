@@ -1,5 +1,4 @@
 app = angular.module('myApp')
-app.controller 'mainCtrl', ($scope, userInfo)->
-  $scope.userInfo = userInfo
+app.controller 'mainCtrl', ($scope)->
   $scope.world = 'Nik'
   return
