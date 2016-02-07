@@ -1,10 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<fieldset>
+    <div class="form-group">
+        <label for="title" class="col-md-2 control-label">Title</label>
+        <div class="col-md-8">
+            <input type="text" id="description" class="form-control" placeholder="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="description" class="col-md-2 control-label">Description</label>
+        <div class="col-md-8">
+            <input type="text" id="title" class="form-control" placeholder="Enter your title">
+        </div>
+    </div>
+    </div>
+    <div class="form-group col-md-12">
+        <label class="col-md-2 control-label">Image</label><br>
+        <div>                                                 <!--на этот раз drop-directive должна быть совмещеан с местом отображения картинки-->
+            <div>                                                               <!--div для ng-repeat=""-->
+                <span>                                                          <!--эта часть у тебя была описана как директива-->
+                    <img ng-src="http://img1.joyreactor.cc/pics/post/full/%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D1%8B%D0%B5-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8-%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0-%D1%80%D0%B5%D0%BA%D0%B0-1105667.jpeg" ng-click="" class="col-md-10 col-md-offset-1"/>
+                    <button ng-click="" class="btn-xs">X</button>      <!--button для удаления картинки-->
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group col-md-6">
+        <div>
+            <textarea class="form-control" rows="25"></textarea>
+        </div>
+    </div>
+    <div class="form-group col-md-6">
+        <div>
+            <textarea class="form-control" rows="25"></textarea>
+        </div>
+    </div>
+</fieldset>

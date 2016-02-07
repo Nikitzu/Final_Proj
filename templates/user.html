@@ -20,7 +20,7 @@
 <div class="col-md-12">
 <div ng-include="'../templates/navbar.html'"></div>
 <main>
-    <div class="col-md-9" ng-hide="buttonSettings">
+    <div class="col-md-9" ng-show="showInfo">
         <form class="form-horizontal col-md-12">
             <fieldset>
                 <div class="form-group">
@@ -50,12 +50,15 @@
             </fieldset>
         </form>
     </div>
-    <form ng-show="buttonSettings" ng-include="'../templates/user_form.html'" class="form-horizontal col-md-9" method="post" action="http://local.host:3000/registry"></form>
+    <form ng-show="showSettings" ng-include="'../templates/user_form.html'" class="form-horizontal col-md-9" method="post" action="http://local.host:3000/registry"></form>
+    <div class="col-md-3" ng-include="'../templates/user_side.html'"></div>
+    <form ng-show="showPost" ng-include="'../templates/articleTemplates/photoText.html'" class="form-horizontal col-md-12"></form>
 </main>
 
-<div class="col-md-3" ng-include="'../templates/user_side.html'"></div>
+
 </div>
 <button class="btn col-md-offset-2" ng-click="changeSettings()">{{changeButton_text}}</button>
+<button class="btn" ng-click="createPost()">{{createButton_text}}</button>
 <script src="../app/components/version/version.js"></script>
 <script src="../app/components/version/version-directive.js"></script>
 <script src="../app/components/version/interpolate-filter.js"></script>

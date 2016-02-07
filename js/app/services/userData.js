@@ -6,11 +6,11 @@
 
   app.factory('UserData', [
     '$http', function($http) {
-      return $http.get('https://').success(function(data) {
+      return $http.get('http://').success(function(data) {
         return data;
-      }).error((function(err) {
+      }).error(function(err) {
         return err;
-      }));
+      });
     }
   ]);
 
