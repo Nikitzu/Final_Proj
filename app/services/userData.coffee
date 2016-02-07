@@ -5,7 +5,7 @@ app.factory 'UserData', [
   ($http) ->
     $http.get('https://')
     .success((data) ->
-      data
-    ).error (err) ->
-      err
+      data)
+    .error ((err) ->
+      err)
 ]

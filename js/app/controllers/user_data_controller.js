@@ -4,11 +4,13 @@
 
   app = angular.module('myApp');
 
-  app.controller('userDataCtrl', function($scope, UserData) {
-    UserData.success(data)(function() {
-      $scope.user = data;
-    });
-  });
+  app.controller('userDataCtrl', [
+    '$scope', 'UserData', function($scope, UserData) {
+      UserData.success(function(data) {
+        $scope.user = data;
+      });
+    }
+  ]);
 
 }).call(this);
 
