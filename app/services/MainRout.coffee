@@ -2,13 +2,13 @@ app = angular.module('myApp')
 app.config ($routeProvider) ->
   $routeProvider
   .when('/',
-    controller: 'MyCtr'
+    controller: 'mainCtrl'
     templateUrl:'../app/main.html')
   .when('/registry',
-    controller: 'MyCtr'
+    controller: 'registrationCtrl'
     templateUrl: '../app/registration.html')
   .when('/user',
-    controller: 'MyCtr'
+    controller: 'userCtrl'
     templateUrl: '../templates/user.html')
   .otherwise redirectTo: '/'
   return

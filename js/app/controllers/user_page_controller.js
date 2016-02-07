@@ -4,8 +4,8 @@
 
   app = angular.module('myApp');
 
-  app.controller('MyCtr', function($scope) {
-    $scope.world = 'Nik';
+  app.controller('userCtrl', function($scope, userInfo) {
+    $scope.userInfo = userInfo;
     $scope.changeButton_text = "Change settings";
     $scope.buttonSettings = false;
     $scope.changeSettings = function() {
@@ -20,3 +20,5 @@
   });
 
 }).call(this);
+
+//# sourceMappingURL=user_page_controller.js.map

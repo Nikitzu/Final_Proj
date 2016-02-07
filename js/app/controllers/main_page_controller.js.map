@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "main_page_controller.js",
+  "sourceRoot": "..\\..\\..\\app\\controllers",
+  "sources": [
+    "main_page_controller.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EACN,GAAG,CAAC,UAAJ,CAAe,UAAf,EAA2B,SAAC,MAAD,EAAS,QAAT;IACzB,MAAM,CAAC,QAAP,GAAkB;IAClB,MAAM,CAAC,KAAP,GAAe;EAFU,CAA3B;AADA"
+}

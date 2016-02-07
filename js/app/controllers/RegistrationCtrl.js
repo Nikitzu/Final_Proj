@@ -18,3 +18,5 @@
   });
 
 }).call(this);
+
+//# sourceMappingURL=RegistrationCtrl.js.map
