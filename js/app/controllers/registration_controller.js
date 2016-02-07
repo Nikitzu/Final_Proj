@@ -19,4 +19,4 @@
 
 }).call(this);
 
-//# sourceMappingURL=RegistrationCtrl.js.map
+//# sourceMappingURL=registration_controller.js.map
