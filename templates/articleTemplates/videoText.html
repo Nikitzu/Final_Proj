@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<div ng-controller="videoCtrl">
+    <div>
+        <input placeholder="Title">
+        <input placeholder="Description">
+    </div>
+    <div>
+        <textarea placeholder="Your article here"></textarea>
+        <input placeholder="URL" ng-model="videoUrl">
+        {{videoUrl}}
+        <iframe width="560" height="315" ng-src="embeddify(videoUrl)" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>

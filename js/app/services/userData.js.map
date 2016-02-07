@@ -1,7 +1,7 @@
 {
   "version": 3,
   "file": "userData.js",
-  "sourceRoot": "..\\..\\..\\app\\services",
+  "sourceRoot": "../../../app/services",
   "sources": [
     "userData.coffee"
   ],
