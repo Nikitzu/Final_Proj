@@ -5,6 +5,7 @@
   app = angular.module('myApp');
 
   app.controller('userCtrl', function($scope) {
+    var changeSettings;
     $scope.changeButton_text = "Change settings";
     $scope.showSettings = false;
     $scope.showInfo = true;
@@ -21,7 +22,9 @@
     };
     $scope.createButton_text = "Create post";
     $scope.templatePanel = false;
-    changeSettings(false, false, false);
+    $scope.firstPost = false;
+    $scope.secondPost = false;
+    $scope.thirdPost = false;
     $scope.createPost = function() {
       if ($scope.templatePanel === false) {
         $scope.templatePanel = true;
@@ -42,11 +45,11 @@
     $scope.showThirdTemplate = function() {
       changeSettings(false, false, true);
     };
-    changeSettings(first, second, third)(function() {
+    changeSettings = function(first, second, third) {
       $scope.firstPost = first;
       $scope.secondPost = second;
       $scope.thirdPost = third;
-    });
+    };
   });
 
 }).call(this);

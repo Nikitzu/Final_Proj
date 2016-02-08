@@ -16,7 +16,9 @@ app.controller 'userCtrl', ($scope)->
 
   $scope.createButton_text = "Create post"
   $scope.templatePanel = false
-  changeSettings(false, false, false)
+  $scope.firstPost = false
+  $scope.secondPost = false
+  $scope.thirdPost = false
   $scope.createPost = ->
     if $scope.templatePanel == false
       $scope.templatePanel = true
@@ -38,10 +40,10 @@ app.controller 'userCtrl', ($scope)->
     changeSettings(false, false, true)
     return
 
-
-  changeSettings(first, second, third) ->
+  changeSettings = (first, second, third) ->
     $scope.firstPost = first
     $scope.secondPost = second
     $scope.thirdPost = third
     return
+
   return
