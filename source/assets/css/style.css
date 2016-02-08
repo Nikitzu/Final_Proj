@@ -725,7 +725,7 @@ only screen and (max-device-width : 550px){
 }
 
 .search-widget{
-	margin-bottom: 15px;
+	margin-bottom: 0px;
 }
 
 .search-widget .input-group .form-control,
@@ -735,7 +735,6 @@ only screen and (max-device-width : 550px){
 	border: transparent;
 	border-radius: 0px;
 	box-shadow: none;
-	height: auto;
 	padding: 14px 28px;
 }
 .search-widget .input-group a.input-group-addon,
