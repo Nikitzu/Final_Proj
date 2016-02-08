@@ -6,11 +6,7 @@
 
   app.factory('UserData', [
     '$http', function($http) {
-      return $http.get('http://').success(function(data) {
-        return data;
-      }).error(function(err) {
-        return err;
-      });
+      return $http.get('http://local.host:3000/host');
     }
   ]);
 
