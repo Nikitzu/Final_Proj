@@ -9,6 +9,5 @@ app.filter 'trustAsResourceUrl', [
 
 app.controller 'videoCtrl', ($scope)->
   $scope.embeddify = (videoUrl)->
-    x = 1
     videoUrl.replace('watch?v=','embed/')
   return
