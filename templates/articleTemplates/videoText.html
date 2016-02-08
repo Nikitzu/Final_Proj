@@ -6,7 +6,6 @@
     <div>
         <textarea placeholder="Your article here"></textarea>
         <input placeholder="URL" ng-model="videoUrl">
-        {{videoUrl}}
-        <iframe width="560" height="315" ng-src="embeddify(videoUrl)" frameborder="0" allowfullscreen></iframe>
+        <iframe width="560" height="315" ng-src="{{embeddify(videoUrl) | trustAsResourceUrl}}" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
