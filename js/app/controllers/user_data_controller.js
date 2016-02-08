@@ -13,5 +13,3 @@
   ]);
 
 }).call(this);
-
-//# sourceMappingURL=user_data_controller.js.map

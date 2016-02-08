@@ -9,5 +9,3 @@
   });
 
 }).call(this);
-
-//# sourceMappingURL=main_page_controller.js.map

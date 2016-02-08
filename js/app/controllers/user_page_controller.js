@@ -21,9 +21,7 @@
     };
     $scope.createButton_text = "Create post";
     $scope.templatePanel = false;
-    $scope.firstPost = false;
-    $scope.secondPost = false;
-    $scope.thirdPost = false;
+    changeSettings(false, false, false);
     $scope.createPost = function() {
       if ($scope.templatePanel === false) {
         $scope.templatePanel = true;
@@ -31,27 +29,24 @@
         $scope.createButton_text = "Add post";
       } else {
         $scope.templatePanel = false;
-        $scope.firstPost = false;
-        $scope.secondPost = false;
-        $scope.thirdPost = false;
         $scope.createButton_text = "Create post";
+        changeSettings(false, false, false);
       }
     };
     $scope.showFirstTemplate = function() {
-      $scope.firstPost = true;
-      $scope.secondPost = false;
-      $scope.thirdPost = false;
+      changeSettings(true, false, false);
     };
     $scope.showSecondTemplate = function() {
-      $scope.firstPost = false;
-      $scope.secondPost = true;
-      $scope.thirdPost = false;
+      changeSettings(false, true, false);
     };
     $scope.showThirdTemplate = function() {
-      $scope.firstPost = false;
-      $scope.secondPost = false;
-      $scope.thirdPost = true;
+      changeSettings(false, false, true);
     };
+    changeSettings(first, second, third)(function() {
+      $scope.firstPost = first;
+      $scope.secondPost = second;
+      $scope.thirdPost = third;
+    });
   });
 
 }).call(this);
