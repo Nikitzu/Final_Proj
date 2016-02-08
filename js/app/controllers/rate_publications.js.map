@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "rate_publications.js",
+  "sourceRoot": "../../../app/controllers",
+  "sources": [
+    "rate_publications"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EACN,GAAG,CAAC,UAAJ,CAAe,UAAf,EAA0B;IAAC,QAAD,EAAW,UAAX,EAAuB,SAAC,MAAD,EAAS,QAAT;MAC/C,QAAQ,CAAC,OAAT,CAAiB,SAAC,IAAD;QACf,MAAM,CAAC,QAAP,GAAkB;MADH,CAAjB;IAD+C,CAAvB;GAA1B;AADA"
+}

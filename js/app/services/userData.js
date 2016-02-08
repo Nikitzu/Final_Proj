@@ -4,11 +4,9 @@
 
   app = angular.module('myApp');
 
-  app.factory('UserData', [
-    '$http', function($http) {
-      return $http.get('http://local.host:3000/host');
-    }
-  ]);
+  app.service('UserDataService', function() {
+    this.user = {};
+  });
 
 }).call(this);
 

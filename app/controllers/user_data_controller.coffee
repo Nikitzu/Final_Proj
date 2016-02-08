@@ -1,7 +1,5 @@
 app = angular.module('myApp')
-app.controller 'userDataCtrl',['$scope', 'UserData', ($scope, UserData)->
-  UserData.success (data) ->
-    $scope.user = data
-    return
+app.controller 'userDataCtrl',['$scope', 'UserDataService', ($scope, UserDataService)->
+  this.user = UserDataService.user
   return
 ]

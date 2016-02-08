@@ -1,10 +1,10 @@
 {
   "version": 3,
   "file": "user_data_controller.js",
-  "sourceRoot": "..\\..\\..\\app\\controllers",
+  "sourceRoot": "../../../app/controllers",
   "sources": [
     "user_data_controller.coffee"
   ],
   "names": [],
-  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EACN,GAAG,CAAC,UAAJ,CAAe,cAAf,EAA8B;IAAC,QAAD,EAAW,UAAX,EAAuB,SAAC,MAAD,EAAS,QAAT;MACnD,QAAQ,CAAC,OAAT,CAAiB,SAAC,IAAD;QACf,MAAM,CAAC,IAAP,GAAc;MADC,CAAjB;IADmD,CAAvB;GAA9B;AADA"
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EACN,GAAG,CAAC,UAAJ,CAAe,cAAf,EAA8B;IAAC,QAAD,EAAW,iBAAX,EAA8B,SAAC,MAAD,EAAS,eAAT;MAC1D,IAAI,CAAC,IAAL,GAAY,eAAe,CAAC;IAD8B,CAA9B;GAA9B;AADA"
 }

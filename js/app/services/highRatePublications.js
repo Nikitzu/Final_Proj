@@ -6,7 +6,7 @@
 
   app.factory('HighRate', [
     '$http', function($http) {
-      return $http.get('http://local.host:3000/rate');
+      return $http.get('http://localhost:3000/rate');
     }
   ]);
 

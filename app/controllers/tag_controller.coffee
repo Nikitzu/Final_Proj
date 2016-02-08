@@ -5,3 +5,4 @@ app.controller 'tagCtrl',['$scope', 'Tags', ($scope, Tags)->
     return
   return
 ]
+#for collecting tags

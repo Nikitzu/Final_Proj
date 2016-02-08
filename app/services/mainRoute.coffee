@@ -10,5 +10,8 @@ app.config ($routeProvider) ->
   .when('/user',
     controller: 'userCtrl'
     templateUrl: '../templates/user.html')
+  .when('/login',
+    controller: 'RegistrationCtrl'
+    templateUrl: '../app/registration.html')
   .otherwise redirectTo: '/'
   return

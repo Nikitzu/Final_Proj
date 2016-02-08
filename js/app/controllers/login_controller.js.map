@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "login_controller.js",
+  "sourceRoot": "../../../app/controllers",
+  "sources": [
+    "login_controller.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EACN,GAAG,CAAC,UAAJ,CAAe,WAAf,EAA2B;IAAC,QAAD,EAAW,UAAX,EAAuB,SAAC,MAAD;MAChD,QAAQ,CAAC,OAAT,CAAiB,SAAC,IAAD;QACf,MAAM,CAAC,IAAP,GAAc;MADC,CAAjB;IADgD,CAAvB;GAA3B;AADA"
+}

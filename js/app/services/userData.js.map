@@ -1,10 +1,10 @@
 {
   "version": 3,
   "file": "userData.js",
-  "sourceRoot": "..\\..\\..\\app\\services",
+  "sourceRoot": "../../../app/services",
   "sources": [
     "userData.coffee"
   ],
   "names": [],
-  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EAEN,GAAG,CAAC,OAAJ,CAAY,UAAZ,EAAwB;IACtB,OADsB,EAEtB,SAAC,KAAD;aACE,KAAK,CAAC,GAAN,CAAU,6BAAV;IADF,CAFsB;GAAxB;AAFA"
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EAEN,GAAG,CAAC,OAAJ,CAAY,iBAAZ,EAA+B,SAAA;IAC7B,IAAI,CAAC,IAAL,GAAY;EADiB,CAA/B;AAFA"
 }

@@ -5,10 +5,8 @@
   app = angular.module('myApp');
 
   app.controller('userDataCtrl', [
-    '$scope', 'UserData', function($scope, UserData) {
-      UserData.success(function(data) {
-        $scope.user = data;
-      });
+    '$scope', 'UserDataService', function($scope, UserDataService) {
+      this.user = UserDataService.user;
     }
   ]);
 
