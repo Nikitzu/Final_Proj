@@ -7,7 +7,6 @@ app.filter 'trustAsResourceUrl', [
       $sce.trustAsResourceUrl val
 ]
 
-
 app.controller 'videoCtrl', ($scope)->
   $scope.embeddify = (videoUrl)->
     videoUrl.replace('watch?v=','embed/')
