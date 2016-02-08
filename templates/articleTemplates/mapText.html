@@ -14,12 +14,13 @@
     </div>
     <div class="form-group">
         <label class="col-md-2 control-label">Image</label>
-        <div class="col-md-10">                                                 <!--на этот раз drop-directive должна быть совмещеан с местом отображения картинки-->
-            <div>                                                               <!--div для ng-repeat=""-->
-                <span>                                                          <!--эта часть у тебя была описана как директива-->
-                    <img ng-src="http://img1.joyreactor.cc/pics/post/full/%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D1%8B%D0%B5-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8-%D0%9F%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0-%D1%80%D0%B5%D0%BA%D0%B0-1105667.jpeg" ng-click="" class="col-md-9"/>
-                    <button ng-click="" class="btn-contact btn-xs">X</button>      <!--button для удаления картинки-->
-                </span>
+        <div class="col-md-8" style="border: 1px dashed lightgrey">                                                 <!--на этот раз drop-directive должна быть совмещеан с местом отображения картинки-->
+            <div drop-directive>
+                <div ng-controller="ImageListController" style="height: 300px">
+                    <div ng-repeat="image in images">
+                        <image-directive></image-directive>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
