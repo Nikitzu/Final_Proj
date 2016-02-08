@@ -3,9 +3,7 @@ app = angular.module('myApp')
 app.factory 'UserData', [
   '$http'
   ($http) ->
-    $http.get('http://')
-    .success (data) ->
-      data
+    $http.get('http://local.host:3000/host')
     .error (err) ->
-      err
+      console.log(err)
 ]
