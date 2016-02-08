@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "popularTags.js",
+  "sourceRoot": "../../../app/services",
+  "sources": [
+    "popularTags.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EAEN,GAAG,CAAC,OAAJ,CAAY,MAAZ,EAAoB;IAClB,OADkB,EAElB,SAAC,KAAD;aACE,KAAK,CAAC,GAAN,CAAU,6BAAV;IADF,CAFkB;GAApB;AAFA"
+}

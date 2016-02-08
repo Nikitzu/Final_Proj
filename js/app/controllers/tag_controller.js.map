@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "tag_controller.js",
+  "sourceRoot": "../../../app/controllers",
+  "sources": [
+    "tag_controller.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EACN,GAAG,CAAC,UAAJ,CAAe,SAAf,EAAyB;IAAC,QAAD,EAAW,MAAX,EAAmB,SAAC,MAAD,EAAS,IAAT;MAC1C,IAAI,CAAC,OAAL,CAAa,SAAC,IAAD;QACX,MAAM,CAAC,OAAP,GAAiB;MADN,CAAb;IAD0C,CAAnB;GAAzB;AADA"
+}
