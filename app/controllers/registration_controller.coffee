@@ -1,8 +1,8 @@
 app = angular.module('myApp')
 
-app.controller 'RegistrationCtrl', ['$http', '$scope', 'UserDataService', ($http, $scope, UserDataService)->
+app.controller 'RegistrationCtrl', ['$http', '$scope', '$routeParams', 'UserDataService', ($http, $scope, $routeParams,UserDataService)->
   $scope.about = ''
-  $scope.action = 'login'
+  $scope.action = $routeParams.action
   $scope.actions =
     'signup': ->
       $http.post 'http://localhost:3000/registry', {

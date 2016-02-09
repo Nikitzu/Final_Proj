@@ -1,7 +1,7 @@
 {
   "version": 3,
   "file": "video_controller.js",
-  "sourceRoot": "../../../app/controllers",
+  "sourceRoot": "..\\..\\..\\app\\controllers",
   "sources": [
     "video_controller.coffee"
   ],
