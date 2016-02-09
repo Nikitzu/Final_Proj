@@ -3,7 +3,7 @@
   "file": "test.js",
   "sourceRoot": "../../../app/controllers",
   "sources": [
-    "test"
+    "test.coffee"
   ],
   "names": [],
   "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf,EAAwB,CAAE,iBAAF,CAAxB;;EACN,GAAG,CAAC,UAAJ,CAAe,SAAf,EAA0B,SAAC,MAAD;IACxB,MAAM,CAAC,KAAP,GAAe,CAAC,MAAD,EAAQ,WAAR,EAAoB,MAApB,EAA2B,OAA3B;EADS,CAA1B;AADA"
