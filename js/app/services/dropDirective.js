@@ -39,19 +39,21 @@
                     size: theFile.size,
                     lastModifiedDate: theFile.lastModifiedDate
                   };
+                  ImageService.imagelist.pop();
                   ImageService.imagelist.push({
                     stats: newFile,
                     file: theFile,
                     URL: URL.createObjectURL(theFile)
                   });
-                  scope.$apply();
                   console.log('Imagelist', ImageService.imagelist.length);
+                  ImageService.image = ImageService.imagelist[ImageService.imagelist.length - 1];
+                  console.log(ImageService.image);
+                  scope.$apply();
                 };
               })(f);
               console.log('Processed', f);
               i++;
             }
-            ImageService.file = files[files.length - 1];
           });
         }
       };
