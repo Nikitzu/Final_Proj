@@ -7,7 +7,15 @@
   app.controller('tagCtrl', [
     '$scope', 'Tags', function($scope, Tags) {
       Tags.success(function(data) {
-        $scope.tagList = data;
+        var i;
+        $scope.tagList = [];
+        $scope.popList = [];
+        i = 0;
+        while (i < 15) {
+          $scope.tagList.push(data(i)['name']);
+          $scope.popList.push(data(i)['size']);
+          i++;
+        }
       });
     }
   ]);
