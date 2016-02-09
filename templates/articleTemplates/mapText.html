@@ -1,20 +1,20 @@
 <fieldset>
     <div class="form-group">
         <label for="title" class="col-md-2 control-label">Title</label>
-        <div class="col-md-8">
-            <input type="text" id="description" class="form-control" placeholder="">
+        <div class="col-md-10">
+            <input type="text" id="description" class="form-control" placeholder="Your title here">
         </div>
     </div>
     <div class="form-group">
         <label for="description" class="col-md-2 control-label">Description</label>
-        <div class="col-md-8">
-            <input type="text" id="title" class="form-control" placeholder="Enter your title">
+        <div class="col-md-10">
+            <input type="text" id="title" class="form-control" placeholder="Short desription">
         </div>
     </div>
     </div>
     <div class="form-group">
         <label class="col-md-2 control-label">Image</label>
-        <div class="col-md-8" style="border: 1px dashed lightgrey">                                                 <!--на этот раз drop-directive должна быть совмещеан с местом отображения картинки-->
+        <div class="col-md-10" style="border: 1px dashed lightgrey">                                                 <!--на этот раз drop-directive должна быть совмещеан с местом отображения картинки-->
             <div drop-directive>
                 <div ng-controller="ImageListController" style="height: 300px">
                     <div ng-repeat="image in images">
@@ -26,12 +26,12 @@
     </div>
     <div class="form-group col-md-6">
         <div>
-            <textarea class="form-control" rows="25"></textarea>
+            <textarea class="form-control" rows="25" placeholder="Place your article"></textarea>
         </div>
     </div>
     <div class="form-group col-md-6">
         <div>
-            <textarea class="form-control" rows="25"></textarea>
+            <textarea class="form-control" rows="25" placeholder="Your map"></textarea>
         </div>
     </div>
 </fieldset>

@@ -39,11 +39,6 @@
       $scope.performAction = function() {
         return $scope.actions[$scope.action]().success(function(data) {
           UserDataService.user = data.user;
-        }).error(function() {
-          UserDataService.user = {
-            name: 'John',
-            surname: 'Doe'
-          };
         });
       };
     }

@@ -32,11 +32,7 @@ app.controller 'RegistrationCtrl', ['$http', '$scope', 'UserDataService', ($http
     $scope.actions[$scope.action]()
     .success (data) ->
       UserDataService.user = data.user
-      return
-    .error ->
-      UserDataService.user =
-        name: 'John',
-        surname: 'Doe'
+
       return
   return
 ]
