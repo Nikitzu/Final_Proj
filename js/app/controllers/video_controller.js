@@ -14,8 +14,10 @@
 
   app.controller('videoCtrl', function($scope) {
     $scope.embeddify = function(videoUrl) {
-      $scope.resUrl = videoUrl.replace('watch?v=', 'embed/');
-      return $scope.resUrl.replace('&index=18&', '?');
+      var resUrl;
+      resUrl = videoUrl.replace('watch?v=', 'embed/');
+      resUrl.replace('&index=18&', '?');
+      return resUrl.replace('&', '?');
     };
   });
 
