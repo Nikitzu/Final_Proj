@@ -31,6 +31,7 @@
         <label for="description" class="col-md-2 control-label">YouTube Video</label>
         <div class="col-md-10" ng-controller="videoCtrl" >
             <input class="form-control" placeholder="URL" ng-model="videoUrl">
+            {{embeddify(videoUrl)}}
             <iframe width="886" height="498"  ng-src="{{embeddify(videoUrl) | trustAsResourceUrl}}" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
