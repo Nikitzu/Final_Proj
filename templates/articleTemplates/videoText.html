@@ -34,4 +34,9 @@
             <iframe width="886" height="498"  ng-src="{{embeddify(videoUrl) | trustAsResourceUrl}}" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
+    <div class="form-group">
+        <div class="col-md-10 col-md-offset-2">
+            <input name="states" id="states" type="text" placeholder="Enter tags" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
+        </div>
+    </div>
 </fieldset>
