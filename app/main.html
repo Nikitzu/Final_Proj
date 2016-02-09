@@ -6,13 +6,18 @@
     <title>My AngularJS App</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #cloud-dynamic { width: 80%; height: 400px; }
+    </style>
 </head>
 <body>
 <div ng-include="'../templates/navbar.html'"></div>
-<main>
+<main ng-controller="controller">
     <div class="col-md-9" ng-include="'../templates/content.html'"></div>
     <div class="col-md-3" ng-include="'../templates/user_side.html'"></div>
-    <h4>Tag cloud:</h4>
+    <!--<button ng-click="update()">Update</button>-->
+    <!--<p>Full width cloud :</p>-->
+    <!--<jqcloud words="words" id="cloud-dynamic" auto-resize="true" steps="7" font-size="{from:0.09, to:0.04}"></jqcloud>-->
     <div class="col-md-3" ng-include="'../templates/tagsCloud.html'"></div>
 </main>
 <script src="components/version/version.js"></script>

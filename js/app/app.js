@@ -2,7 +2,7 @@
 (function() {
   var app;
 
-  app = angular.module('myApp', ['ngRoute', 'myApp.version']);
+  app = angular.module('myApp', ['ngRoute', 'myApp.version', 'angular-jqcloud']);
 
 }).call(this);
 
