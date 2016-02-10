@@ -3,4 +3,14 @@ app = angular.module('myApp', [
   'myApp.version'
   'angular-jqcloud'
   'ui.bootstrap'
+  'ngRateIt'
 ])
+
+app.config ($httpProvider) ->
+  $httpProvider.defaults.useXDomain = true
+  delete $httpProvider.defaults.headers.common['X-Requested-With']
+  return
+#  $httpProvider.defaults.headers.post = {}
+#  $httpProvider.defaults.headers.put = {}
+#  $httpProvider.defaults.headers.patch = {}
+#  return

@@ -2,7 +2,12 @@
 (function() {
   var app;
 
-  app = angular.module('myApp', ['ngRoute', 'myApp.version', 'angular-jqcloud', 'ui.bootstrap']);
+  app = angular.module('myApp', ['ngRoute', 'myApp.version', 'angular-jqcloud', 'ui.bootstrap', 'ngRateIt']);
+
+  app.config(function($httpProvider) {
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  });
 
 }).call(this);
 
