@@ -3,7 +3,17 @@ app = angular.module 'myApp'
 app.controller 'mapCtrl', ($scope)->
 
   $scope.initialize = ->
-    $scope.myLatlng = new (google.maps.LatLng)(-34.397, 150.644)
+
+    if navigator.geolocation
+      navigator.geolocation.getCurrentPosition (position) ->
+        $scope.latitude = position.coords.latitude
+        $scope.longitude = position.coords.longitude
+        console.log(latitude + ' ' + longitude)
+        return
+    else
+    console.log('Geolocation API не поддерживается в вашем браузере')
+
+    $scope.myLatlng = new (google.maps.LatLng)($scope.latitude, $scope.longitude)
     $scope.myOptions =
       zoom: 8
       center: $scope.myLatlng
