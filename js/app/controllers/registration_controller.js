@@ -38,7 +38,7 @@
       };
       $scope.performAction = function() {
         return $scope.actions[$scope.action]().success(function(data) {
-          UserDataService.user = data.user;
+          UserDataService.user = data;
         });
       };
     }

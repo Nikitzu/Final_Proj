@@ -31,8 +31,7 @@ app.controller 'RegistrationCtrl', ['$http', '$scope', '$routeParams', 'UserData
 
     $scope.actions[$scope.action]()
     .success (data) ->
-      UserDataService.user = data.user
-
+      UserDataService.user = data
       return
   return
 ]
