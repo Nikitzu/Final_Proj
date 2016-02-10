@@ -1,10 +1,9 @@
 app = angular.module 'myApp'
 
-app.controller 'mapCtrl', ($scope)->
+app.controller 'mapCtrl', ($scope, $window)->
 
   $scope.mapReady = ->
-    if navigator.geolocation
-      navigator.geolocation.getCurrentPosition (position) ->
+      $window.navigator.geolocation.getCurrentPosition (position) ->
         latitude = position.coords.latitude
         longitude = position.coords.longitude
         coords = new (google.maps.LatLng)(latitude, longitude)
@@ -20,6 +19,4 @@ app.controller 'mapCtrl', ($scope)->
           map: map
           title: 'Your current location!')
         return
-    else
-    alert 'Geolocation API не поддерживается в вашем браузере'
   return
