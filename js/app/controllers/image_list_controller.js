@@ -4,21 +4,20 @@
 
   app = angular.module('myApp');
 
-  app.controller('ImageListController', function($scope, ImageService) {
+  app.controller('ImageListController', function($scope, ImageService, States) {
     $scope.images = ImageService.imagelist;
-    $scope.remove = function(image) {
-      var index;
-      index = $scope.images.indexOf(image);
-      $scope.images.splice(index, 1);
-      console.log('trying to remove!');
-      if ($scope.images.length === 0) {
-        $scope.init_image();
-      }
+    $scope.image = ImageService.image;
+    $scope.remove = function() {
+      ImageService.imagelist[0] = [];
     };
-    $scope.select = function(image) {
-      ImageService.file = $scope.images[$scope.images.indexOf(image)].file;
-      $scope.init_image(true);
-    };
+    $scope.selected = void 0;
+    $scope.states = States;
+  });
+
+  app.factory('States', function() {
+    var states;
+    states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+    return states;
   });
 
 }).call(this);

@@ -1,19 +1,69 @@
 app = angular.module('myApp')
 
-app.controller 'ImageListController', ($scope, ImageService) ->
+app.controller 'ImageListController', ($scope, ImageService, States) ->
   $scope.images = ImageService.imagelist
-
-  $scope.remove = (image) ->
-    index = $scope.images.indexOf(image)
-    $scope.images.splice index, 1
-    console.log 'trying to remove!'
-    if $scope.images.length == 0
-      $scope.init_image()
+  $scope.image = ImageService.image
+  $scope.remove = ->
+    ImageService.imagelist[0] =[]
     return
 
-  $scope.select = (image) ->
-    ImageService.file = $scope.images[$scope.images.indexOf(image)].file
-    $scope.init_image true
-    return
+  $scope.selected = undefined
+  $scope.states = States
 
   return
+
+
+app.factory 'States', ->
+  states = [
+    'Alabama'
+    'Alaska'
+    'Arizona'
+    'Arkansas'
+    'California'
+    'Colorado'
+    'Connecticut'
+    'Delaware'
+    'Florida'
+    'Georgia'
+    'Hawaii'
+    'Idaho'
+    'Illinois'
+    'Indiana'
+    'Iowa'
+    'Kansas'
+    'Kentucky'
+    'Louisiana'
+    'Maine'
+    'Maryland'
+    'Massachusetts'
+    'Michigan'
+    'Minnesota'
+    'Mississippi'
+    'Missouri'
+    'Montana'
+    'Nebraska'
+    'Nevada'
+    'New Hampshire'
+    'New Jersey'
+    'New Mexico'
+    'New York'
+    'North Dakota'
+    'North Carolina'
+    'Ohio'
+    'Oklahoma'
+    'Oregon'
+    'Pennsylvania'
+    'Rhode Island'
+    'South Carolina'
+    'South Dakota'
+    'Tennessee'
+    'Texas'
+    'Utah'
+    'Vermont'
+    'Virginia'
+    'Washington'
+    'West Virginia'
+    'Wisconsin'
+    'Wyoming'
+  ]
+  states

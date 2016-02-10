@@ -9,5 +9,7 @@ app.filter 'trustAsResourceUrl', [
 
 app.controller 'videoCtrl', ($scope)->
   $scope.embeddify = (videoUrl)->
-    videoUrl.replace('watch?v=','embed/')
+      resUrl = videoUrl.replace('watch?v=','embed/')
+      resUrl.replace('&index=18&', '?')
+      resUrl.replace('&','?')
   return
