@@ -29,8 +29,8 @@
             </div>
         </div>
         <div class="form-group col-md-6">
-            <button ng-click="initialize()">Load map</button>
-            <div id="map_canvas" style="width:800px; height:500px"></div>
+            <button ng-click="mapReady()">Load map</button>
+            <div id="map-canvas"></div>
         </div>
     </div>
     <div class="form-group">
@@ -39,4 +39,35 @@
         </div>
     </div>
 </fieldset>
+<!--<script type="text/javascript">-->
+    <!--var mapReady = function() {-->
+        <!--if (navigator.geolocation) {-->
+            <!--navigator.geolocation.getCurrentPosition(function (position) {-->
+                <!--var latitude = position.coords.latitude;-->
+                <!--var longitude = position.coords.longitude;-->
+                <!--var coords = new google.maps.LatLng(latitude, longitude);-->
+                <!--var mapOptions = {-->
+                    <!--zoom: 15,-->
+                    <!--center: coords,-->
+                    <!--mapTypeControl: true,-->
+                    <!--navigationControlOptions: {-->
+                        <!--style: google.maps.NavigationControlStyle.SMALL-->
+                    <!--},-->
+                    <!--mapTypeId: google.maps.MapTypeId.ROADMAP-->
+                <!--};-->
+                <!--map = new google.maps.Map(-->
+                        <!--document.getElementById("map-canvas"), mapOptions-->
+                <!--);-->
+                <!--var marker = new google.maps.Marker({-->
+                    <!--position: coords,-->
+                    <!--map: map,-->
+                    <!--title: "Your current location!"-->
+                <!--});-->
+
+            <!--});-->
+        <!--} else {-->
+            <!--alert("Geolocation API не поддерживается в вашем браузере");-->
+        <!--}-->
+    <!--};-->
+<!--</script>-->
 

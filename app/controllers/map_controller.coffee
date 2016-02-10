@@ -2,23 +2,24 @@ app = angular.module 'myApp'
 
 app.controller 'mapCtrl', ($scope)->
 
-  $scope.initialize = ->
-
+  $scope.mapReady = ->
     if navigator.geolocation
       navigator.geolocation.getCurrentPosition (position) ->
-        $scope.latitude = position.coords.latitude
-        $scope.longitude = position.coords.longitude
-        console.log(latitude + ' ' + longitude)
+        latitude = position.coords.latitude
+        longitude = position.coords.longitude
+        coords = new (google.maps.LatLng)(latitude, longitude)
+        mapOptions =
+          zoom: 15
+          center: coords
+          mapTypeControl: true
+          navigationControlOptions: style: google.maps.NavigationControlStyle.SMALL
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        map = new (google.maps.Map)(document.getElementById('map-canvas'), mapOptions)
+        marker = new (google.maps.Marker)(
+          position: coords
+          map: map
+          title: 'Your current location!')
         return
     else
-    console.log('Geolocation API не поддерживается в вашем браузере')
-
-    $scope.myLatlng = new (google.maps.LatLng)($scope.latitude, $scope.longitude)
-    $scope.myOptions =
-      zoom: 8
-      center: $scope.myLatlng
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    $scope.map = new (google.maps.Map)(document.getElementById('map_canvas'), $scope.myOptions)
-    console.log('map ready')
-    return
+    alert 'Geolocation API не поддерживается в вашем браузере'
   return
