@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div class="col-md-12">
+<div class="col-md-12" ng-controller="userDataCtrl as user_data">
 <div ng-include="'../templates/navbar.html'"></div>
 <main>
     <div class="col-md-9" ng-show="showInfo">
@@ -17,25 +17,25 @@
                 <div class="form-group">
                     <label for="inputName" class="col-lg-2 control-label">Name</label>
                     <div class="col-lg-4">
-                        <h4 id="inputName">{{user.name}}</h4>
+                        <h4 id="inputName">{{user_data.user.firstName}}</h4>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputSurname" class="col-lg-2 control-label">Surname</label>
                     <div class="col-lg-4">
-                        <h4 id="inputSurname">{{user.surname}}</h4>
+                        <h4 id="inputSurname">{{user_data.user.lastName}}</h4>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                     <div class="col-lg-4">
-                        <h4 id="inputEmail">{{user.email}}</h4>
+                        <h4 id="inputEmail">{{user_data.user.email}}</h4>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="textArea" class="col-lg-2 control-label" >About you</label>
                     <div class="col-lg-10">
-                        <textarea class="form-control" rows="7" id="textArea" placeholder="userInfo.about" readonly></textarea>
+                        <textarea class="form-control" rows="7" id="textArea" placeholder="userInfo.about">{{user_data.user.about}}</textarea>
                     </div>
                 </div>
             </fieldset>
