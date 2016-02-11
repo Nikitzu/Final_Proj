@@ -10,11 +10,12 @@
       var tags;
       console.log("Child Scope");
       tags = $scope.tags.split(" ");
-      return $http.post('http://localhost:3000/registry', {
+      return $http.post('http://localhost:3000/post/save', {
         title: $scope.title,
         description: $scope.description,
         article: $scope.article,
-        tags: tags
+        tags: tags,
+        template: 'photo'
       });
     };
     $scope.setAction(action);

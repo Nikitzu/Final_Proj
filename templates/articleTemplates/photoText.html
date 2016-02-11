@@ -1,17 +1,17 @@
-<fieldset ng-controller="ImageListController">
+<fieldset ng-controller="PhotoTemplateCtrl">
     <div class="form-group">
         <label for="title" class="col-md-2 control-label">Title</label>
         <div class="col-md-10">
-            <input type="text" id="description" class="form-control" placeholder="Your title here">
+            <input ng-model="title" type="text" id="title" class="form-control" placeholder="Your title here">
         </div>
     </div>
     <div class="form-group">
         <label for="description" class="col-md-2 control-label">Description</label>
         <div class="col-md-10">
-            <input type="text" id="title" class="form-control" placeholder="Short desription">
+            <input ng-model="description" type="text" id="description" class="form-control" placeholder="Short desription">
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group" ng-controller="ImageListController">
         <label class="col-md-2 control-label">Image</label>
         <div class="col-md-10" style="border: 1px dashed lightgrey">
             <div drop-directive>
@@ -24,12 +24,12 @@
     <div class="form-group">
         <label for="textArea" class="col-md-2 control-label">Article</label>
         <div class="col-md-10">
-            <textarea class="form-control" rows="30" id="textArea" placeholder="Place your article"></textarea>
+            <textarea ng-model="article" class="form-control" rows="30" id="textArea" placeholder="Place your article"></textarea>
         </div>
     </div>
     <div class="form-group">
         <div class="col-md-10 col-md-offset-2">
-            <input name="states" id="states" data-items="4" type="text" placeholder="Enter tags" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
+            <input ng-model="tags" name="states" id="states" data-items="4" type="text" placeholder="Enter tags" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
         </div>
     </div>
 </fieldset>

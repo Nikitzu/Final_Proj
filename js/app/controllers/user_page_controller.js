@@ -33,6 +33,11 @@
       } else {
         $scope.templatePanel = false;
         $scope.createButton_text = "Create post";
+        $scope.action().success(function() {
+          console.log("nebeda");
+        }).error(function() {
+          return console.log("beda");
+        });
         changeSettings(false, false, false);
       }
     };
@@ -44,6 +49,10 @@
     };
     $scope.showThirdTemplate = function() {
       changeSettings(false, false, true);
+    };
+    $scope.action = {};
+    $scope.setAction = function(action) {
+      $scope.action = action;
     };
     changeSettings = function(first, second, third) {
       $scope.firstPost = first;
