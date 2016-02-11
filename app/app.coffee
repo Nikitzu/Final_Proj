@@ -4,6 +4,7 @@ app = angular.module('myApp', [
   'angular-jqcloud'
   'ui.bootstrap'
   'ngRateIt'
+  'hc.marked'
 ])
 
 app.config ($httpProvider) ->

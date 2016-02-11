@@ -2,7 +2,7 @@
 (function() {
   var app;
 
-  app = angular.module('myApp', ['ngRoute', 'myApp.version', 'angular-jqcloud', 'ui.bootstrap', 'ngRateIt']);
+  app = angular.module('myApp', ['ngRoute', 'myApp.version', 'angular-jqcloud', 'ui.bootstrap', 'ngRateIt', 'hc.marked']);
 
   app.config(function($httpProvider) {
     $httpProvider.defaults.useXDomain = true;
