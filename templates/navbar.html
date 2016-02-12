@@ -15,14 +15,6 @@
             <li ng-if="!user"><a href="#/login/login">{{translation.SIGN_IN}}</a></li>
             <li ng-if="user" ng-click="action()"><a>{{translation.SIGN_OUT}}</a></li>
         </ul>
-        <section>
-            <div class="col-md-offset-1 col-md-2 col-sm-2 col-xs-2">
-                <select class="form-control" ng-change="lang.translate()" ng-model="lang.selectedLanguage">
-                    <option value="en">EN</option>
-                    <option value="ru">RU</option>
-                </select>
-            </div>
-        </section>
         <div ng-include="'../templates/search.html'"></div>
     </div>
 </div>

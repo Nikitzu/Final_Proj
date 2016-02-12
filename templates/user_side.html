@@ -11,6 +11,16 @@
                         <li>
                             <a href="#">{{translation.RATE}}</a>
                         </li>
+                        <li>
+                            <section>
+                                <div>
+                                    <select class="form-control" ng-change="lang.translate()" ng-model="lang.selectedLanguage">
+                                        <option value="en">EN</option>
+                                        <option value="ru">RU</option>
+                                    </select>
+                                </div>
+                            </section>
+                        </li>
                     </ul>
                 </li>
             </ul>
