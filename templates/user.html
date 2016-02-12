@@ -15,25 +15,25 @@
         <form class="form-horizontal col-md-12">
             <fieldset>
                 <div class="form-group">
-                    <label for="inputName" class="col-lg-2 control-label">Name</label>
+                    <label for="inputName" class="col-lg-2 control-label">{{translation.NAME}}</label>
                     <div class="col-lg-4">
                         <h4 id="inputName">{{user_data.user.firstName}}</h4>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputSurname" class="col-lg-2 control-label">Surname</label>
+                    <label for="inputSurname" class="col-lg-2 control-label">{{translation.SURNAME}}</label>
                     <div class="col-lg-4">
                         <h4 id="inputSurname">{{user_data.user.lastName}}</h4>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                    <label for="inputEmail" class="col-lg-2 control-label">{{translation.EMAIL}}</label>
                     <div class="col-lg-4">
                         <h4 id="inputEmail">{{user_data.user.email}}</h4>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="textArea" class="col-lg-2 control-label" >About you</label>
+                    <label for="textArea" class="col-lg-2 control-label" >{{translation.ABOUT}}</label>
                     <div class="col-lg-10">
                         <textarea class="form-control" rows="7" id="textArea" placeholder="userInfo.about">{{user_data.user.about}}</textarea>
                     </div>

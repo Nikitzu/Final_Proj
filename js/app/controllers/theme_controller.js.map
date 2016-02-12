@@ -1,7 +1,7 @@
 {
   "version": 3,
   "file": "theme_controller.js",
-  "sourceRoot": "../../../app/controllers",
+  "sourceRoot": "..\\..\\..\\app\\controllers",
   "sources": [
     "theme_controller.coffee"
   ],

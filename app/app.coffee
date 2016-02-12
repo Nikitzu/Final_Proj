@@ -5,6 +5,7 @@ app = angular.module('myApp', [
   'ui.bootstrap'
   'ngRateIt'
   'hc.marked'
+  'ngResource'
   'door3.css'
 ])
 

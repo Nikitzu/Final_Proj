@@ -1,4 +1,4 @@
-<div class="navbar navbar-default navbar-fixed-top">
+<div class="navbar navbar-default navbar-fixed-top" ng-controller="NavBarController">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
             <span class="sr-only">Toggle navigation</span>
@@ -7,14 +7,22 @@
             <span class="icon-bar"></span>
         </button>
     </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2" ng-controller="NavBarController">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
         <ul class="nav navbar-nav navbar-left">
-            <li class="active"><a href="#/main">Main<span class="sr-only">(current)</span></a></li>
-            <li><a href="#/">Home</a></li>
-            <li ng-if="!user"><a href="#/login/signup">Sign up</a></li>
-            <li ng-if="!user"><a href="#/login/login">Sign in</a></li>
-            <li ng-if="user" ng-click="action()"><a>Sign Out</a></li>
+            <li class="active"><a href="#/main">{{translation.MAIN}}<span class="sr-only">(current)</span></a></li>
+            <li><a href="#/">{{translation.HOME}}</a></li>
+            <li ng-if="!user"><a href="#/login/signup">{{translation.SIGN_UP}}</a></li>
+            <li ng-if="!user"><a href="#/login/login">{{translation.SIGN_IN}}</a></li>
+            <li ng-if="user" ng-click="action()"><a>{{translation.SIGN_OUT}}</a></li>
         </ul>
+        <section>
+            <div class="col-md-offset-1 col-md-2 col-sm-2 col-xs-2">
+                <select class="form-control" ng-change="lang.translate()" ng-model="lang.selectedLanguage">
+                    <option value="en">EN</option>
+                    <option value="ru">RU</option>
+                </select>
+            </div>
+        </section>
         <div ng-include="'../templates/search.html'"></div>
     </div>
 </div>
