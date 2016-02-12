@@ -1,18 +1,18 @@
 <fieldset>
     <div class="form-group">
-        <label for="inputName" class="col-lg-2 control-label">{{translation.NAME}}</label>
+        <label for="inputName" class="col-lg-1 control-label">{{translation.NAME}}</label>
         <div class="col-lg-4">
             <input type="text" class="form-control" id="inputName" placeholder="Name" value="{{user_data.user.firstName}}" ng-model="tempFirstName">
         </div>
     </div>
     <div class="form-group">
-        <label for="inputSurname" class="col-lg-2 control-label">{{translation.SURNAME}}</label>
+        <label for="inputSurname" class="col-lg-1 control-label">{{translation.SURNAME}}</label>
         <div class="col-lg-4">
             <input type="text" class="form-control" id="inputSurname" placeholder="Surname" value="{{user_data.user.lastName}}" ng-model="tempLastName">
         </div>
     </div>
     <div class="form-group">
-        <label for="textArea" class="col-lg-2 control-label">{{translation.ABOUT}}</label>
+        <label for="textArea" class="col-lg-1 control-label">{{translation.ABOUT}}</label>
         <div class="col-lg-10">
             <textarea class="form-control" rows="7" id="textArea" placeholder="{{translation.ABOUT_PLACEHOLDER}}" value="{{user_data.user.about}}" ng-model="tempAbout"></textarea>
         </div>
