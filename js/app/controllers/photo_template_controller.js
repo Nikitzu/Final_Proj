@@ -4,24 +4,29 @@
 
   app = angular.module('myApp');
 
-  ctor = function($http, $scope, $routeParams, UserDataService) {
+  ctor = function($http, $scope, ImageService) {
     var action;
     action = function() {
       var tags;
-      console.log("Child Scope");
+      console.log("Child Scope", ImageService.imagelist[0].base64);
       tags = $scope.tags.split(" ");
       return $http.post('http://localhost:3000/post/save', {
         title: $scope.title,
         description: $scope.description,
         article: $scope.article,
-        tags: tags,
-        template: 'photo'
+        tags: tags.map(function(tag) {
+          return {
+            name: tag
+          };
+        }),
+        template: 'photo',
+        img: ImageService.imagelist[0].base64
       });
     };
     $scope.setAction(action);
   };
 
-  app.controller('PhotoTemplateCtrl', ['$http', '$scope', '$routeParams', 'UserDataService', ctor]);
+  app.controller('PhotoTemplateCtrl', ['$http', '$scope', 'ImageService', ctor]);
 
 }).call(this);
 

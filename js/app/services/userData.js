@@ -5,7 +5,7 @@
   app = angular.module('myApp');
 
   app.service('UserDataService', function() {
-    this.user = {};
+    this.user = null;
   });
 
 }).call(this);

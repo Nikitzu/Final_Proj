@@ -25,7 +25,7 @@ app.directive 'dropDirective', [
           f = undefined
           while f = files[i]
             reader = new FileReader
-            reader.readAsArrayBuffer f
+            reader.readAsDataURL f
             reader.onload = ((theFile) ->
               (e) ->
                 newFile =
@@ -38,6 +38,7 @@ app.directive 'dropDirective', [
                   stats: newFile
                   file: theFile
                   URL: URL.createObjectURL(theFile)
+                  base64: reader.result
 
                 console.log 'Imagelist', ImageService.imagelist.length
                 ImageService.image = ImageService.imagelist[ImageService.imagelist.length - 1]

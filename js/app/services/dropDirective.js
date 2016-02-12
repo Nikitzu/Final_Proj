@@ -29,7 +29,7 @@
             f = void 0;
             while (f = files[i]) {
               reader = new FileReader;
-              reader.readAsArrayBuffer(f);
+              reader.readAsDataURL(f);
               reader.onload = (function(theFile) {
                 return function(e) {
                   var newFile;
@@ -43,7 +43,8 @@
                   ImageService.imagelist.push({
                     stats: newFile,
                     file: theFile,
-                    URL: URL.createObjectURL(theFile)
+                    URL: URL.createObjectURL(theFile),
+                    base64: reader.result
                   });
                   console.log('Imagelist', ImageService.imagelist.length);
                   ImageService.image = ImageService.imagelist[ImageService.imagelist.length - 1];

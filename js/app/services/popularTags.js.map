@@ -1,7 +1,7 @@
 {
   "version": 3,
   "file": "popularTags.js",
-  "sourceRoot": "..\\..\\..\\app\\services",
+  "sourceRoot": "../../../app/services",
   "sources": [
     "popularTags.coffee"
   ],

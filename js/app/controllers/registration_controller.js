@@ -39,7 +39,7 @@
       $scope.performAction = function() {
         return $scope.actions[$scope.action]().success(function(data) {
           UserDataService.user = data;
-          window.location.href = 'http://localhost:8000/app/#/login/login';
+          window.location.href = 'http://localhost:8000/app/#/';
         });
       };
     }

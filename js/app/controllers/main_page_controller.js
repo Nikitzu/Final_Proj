@@ -4,9 +4,18 @@
 
   app = angular.module('myApp');
 
-  app.controller('mainCtrl', function($scope) {
-    $scope.world = 'Nik';
-  });
+  app.controller('mainCtrl', [
+    '$http', '$scope', function($http, $scope) {
+      $scope.world = 'Nik';
+      $scope.posts = [];
+      $scope.action = function() {
+        return $http.get('http://localhost:3000/posts/' + '12345').then(function(data) {
+          console.log(data.data);
+          $scope.posts = data.data;
+        });
+      };
+    }
+  ]);
 
 }).call(this);
 

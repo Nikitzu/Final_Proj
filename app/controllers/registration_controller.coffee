@@ -32,7 +32,7 @@ app.controller 'RegistrationCtrl', ['$http', '$scope', '$routeParams', 'UserData
     $scope.actions[$scope.action]()
     .success (data) ->
       UserDataService.user = data
-      window.location.href = 'http://localhost:8000/app/#/login/login'
+      window.location.href = 'http://localhost:8000/app/#/'
       return
   return
 ]
