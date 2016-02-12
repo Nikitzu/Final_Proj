@@ -5,6 +5,7 @@ app = angular.module('myApp', [
   'ui.bootstrap'
   'ngRateIt'
   'hc.marked'
+  'door3.css'
 ])
 
 app.config ($httpProvider) ->
