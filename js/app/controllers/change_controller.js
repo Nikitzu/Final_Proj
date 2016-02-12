@@ -5,13 +5,25 @@
   app = angular.module('myApp');
 
   app.controller('changeCtrl', [
-    '$scope', 'translationService', function($scope, translationService) {
+    '$scope', 'translationService', '$css', function($scope, translationService, $css) {
       this.translate = function() {
         translationService.getTranslation($scope, this.selectedLanguage);
       };
       console.log(this.selectedLanguage);
       this.selectedLanguage = 'en';
       this.translate();
+      this.selectedTheme = 'light';
+      this.switchTheme = function() {
+        if (this.selectedTheme === 'light') {
+          $css.add('../source/assets/css/style.css');
+          $css.remove('../source/assets/css/style2.css');
+        } else {
+          $css.remove('../source/assets/css/style.css');
+          $css.add('../source/assets/css/style2.css');
+        }
+        return;
+        return this.switchTheme();
+      };
     }
   ]);
 
@@ -29,4 +41,4 @@
 
 }).call(this);
 
-//# sourceMappingURL=translation_controller.js.map
+//# sourceMappingURL=change_controller.js.map

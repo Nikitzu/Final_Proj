@@ -1,29 +1,33 @@
-<div class="col-md-12">
-    <div class="navbar col-md-12" role="navigation">
-        <div class="sidebar-nav navbar-collapse">
-            <ul class="nav" id="side-menu">
-                <li>
-                    <a href="#/user"><img src="../source/assets/img/no_photo.jpg" /></a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="#">{{user_data.user.firstName}} {{user_data.user.lastName}}</a>
-                        </li>
-                        <li>
-                            <a href="#">{{translation.RATE}}</a>
-                        </li>
-                        <li>
-                            <section>
-                                <div>
-                                    <select class="form-control" ng-change="lang.translate()" ng-model="lang.selectedLanguage">
-                                        <option value="en">EN</option>
-                                        <option value="ru">RU</option>
-                                    </select>
-                                </div>
-                            </section>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
+<div class="col-md-12 navbar sidebar-nav navbar-collapse " role="navigation">
+    <ul class="nav">
+        <li>
+            <a href="#/user"><img src="../source/assets/img/no_photo.jpg" /></a>
+        </li>
+        <li>
+            <a href="#">{{user_data.user.firstName}} {{user_data.user.lastName}}</a>
+        </li>
+        <li>
+            <a href="#">{{translation.RATE}}</a>
+        </li>
+        <li>
+            <section class="switch">
+                <div>
+                    <select class="form-control" ng-change="lang.translate()" ng-model="lang.selectedLanguage">
+                        <option value="en">EN</option>
+                        <option value="ru">RU</option>
+                    </select>
+                </div>
+            </section>
+        </li>
+        <li>
+            <section class="switch">
+                <div>
+                    <select class="form-control" ng-change="lang.switchTheme()" ng-model="lang.selectedTheme">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </div>
+            </section>
+        </li>
+    </ul>
 </div>

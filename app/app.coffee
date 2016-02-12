@@ -8,7 +8,6 @@ app = angular.module('myApp', [
   'ngResource'
   'door3.css'
 ])
-
 app.config ($httpProvider) ->
   $httpProvider.defaults.useXDomain = true
   $httpProvider.defaults.withCredentials = true

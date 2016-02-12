@@ -1,9 +1,10 @@
 app = angular.module('myApp')
 
-app.controller 'translationCtrl', [
+app.controller 'changeCtrl', [
   '$scope'
   'translationService'
-  ($scope, translationService) ->
+  '$css'
+  ($scope, translationService, $css) ->
 
     @translate = ->
       translationService.getTranslation $scope, @selectedLanguage
@@ -11,6 +12,17 @@ app.controller 'translationCtrl', [
     console.log @selectedLanguage
     @selectedLanguage = 'en'
     @translate()
+
+    @selectedTheme = 'light'
+    @switchTheme = ->
+      if @selectedTheme == 'light'
+        $css.add '../source/assets/css/style.css'
+        $css.remove '../source/assets/css/style2.css'
+      else
+        $css.remove '../source/assets/css/style.css'
+        $css.add '../source/assets/css/style2.css'
+      return
+      @switchTheme()
     return
 ]
 
