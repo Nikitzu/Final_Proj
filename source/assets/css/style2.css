@@ -4,6 +4,14 @@
 						Navigation menu
 =========================================================================*/
 
+.temp-img {
+	background-color: #1e1e1e;
+}
+
+.temp-img:hover {
+	background-color: #141313;
+}
+
 .switch{
 	width:100px;
 }

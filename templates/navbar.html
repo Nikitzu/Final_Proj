@@ -15,12 +15,12 @@
             <li ng-if="!user"><a href="#/login/login">{{translation.SIGN_IN}}</a></li>
             <li ng-if="user" ng-click="action()"><a href="#/">{{translation.SIGN_OUT}}</a></li>
             <li ng-if="user" class="navbar-right">
-                <a href="#/" ng-click="lang.switchTheme()">
+                <a href="" ng-click="lang.switchTheme()">
                     {{translation[lang.selectedTheme]}}
                 </a>
             </li>
             <li class="navbar-right">
-                <a href="#/" ng-click="lang.translate()">
+                <a href="" ng-click="lang.translate()">
                     {{lang.selectedLanguage}}
                 </a>
             </li>
