@@ -5,11 +5,15 @@
   app = angular.module('myApp');
 
   app.controller('mainCtrl', [
-    '$http', '$scope', function($http, $scope) {
+    '$http', '$scope', 'UserDataService', function($http, $scope, UserDataService) {
       $scope.world = 'Nik';
       $scope.posts = [];
+      $http.get('http://localhost:3000/currentUser').then(function(data) {
+        console.log(data.data);
+        UserDataService.user = data.data;
+      });
       $scope.action = function() {
-        return $http.get('http://localhost:3000/posts/' + '12345').then(function(data) {
+        return $http.get('http://localhost:3000/posts/' + UserDataService.user.authId).then(function(data) {
           console.log(data.data);
           $scope.posts = data.data;
         });
