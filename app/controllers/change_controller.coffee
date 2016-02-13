@@ -2,7 +2,6 @@ app = angular.module('myApp')
 
 app.controller 'changeCtrl', [
   '$scope'
- # 'translationService'
   '$css'
   'langFactory'
   ($scope, $css, langFactory) ->
@@ -13,7 +12,6 @@ app.controller 'changeCtrl', [
         @selectedLanguage = 'ru'
       $scope.translation = langFactory(@selectedLanguage)
       return
-    console.log @selectedLanguage
     @selectedLanguage = 'ru'
     @translate()
 

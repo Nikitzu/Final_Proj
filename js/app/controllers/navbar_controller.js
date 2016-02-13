@@ -5,9 +5,9 @@
   app = angular.module('myApp');
 
   app.controller('NavBarController', [
-    '$http', '$scope', 'UserDataService', function($http, $scope, UserDataService) {
-      $scope.action = function() {
-        return $http.post('http://localhost:3000/logout').then(function() {
+    '$scope', 'UserDataService', 'logoutUser', function($scope, UserDataService, logoutUser) {
+      $scope.logout = function() {
+        return logoutUser().then(function() {
           console.log(UserDataService.user);
           UserDataService.user = null;
           window.location.href = 'http://localhost:8000/app/#/';

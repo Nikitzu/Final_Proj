@@ -1,6 +1,6 @@
 app = angular.module 'myApp'
-
-app.controller 'mapCtrl', ($scope, $window)->
+#TODO: rewrite as a directive
+app.controller 'mapCtrl', ($scope, $window) ->
 
   $scope.mapReady = ->
       $window.navigator.geolocation.getCurrentPosition (position) ->

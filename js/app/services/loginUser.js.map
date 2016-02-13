@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "loginUser.js",
+  "sourceRoot": "..\\..\\..\\app\\services",
+  "sources": [
+    "loginUser.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EAEN,GAAG,CAAC,OAAJ,CAAY,WAAZ,EAAyB,SAAC,KAAD;WACvB,SAAC,IAAD;aACE,KAAK,CAAC,IAAN,CAAW,6BAAX,EAA0C,IAA1C;IADF;EADuB,CAAzB;AAFA"
+}

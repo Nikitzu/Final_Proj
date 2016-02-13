@@ -5,12 +5,12 @@
   app = angular.module('myApp');
 
   app.controller('RegistrationCtrl', [
-    '$http', '$scope', '$routeParams', 'UserDataService', function($http, $scope, $routeParams, UserDataService) {
+    '$scope', '$routeParams', 'UserDataService', 'signupUser', 'loginUser', function($scope, $routeParams, UserDataService, signupUser, loginUser) {
       $scope.about = '';
       $scope.action = $routeParams.action;
       $scope.actions = {
         'signup': function() {
-          return $http.post('http://localhost:3000/registry', {
+          return signupUser({
             email: $scope.email,
             password: $scope.password,
             username: $scope.name,
@@ -19,22 +19,11 @@
           });
         },
         'login': function() {
-          return $http.post('http://localhost:3000/login', {
+          return loginUser({
             email: $scope.email,
             password: $scope.password
           });
         }
-
-        /*
-          $scope.submit = ->
-        $http.post('http://local.host:3000/registry', {
-          email: $scope.email,
-          password: $scope.password,
-          username: $scope.name,
-          surname: $scope.surname,
-          about: $scope.about
-        })
-         */
       };
       $scope.performAction = function() {
         return $scope.actions[$scope.action]().success(function(data) {

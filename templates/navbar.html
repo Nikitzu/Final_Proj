@@ -13,7 +13,7 @@
             <li ng-if="user"><a href="#/user">{{translation.HOME}}</a></li>
             <li ng-if="!user"><a href="#/login/signup">{{translation.SIGN_UP}}</a></li>
             <li ng-if="!user"><a href="#/login/login">{{translation.SIGN_IN}}</a></li>
-            <li ng-if="user" ng-click="action()"><a href="#/">{{translation.SIGN_OUT}}</a></li>
+            <li ng-if="user" ng-click="logout()"><a href="#/">{{translation.SIGN_OUT}}</a></li>
             <li ng-if="user" class="navbar-right">
                 <a href="" ng-click="lang.switchTheme()">
                     {{translation[lang.selectedTheme]}}

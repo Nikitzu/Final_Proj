@@ -1,34 +1,22 @@
 app = angular.module('myApp')
-#TODO
-app.controller 'RegistrationCtrl', ['$http', '$scope', '$routeParams', 'UserDataService', ($http, $scope, $routeParams,UserDataService)->
+
+app.controller 'RegistrationCtrl', ['$scope', '$routeParams', 'UserDataService', 'signupUser', 'loginUser', ($scope, $routeParams,UserDataService, signupUser, loginUser)->
   $scope.about = ''
   $scope.action = $routeParams.action
   $scope.actions =
     'signup': ->
-      $http.post 'http://localhost:3000/registry', {
+      signupUser
         email: $scope.email,
         password: $scope.password,
         username: $scope.name,
         surname: $scope.surname,
         about: $scope.about
-      }
     'login': ->
-      $http.post 'http://localhost:3000/login', {
+      loginUser
         email: $scope.email,
         password: $scope.password
-      }
-    ###
-  $scope.submit = ->
-    $http.post('http://local.host:3000/registry', {
-      email: $scope.email,
-      password: $scope.password,
-      username: $scope.name,
-      surname: $scope.surname,
-      about: $scope.about
-    })
-###
-  $scope.performAction = ->
 
+  $scope.performAction = ->
     $scope.actions[$scope.action]()
     .success (data) ->
       UserDataService.user = data

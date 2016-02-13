@@ -4,13 +4,11 @@
 
   app = angular.module('myApp');
 
-  ctor = function($http, $scope, ImageService) {
+  ctor = function($scope, ImageService, saveImage) {
     var action;
     action = function() {
-      var tags;
       console.log("Child Scope", ImageService.imagelist[0].base64);
-      tags = $scope.tags.split(" ");
-      return $http.post('http://localhost:3000/post/save', {
+      return saveImage({
         title: $scope.title,
         description: $scope.description,
         article: $scope.article,
@@ -26,7 +24,7 @@
     $scope.setAction(action);
   };
 
-  app.controller('PhotoTemplateCtrl', ['$http', '$scope', 'ImageService', ctor]);
+  app.controller('PhotoTemplateCtrl', ['$scope', 'ImageService', 'saveImage', ctor]);
 
 }).call(this);
 

@@ -1,10 +1,9 @@
 app = angular.module('myApp')
-ctor = ($http, $scope, ImageService)->
-#TODO
+
+ctor = ($scope, ImageService, saveImage)->
   action = ->
     console.log "Child Scope", ImageService.imagelist[0].base64
-    tags = $scope.tags.split " "
-    $http.post 'http://localhost:3000/post/save', {
+    saveImage
       title: $scope.title,
       description: $scope.description,
       article: $scope.article,
@@ -12,8 +11,7 @@ ctor = ($http, $scope, ImageService)->
         {name: tag}
       template: 'photo'
       img: ImageService.imagelist[0].base64
-    }
   $scope.setAction(action)
   return
-app.controller 'PhotoTemplateCtrl', ['$http', '$scope', 'ImageService', ctor]
+app.controller 'PhotoTemplateCtrl', ['$scope', 'ImageService', 'saveImage', ctor]
 

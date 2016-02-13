@@ -14,7 +14,6 @@
         }
         $scope.translation = langFactory(this.selectedLanguage);
       };
-      console.log(this.selectedLanguage);
       this.selectedLanguage = 'ru';
       this.translate();
       this.selectedTheme = 'light';

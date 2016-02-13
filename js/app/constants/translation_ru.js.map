@@ -1,7 +1,7 @@
 {
   "version": 3,
   "file": "translation_ru.js",
-  "sourceRoot": "..\\..\\..\\app\\controllers",
+  "sourceRoot": "..\\..\\..\\app\\constants",
   "sources": [
     "translation_ru.coffee"
   ],

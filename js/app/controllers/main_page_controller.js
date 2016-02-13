@@ -5,18 +5,21 @@
   app = angular.module('myApp');
 
   app.controller('mainCtrl', [
-    '$http', '$scope', 'UserDataService', function($http, $scope, UserDataService) {
-      $scope.world = 'Nik';
+    '$scope', 'UserDataService', 'getUser', 'getPosts', function($scope, UserDataService, getUser, getPosts) {
       $scope.posts = [];
-      $http.get('http://localhost:3000/currentUser').then(function(data) {
-        console.log(data.data);
-        UserDataService.user = data.data;
+      getUser.then(function(user) {
+        console.log('USER PRISHEL');
+        UserDataService.user = user.data;
+      }, function(error) {
+        console.log('USER NEPRISHEL');
+        console.log(error.data);
       });
       $scope.action = function() {
-        return $http.get('http://localhost:3000/posts/' + UserDataService.user.authId).then(function(data) {
-          console.log(data.data);
-          $scope.posts = data.data;
-        });
+        getPosts(UserDataService.user.authId).then;
+        return function(posts) {
+          console.log(posts.data);
+          $scope.posts = posts.data;
+        };
       };
     }
   ]);

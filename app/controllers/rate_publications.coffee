@@ -1,5 +1,5 @@
 app = angular.module('myApp')
-app.controller 'rateCtrl',['$scope', 'HighRate', ($scope, HighRate)->
+app.controller 'rateCtrl', ['$scope', 'HighRate', ($scope, HighRate)->
   HighRate.success (data) ->
     $scope.postList = data
     return

@@ -1,18 +1,29 @@
 app = angular.module('myApp')
-#TODO
-app.controller 'mainCtrl', ['$http', '$scope', 'UserDataService', ($http, $scope, UserDataService) ->
-  $scope.world = 'Nik'
-  $scope.posts = []
-  $http.get('http://localhost:3000/currentUser').then((data)->
-    console.log(data.data)
-    UserDataService.user = data.data
-    return
-  )
-  $scope.action = () ->
-    $http.get('http://localhost:3000/posts/'+ UserDataService.user.authId).then( (data)->
-      console.log(data.data)
-      $scope.posts = data.data
+
+app.controller 'mainCtrl', [
+  '$scope',
+  'UserDataService',
+  'getUser',
+  'getPosts'
+  ($scope, UserDataService, getUser, getPosts) ->
+
+    $scope.posts = []
+
+    getUser.then (user)->
+      console.log('USER PRISHEL')
+      UserDataService.user = user.data
       return
-  )
-  return
+    ,
+    (error) ->
+      console.log('USER NEPRISHEL')
+      console.log error.data
+      return
+
+    $scope.action = () ->
+      getPosts(UserDataService.user.authId).then
+      (posts)->
+        console.log(posts.data)
+        $scope.posts = posts.data
+        return
+    return
 ]

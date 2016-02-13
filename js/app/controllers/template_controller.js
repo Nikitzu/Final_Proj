@@ -5,7 +5,7 @@
   app = angular.module('myApp');
 
   app.controller('TemplateCtrl', [
-    '$http', '$scope', '$routeParams', 'UserDataService', function($http, $scope, $routeParams, UserDataService) {
+    '$http', '$scope', '$routeParams', 'UserDataService', function($scope, $routeParams, UserDataService) {
       $scope.actionPrototype = {};
     }
   ]);
