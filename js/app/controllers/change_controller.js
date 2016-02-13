@@ -5,14 +5,14 @@
   app = angular.module('myApp');
 
   app.controller('changeCtrl', [
-    '$scope', 'translationService', '$css', function($scope, translationService, $css) {
+    '$scope', '$css', 'langFactory', function($scope, $css, langFactory) {
       this.translate = function() {
         if (this.selectedLanguage === 'ru') {
           this.selectedLanguage = 'en';
         } else {
           this.selectedLanguage = 'ru';
         }
-        translationService.getTranslation($scope, this.selectedLanguage);
+        $scope.translation = langFactory(this.selectedLanguage);
       };
       console.log(this.selectedLanguage);
       this.selectedLanguage = 'ru';
@@ -34,18 +34,6 @@
       };
     }
   ]);
-
-  app.service('translationService', function($resource) {
-    this.getTranslation = function($scope, language) {
-      var languageFilePath;
-      languageFilePath = '../app/controllers/translation_' + language + '.json';
-      console.log(languageFilePath);
-      $resource(languageFilePath).get(function(data) {
-        console.log(data);
-        $scope.translation = data;
-      });
-    };
-  });
 
 }).call(this);
 

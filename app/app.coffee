@@ -5,7 +5,7 @@ app = angular.module('myApp', [
   'ui.bootstrap'
   'ngRateIt'
   'hc.marked'
-  'ngResource'
+ # 'ngResource'
   'door3.css'
 ])
 app.config ($httpProvider) ->

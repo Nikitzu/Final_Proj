@@ -1,4 +1,5 @@
-{
+app = angular.module "myApp"
+app.constant "translation_en",
   "PASSWORD_PLACEHOLDER" : "Password",
   "PASSWORD" : "Password",
   "ABOUT_PLACEHOLDER" : "Tell as about you",
@@ -30,6 +31,5 @@
   "COLOR" : "Color",
   "HELLO" : "Hello",
   "HELLO_WORLD" : " Hello World!",
-  "light": "Light",
-  "dark":"Dark"
-}
+  "light" : "Light",
+  "dark" : "Dark"

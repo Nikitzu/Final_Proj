@@ -2,15 +2,16 @@ app = angular.module('myApp')
 
 app.controller 'changeCtrl', [
   '$scope'
-  'translationService'
+ # 'translationService'
   '$css'
-  ($scope, translationService, $css) ->
+  'langFactory'
+  ($scope, $css, langFactory) ->
     @translate = ->
       if @selectedLanguage == 'ru'
         @selectedLanguage = 'en'
       else
         @selectedLanguage = 'ru'
-      translationService.getTranslation $scope, @selectedLanguage
+      $scope.translation = langFactory(@selectedLanguage)
       return
     console.log @selectedLanguage
     @selectedLanguage = 'ru'
@@ -31,15 +32,3 @@ app.controller 'changeCtrl', [
       return
     return
 ]
-
-app.service 'translationService', ($resource) ->
-  @getTranslation = ($scope, language) ->
-    languageFilePath = '../app/controllers/translation_' + language + '.json'
-    console.log languageFilePath
-    $resource(languageFilePath).get (data) ->
-      console.log data
-      $scope.translation = data
-      return
-    return
-
-  return
