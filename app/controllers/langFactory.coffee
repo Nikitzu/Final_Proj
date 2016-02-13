@@ -6,3 +6,5 @@ app.factory 'langFactory',
       'ru' : translation_ru
     (lang) ->
       dictionary[lang]
+
+
