@@ -1,9 +1,13 @@
 {
+  "PASSWORD_PLACEHOLDER" : "Пароль",
   "PASSWORD" : "Пароль",
   "ABOUT_PLACEHOLDER" : "Расскажите о себе",
   "ABOUT" : "О Вас",
+  "EMAIL_PLACEHOLDER" : "Почта",
   "EMAIL" : "Почта",
+  "SURNAME_PLACEHOLDER" : "Фамилия",
   "SURNAME" : "Фамилия",
+  "NAME_PLACEHOLDER" : "Имя",
   "NAME" : "Имя",
   "TAGS_CLOUD" : "Облако тэгов:",
   "YOUTUBE_VIDEO" : "Youtube видео",

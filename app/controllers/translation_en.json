@@ -1,9 +1,13 @@
 {
+  "PASSWORD_PLACEHOLDER" : "Password",
   "PASSWORD" : "Password",
   "ABOUT_PLACEHOLDER" : "Tell as about you",
   "ABOUT" : "About you",
+  "EMAIL_PLACEHOLDER" : "Email",
   "EMAIL" : "Email",
+  "SURNAME_PLACEHOLDER" : "Surname",
   "SURNAME" : "Surname",
+  "NAME_PLACEHOLDER" : "Name",
   "NAME" : "Name",
   "TAGS_CLOUD" : "Tags cloud:",
   "YOUTUBE_VIDEO" : "Youtube video",
