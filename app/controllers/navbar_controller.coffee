@@ -1,5 +1,5 @@
 app = angular.module('myApp')
-
+#TODO
 app.controller 'NavBarController', ['$http', '$scope', 'UserDataService', ($http, $scope, UserDataService)->
   $scope.action = () ->
     $http.post('http://localhost:3000/logout').then( ()->

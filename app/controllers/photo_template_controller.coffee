@@ -1,6 +1,6 @@
 app = angular.module('myApp')
 ctor = ($http, $scope, ImageService)->
-
+#TODO
   action = ->
     console.log "Child Scope", ImageService.imagelist[0].base64
     tags = $scope.tags.split " "

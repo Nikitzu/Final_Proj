@@ -1,5 +1,5 @@
 app = angular.module('myApp')
-
+#TODO
 app.controller 'ImageListController', ($scope, ImageService, States) ->
   $scope.images = ImageService.imagelist
   $scope.image = ImageService.image
@@ -11,7 +11,6 @@ app.controller 'ImageListController', ($scope, ImageService, States) ->
   $scope.states = States
 
   return
-
 
 app.factory 'States', ->
   states = [

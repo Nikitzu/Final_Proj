@@ -1,4 +1,5 @@
 app = angular.module('myApp')
+#TODO
 app.controller 'mainCtrl', ['$http', '$scope', 'UserDataService', ($http, $scope, UserDataService) ->
   $scope.world = 'Nik'
   $scope.posts = []
