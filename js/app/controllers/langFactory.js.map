@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "langFactory.js",
+  "sourceRoot": "..\\..\\..\\app\\controllers",
+  "sources": [
+    "langFactory.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EACN,GAAG,CAAC,OAAJ,CAAY,aAAZ,EACE,SAAC,cAAD,EAAiB,cAAjB;AACE,QAAA;IAAA,UAAA,GACE;MAAA,IAAA,EAAO,cAAP;MACA,IAAA,EAAO,cADP;;WAEF,SAAC,IAAD;aACE,UAAW,CAAA,IAAA;IADb;EAJF,CADF;AADA"
+}
