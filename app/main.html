@@ -15,10 +15,10 @@
 </head>
 <body>
 <div ng-include="'../templates/navbar.html'"></div>
-<main ng-controller="controller">
-    <div class="col-md-2" ng-include="'../templates/user_side.html'"></div>
-    <div class="col-md-10" ng-include="'../templates/content.html'"></div>
-    <div class="col-md-2" ng-include="'../templates/tagsCloud.html'"></div>
+<main>
+    <div ng-controller="userDataCtrl" ng-if="user" class="col-md-3" ng-include="'../templates/user_side.html'"></div>
+    <div  ng-controller="controller"  class="col-md-3" ng-include="'../templates/tagsCloud.html'"></div>
+    <div class="col-md-9" ng-include="'../templates/content.html'"></div>
 </main>
 <script src="components/version/version.js"></script>
 <script src="components/version/version-directive.js"></script>

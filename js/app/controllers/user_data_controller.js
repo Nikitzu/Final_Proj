@@ -6,7 +6,7 @@
 
   app.controller('userDataCtrl', [
     '$scope', 'UserDataService', function($scope, UserDataService) {
-      this.user = UserDataService.user;
+      $scope.user = UserDataService.user;
     }
   ]);
 

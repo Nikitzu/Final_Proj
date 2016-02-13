@@ -7,13 +7,23 @@
   app.controller('changeCtrl', [
     '$scope', 'translationService', '$css', function($scope, translationService, $css) {
       this.translate = function() {
+        if (this.selectedLanguage === 'ru') {
+          this.selectedLanguage = 'en';
+        } else {
+          this.selectedLanguage = 'ru';
+        }
         translationService.getTranslation($scope, this.selectedLanguage);
       };
       console.log(this.selectedLanguage);
-      this.selectedLanguage = 'en';
+      this.selectedLanguage = 'ru';
       this.translate();
       this.selectedTheme = 'light';
       this.switchTheme = function() {
+        if (this.selectedTheme === 'light') {
+          this.selectedTheme = 'dark';
+        } else {
+          this.selectedTheme = 'light';
+        }
         if (this.selectedTheme === 'light') {
           $css.add('../source/assets/css/style.css');
           $css.remove('../source/assets/css/style2.css');
@@ -21,8 +31,6 @@
           $css.remove('../source/assets/css/style.css');
           $css.add('../source/assets/css/style2.css');
         }
-        return;
-        return this.switchTheme();
       };
     }
   ]);

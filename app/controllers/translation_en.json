@@ -25,5 +25,7 @@
   "RATE" : "Rate",
   "COLOR" : "Color",
   "HELLO" : "Hello",
-  "HELLO_WORLD" : " Hello World!"
+  "HELLO_WORLD" : " Hello World!",
+  "light": "Light",
+  "dark":"Dark"
 }
