@@ -3,7 +3,6 @@ app = angular.module('myApp', [
   'myApp.version'
   'angular-jqcloud'
   'ui.bootstrap'
-  'ngRateIt'
   'hc.marked'
  # 'ngResource'
   'door3.css'

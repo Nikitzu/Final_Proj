@@ -4,12 +4,6 @@
 
   app = angular.module('myApp');
 
-  app.factory('sendRating', function($http) {
-    return function(rating) {
-      return $http.post('localhost:3000/rate', rating);
-    };
-  });
-
   app.controller('mainCtrl', [
     '$scope', '$routeParams', 'UserDataService', 'getUser', 'getPosts', 'sendRating', 'getHighRate', function($scope, $routeParams, UserDataService, getUser, getPosts, sendRating, getHighRate) {
       $scope.destinations = {
