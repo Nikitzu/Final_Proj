@@ -16,6 +16,9 @@
         'user': getPosts(UserDataService.user),
         'all': getHighRate
       };
+      getUser.success(function(data) {
+        return UserDataService.user = data;
+      });
       $scope.posts = [];
       $scope.action = function() {
         $scope.destinations[$routeParams.destination].get().then(function(posts) {
@@ -25,11 +28,11 @@
           console.log(err.data);
         });
       };
-      $scope.rate = function(post) {
+      $scope.changeRating = function(post, inc) {
         var rating;
         rating = {
           id: post.id,
-          score: post.score
+          score: inc
         };
         console.log(rating);
         sendRating(rating).success(function(meanRating) {

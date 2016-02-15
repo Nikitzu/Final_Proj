@@ -18,6 +18,9 @@ app.controller 'mainCtrl', [
       'user' : getPosts UserDataService.user
       'all' : getHighRate
 
+    getUser.success (data) ->
+      UserDataService.user = data
+
     $scope.posts = []
     $scope.action = () ->
       $scope.destinations[$routeParams.destination].get()
@@ -31,10 +34,10 @@ app.controller 'mainCtrl', [
           return
       return
 
-    $scope.rate = (post) ->
+    $scope.changeRating = (post, inc) ->
       rating =
         id : post.id
-        score : post.score
+        score : inc
       console.log rating
       sendRating(rating)
       .success (meanRating) ->

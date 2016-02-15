@@ -3,6 +3,31 @@
 /*=======================================================================
 						Navigation menu
 =========================================================================*/
+.rating{
+	margin-left: 11px;
+}
+
+.change:hover{
+	cursor: pointer;
+}
+
+#down{
+	background: transparent;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 20px 15px 0 15px;
+	border-color: orange transparent transparent transparent;
+}
+
+#up{
+	background: transparent;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 15px 20px 15px;
+	border-color: transparent transparent orange transparent;
+}
 
 .temp-img {
 	background-color: #1e1e1e;
@@ -163,6 +188,7 @@ a:hover {
 
 h1,h2,h3,h4,h5,h6 {
 	text-transform: capitalize;
+	color: white;
 }
 
 h1 {
@@ -375,6 +401,7 @@ input[type="checkbox"] {
 	font-size: 12px;
 	line-height: 1.75em;
 	text-transform: capitalize;
+	color: white;
 }
 
 .blog-item p a {
@@ -388,6 +415,7 @@ input[type="checkbox"] {
 
 .blog-item p time {
 	padding-left: 3px;
+	color:white;
 }
 
 .blog-item h1 {

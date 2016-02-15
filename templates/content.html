@@ -9,7 +9,7 @@
                             <img ng-src="{{post.url}}" class="img-thumbnail center-block" alt="Blog Post Thumbnail">
                         </a>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-8">
                         <p>
                             <a href="../source/html5-templates.html">html5</a>
                             <time>{{post.createdAt}}</time>
@@ -19,8 +19,12 @@
                             <a href="../source/single_blog_page.html"> {{post.title}} </a>
                         </h1>
                     </div>
+                    <div class="col-md-1">
+                        <input class="change" id="up" ng-click="changeRating(post, +1)">
+                        <h5 class="rating">{{ meanRating }}5</h5>
+                        <input class="change" id="down" ng-click="changeRating(post, -1)">
+                    </div>
                 </div>
-                <ng-rate-it ratedbvgdfshu="rate(post)" over="   " ng-model="post.score"></ng-rate-it>
             </article> <!-- /.blog-item -->
 
             <article class="blog-item">

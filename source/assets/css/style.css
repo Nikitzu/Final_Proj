@@ -3,6 +3,31 @@
 /*=======================================================================
 						Navigation menu
 =========================================================================*/
+.rating{
+	margin-left: 10px;
+}
+
+.change:hover{
+	cursor: pointer;
+}
+
+#down{
+	background: transparent;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 20px 15px 0 15px;
+	border-color: #558c51 transparent transparent transparent;
+}
+
+#up{
+	background: transparent;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 15px 20px 15px;
+	border-color: transparent transparent #558c51 transparent;
+}
 
 .navbar {
 	margin-bottom: 0px;
