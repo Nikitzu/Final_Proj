@@ -22,6 +22,7 @@
           console.log(err.data);
         });
       };
+      $scope.action();
       $scope.changeRating = function(post, inc) {
         var rating;
         rating = {

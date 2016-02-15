@@ -18,6 +18,7 @@ app.controller 'userCtrl', ($scope)->
 
   $scope.createButton_text = "Create post"
   $scope.templatePanel = false
+
   $scope.firstPost = false
   $scope.secondPost = false
   $scope.thirdPost = false

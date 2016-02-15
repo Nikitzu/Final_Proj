@@ -18,7 +18,7 @@ app.controller 'mainCtrl', [
       UserDataService.user = data
 
     $scope.posts = []
-    $scope.action = () ->
+    $scope.action = ->
       $scope.destinations[$routeParams.destination].get()
       .then (posts)->
         console.log posts.data
@@ -29,7 +29,7 @@ app.controller 'mainCtrl', [
           console.log(err.data)
           return
       return
-
+    $scope.action()
     $scope.changeRating = (post, inc) ->
       rating =
         id : post.id

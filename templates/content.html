@@ -1,5 +1,4 @@
 <div class="container col-md-12">
-    <button ng-click="action()" style="height: 100px">Check</button>
     <div class="row container col-md-12">
         <section class="col-md-12">
             <article ng-repeat="post in posts" class="blog-item">
@@ -20,7 +19,7 @@
                         </h1>
                     </div>
                     <div class="col-md-1">
-                        <input ng-class="myCssVar" ng-init="myCssVar='classup'" ng-mouseenter="myCssVar='up'" ng-mouseleave="myCssVar='classup'" ng-click="changeRating(post, +1)">
+                        <input ng-init="myCssVar='classup'" ng-mouseenter="myCssVar='up'" ng-mouseleave="myCssVar='classup'" ng-click="changeRating(post, +1)">
                         <h5 class="rating">{{ post.score }}</h5>
                         <input ng-class="myCss" ng-init="myCss='classdown'" ng-mouseenter="myCss='down'" ng-mouseleave="myCss='classdown'" ng-click="changeRating(post, -1)">
                     </div>
