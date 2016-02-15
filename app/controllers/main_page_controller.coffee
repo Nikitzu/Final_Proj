@@ -36,10 +36,12 @@ app.controller 'mainCtrl', [
         score : inc
       console.log rating
       sendRating(rating)
-      .success (meanRating) ->
-        console.log meanRating
+      .success (res) ->
+        console.log res
+        post.score = res.score
         return
-
+      .error ->
+        console.log "already rated"
       return
     return
 ]

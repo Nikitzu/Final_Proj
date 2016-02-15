@@ -29,8 +29,11 @@
           score: inc
         };
         console.log(rating);
-        sendRating(rating).success(function(meanRating) {
-          console.log(meanRating);
+        sendRating(rating).success(function(res) {
+          console.log(res);
+          post.score = res.score;
+        }).error(function() {
+          return console.log("already rated");
         });
       };
     }
