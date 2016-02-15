@@ -11,6 +11,10 @@
 	cursor: pointer;
 }
 
+.marked{
+	color:black;
+}
+
 #down{
 	background: transparent;
 	width: 0;

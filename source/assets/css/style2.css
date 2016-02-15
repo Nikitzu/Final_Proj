@@ -11,6 +11,10 @@
 	cursor: pointer;
 }
 
+.marked{
+	color: white;
+}
+
 #down{
 	background: transparent;
 	width: 0;
@@ -341,15 +345,15 @@ input[type="checkbox"] {
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #969595;  
+   color: #969595;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #969595;  
+   color: #969595;
 }
 
 :-ms-input-placeholder {  
-   color: #969595;  
+   color: #969595;
 }
 
 /*-------------------------------------  pagination -------------------------------*/

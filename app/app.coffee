@@ -12,7 +12,3 @@ app.config ($httpProvider) ->
   $httpProvider.defaults.withCredentials = true
   delete $httpProvider.defaults.headers.common['X-Requested-With']
   return
-#  $httpProvider.defaults.headers.post = {}
-#  $httpProvider.defaults.headers.put = {}
-#  $httpProvider.defaults.headers.patch = {}
-#  return
