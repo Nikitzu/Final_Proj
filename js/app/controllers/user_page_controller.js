@@ -9,6 +9,7 @@
     $scope.changeButton_text = "Change settings";
     $scope.showSettings = false;
     $scope.showInfo = true;
+    $scope.showPost = false;
     $scope.changeSettings = function() {
       if ($scope.showSettings === false) {
         $scope.showSettings = true;
@@ -30,9 +31,14 @@
         $scope.templatePanel = true;
         $scope.firstPost = true;
         $scope.createButton_text = "Add post";
+        $scope.showPost = true;
       } else {
         $scope.templatePanel = false;
         $scope.createButton_text = "Create post";
+        $scope.showPost = false;
+        $scope.firstPost = false;
+        $scope.secondPost = false;
+        $scope.thirdPost = false;
         $scope.action().success(function() {
           console.log("nebeda");
         }).error(function() {

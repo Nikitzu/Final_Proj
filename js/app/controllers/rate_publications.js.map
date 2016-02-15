@@ -1,10 +1,10 @@
 {
   "version": 3,
   "file": "rate_publications.js",
-  "sourceRoot": "..\\..\\..\\app\\controllers",
+  "sourceRoot": "../../../app/controllers",
   "sources": [
     "rate_publications.coffee"
   ],
   "names": [],
-  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EACN,GAAG,CAAC,UAAJ,CAAe,UAAf,EAA2B;IAAC,QAAD,EAAW,UAAX,EAAuB,SAAC,MAAD,EAAS,QAAT;MAChD,QAAQ,CAAC,OAAT,CAAiB,SAAC,IAAD;QACf,MAAM,CAAC,QAAP,GAAkB;MADH,CAAjB;IADgD,CAAvB;GAA3B;AADA"
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EAEN,GAAG,CAAC,UAAJ,CAAe,UAAf,EAA2B;IAAC,QAAD,EAAW,aAAX,EAA0B,SAAC,MAAD,EAAS,WAAT;MACnD,WAAW,CAAC,OAAZ,CAAoB,SAAC,IAAD;QAClB,MAAM,CAAC,QAAP,GAAkB;MADA,CAApB;IADmD,CAA1B;GAA3B;AAFA"
 }

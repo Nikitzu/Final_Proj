@@ -5,8 +5,8 @@
   app = angular.module('myApp');
 
   app.controller('rateCtrl', [
-    '$scope', 'HighRate', function($scope, HighRate) {
-      HighRate.success(function(data) {
+    '$scope', 'getHighRate', function($scope, getHighRate) {
+      getHighRate.success(function(data) {
         $scope.postList = data;
       });
     }

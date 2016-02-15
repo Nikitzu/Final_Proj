@@ -1,5 +1,5 @@
 app = angular.module('myApp')
-#TODO
+
 app.controller 'ImageListController', ($scope, ImageService) ->
   $scope.images = ImageService.imagelist
   $scope.image = ImageService.image

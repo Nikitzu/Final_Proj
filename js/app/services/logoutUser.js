@@ -6,7 +6,6 @@
 
   app.factory('logoutUser', function($http) {
     return function() {
-      console.log('LOGGING OUT');
       return $http.post('http://localhost:3000/logout');
     };
   });

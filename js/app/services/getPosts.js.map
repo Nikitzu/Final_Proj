@@ -1,10 +1,10 @@
 {
   "version": 3,
   "file": "getPosts.js",
-  "sourceRoot": "..\\..\\..\\app\\services",
+  "sourceRoot": "../../../app/services",
   "sources": [
     "getPosts.coffee"
   ],
   "names": [],
-  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EAEN,GAAG,CAAC,OAAJ,CAAY,UAAZ,EAAwB,SAAC,KAAD;WACtB,SAAC,MAAD;aACE,KAAK,CAAC,GAAN,CAAU,8BAAA,GAA+B,MAAzC;IADF;EADsB,CAAxB;AAFA"
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EAEN,GAAG,CAAC,OAAJ,CAAY,UAAZ,EAAwB,SAAC,KAAD;WACtB,SAAC,IAAD;aACC;QAAA,GAAA,EAAM,SAAA;iBACH,KAAK,CAAC,GAAN,CAAU,8BAAA,GAA+B,IAAI,CAAC,MAA9C;QADG,CAAN;;IADD;EADsB,CAAxB;AAFA"
 }

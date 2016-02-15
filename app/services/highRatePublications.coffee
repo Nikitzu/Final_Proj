@@ -1,8 +1,6 @@
 app = angular.module('myApp')
 
-app.factory 'HighRate', [
-  '$http'
-  ($http) ->
-    $http.get('http://localhost:3000/rate')
+app.factory 'getHighRate', ['$http', ($http) ->
+    get : () ->
+      $http.get('http://localhost:3000/ratedarticles')
 ]
-#for collecting highrate publications

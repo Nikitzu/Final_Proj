@@ -4,9 +4,13 @@
 
   app = angular.module('myApp');
 
-  app.factory('HighRate', [
+  app.factory('getHighRate', [
     '$http', function($http) {
-      return $http.get('http://localhost:3000/rate');
+      return {
+        get: function() {
+          return $http.get('http://localhost:3000/ratedarticles');
+        }
+      };
     }
   ]);
 

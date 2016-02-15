@@ -1,5 +1,6 @@
 app = angular.module('myApp')
 
 app.factory 'getPosts', ($http) ->
-  (authId)->
-    $http.get('http://localhost:3000/posts/'+authId)
+  (user)->
+   get : ()->
+      $http.get('http://localhost:3000/posts/'+user.authId)

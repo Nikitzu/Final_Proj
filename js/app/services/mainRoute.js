@@ -6,14 +6,16 @@
 
   app.config(function($routeProvider) {
     $routeProvider.when('/', {
-      controller: 'mainCtrl',
-      templateUrl: '../app/main.html'
+      redirectTo: '/main/all'
     }).when('/user', {
       controller: 'userCtrl',
       templateUrl: '../templates/user.html'
     }).when('/login/:action', {
       controller: 'RegistrationCtrl',
       templateUrl: '../app/registration.html'
+    }).when('/main/:destination', {
+      controller: 'mainCtrl',
+      templateUrl: '../app/main.html'
     }).otherwise({
       redirectTo: '/'
     });

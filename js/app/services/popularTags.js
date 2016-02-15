@@ -4,11 +4,9 @@
 
   app = angular.module('myApp');
 
-  app.factory('Tags', [
+  app.factory('Tags--', [
     '$http', function($http) {
-      return $http.get('http://local.host:3000/tags', {
-        withCredentials: true
-      });
+      return $http.get('http://local.host:3000/tags');
     }
   ]);
 

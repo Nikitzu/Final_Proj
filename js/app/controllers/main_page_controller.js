@@ -4,22 +4,37 @@
 
   app = angular.module('myApp');
 
+  app.factory('sendRating', function($http) {
+    return function(rating) {
+      return $http.post('localhost:3000/rate', rating);
+    };
+  });
+
   app.controller('mainCtrl', [
-    '$scope', 'UserDataService', 'getUser', 'getPosts', function($scope, UserDataService, getUser, getPosts) {
+    '$scope', '$routeParams', 'UserDataService', 'getUser', 'getPosts', 'sendRating', 'getHighRate', function($scope, $routeParams, UserDataService, getUser, getPosts, sendRating, getHighRate) {
+      $scope.destinations = {
+        'user': getPosts(UserDataService.user),
+        'all': getHighRate
+      };
       $scope.posts = [];
-      getUser.then(function(user) {
-        console.log('USER PRISHEL');
-        UserDataService.user = user.data;
-      }, function(error) {
-        console.log('USER NEPRISHEL');
-        console.log(error.data);
-      });
       $scope.action = function() {
-        getPosts(UserDataService.user.authId).then;
-        return function(posts) {
+        $scope.destinations[$routeParams.destination].get().then(function(posts) {
           console.log(posts.data);
           $scope.posts = posts.data;
+        }, function(err) {
+          console.log(err.data);
+        });
+      };
+      $scope.rate = function(post) {
+        var rating;
+        rating = {
+          id: post.id,
+          score: post.score
         };
+        console.log(rating);
+        sendRating(rating).success(function(meanRating) {
+          console.log(meanRating);
+        });
       };
     }
   ]);

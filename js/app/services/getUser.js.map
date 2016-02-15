@@ -1,10 +1,10 @@
 {
   "version": 3,
   "file": "getUser.js",
-  "sourceRoot": "..\\..\\..\\app\\services",
+  "sourceRoot": "../../../app/services",
   "sources": [
     "getUser.coffee"
   ],
   "names": [],
-  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EAEN,GAAG,CAAC,OAAJ,CAAY,SAAZ,EAAuB,SAAC,KAAD;IACrB,OAAO,CAAC,GAAR,CAAY,QAAZ;WACA,KAAK,CAAC,GAAN,CAAU,mCAAV;EAFqB,CAAvB;AAFA"
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EAEN,GAAG,CAAC,OAAJ,CAAY,SAAZ,EAAuB,SAAC,KAAD;WACrB,KAAK,CAAC,GAAN,CAAU,mCAAV;EADqB,CAAvB;AAFA"
 }

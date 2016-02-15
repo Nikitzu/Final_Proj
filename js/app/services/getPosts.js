@@ -5,8 +5,12 @@
   app = angular.module('myApp');
 
   app.factory('getPosts', function($http) {
-    return function(authId) {
-      return $http.get('http://localhost:3000/posts/' + authId);
+    return function(user) {
+      return {
+        get: function() {
+          return $http.get('http://localhost:3000/posts/' + user.authId);
+        }
+      };
     };
   });
 

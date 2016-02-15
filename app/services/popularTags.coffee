@@ -1,8 +1,8 @@
 app = angular.module('myApp')
 
-app.factory 'Tags', [
+app.factory 'Tags--', [
   '$http'
   ($http) ->
-    $http.get('http://local.host:3000/tags', {withCredentials: true})
+    $http.get('http://local.host:3000/tags')
 ]
 #for collecting tags

@@ -3,6 +3,7 @@ app = angular.module('myApp')
 ctor = ($scope, ImageService, saveImage)->
   action = ->
     console.log "Child Scope", ImageService.imagelist[0].base64
+    tags = $scope.tags.split(" ")
     saveImage
       title: $scope.title,
       description: $scope.description,

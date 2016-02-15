@@ -1,5 +1,5 @@
 <div class="container col-md-12">
-    <!--<button ng-click="action()" style="height: 100px">Check</button>-->
+    <button ng-click="action()" style="height: 100px">Check</button>
     <div class="row container col-md-12">
         <section class="col-md-12">
             <article ng-repeat="post in posts" class="blog-item">
@@ -11,19 +11,16 @@
                     </div>
                     <div class="col-md-9">
                         <p>
-                            in
                             <a href="../source/html5-templates.html">html5</a>
-                            ,
-                            <a href="#">templates</a>
                             <time>{{post.createdAt}}</time>
-                            {{post.title}}
+                            {{post.title}} {{post.score}}
                         </p>
                         <h1>
-                            <a href="../source/single_blog_page.html"> {{world}} best free responsive corporate template in 2015</a>
+                            <a href="../source/single_blog_page.html"> {{post.title}} </a>
                         </h1>
                     </div>
                 </div>
-                <ng-rate-it ng-model="test.rateit"></ng-rate-it>
+                <ng-rate-it ratedbvgdfshu="rate(post)" over="   " ng-model="post.score"></ng-rate-it>
             </article> <!-- /.blog-item -->
 
             <article class="blog-item">

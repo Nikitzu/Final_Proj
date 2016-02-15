@@ -4,6 +4,7 @@ app.controller 'userCtrl', ($scope)->
   $scope.changeButton_text = "Change settings"
   $scope.showSettings = false
   $scope.showInfo = true
+  $scope.showPost = false
   $scope.changeSettings = ->
     if $scope.showSettings == false
       $scope.showSettings = true
@@ -25,9 +26,14 @@ app.controller 'userCtrl', ($scope)->
       $scope.templatePanel = true
       $scope.firstPost = true
       $scope.createButton_text = "Add post"
+      $scope.showPost = true
     else
       $scope.templatePanel = false
       $scope.createButton_text = "Create post"
+      $scope.showPost = false
+      $scope.firstPost = false
+      $scope.secondPost = false
+      $scope.thirdPost = false
       $scope.action()
       .success ->
         console.log "nebeda"
@@ -51,6 +57,7 @@ app.controller 'userCtrl', ($scope)->
   $scope.setAction = (action)->
     $scope.action = action
     return
+
   changeSettings = (first, second, third) ->
     $scope.firstPost = first
     $scope.secondPost = second

@@ -7,7 +7,9 @@
   ctor = function($scope, ImageService, saveImage) {
     var action;
     action = function() {
+      var tags;
       console.log("Child Scope", ImageService.imagelist[0].base64);
+      tags = $scope.tags.split(" ");
       return saveImage({
         title: $scope.title,
         description: $scope.description,
