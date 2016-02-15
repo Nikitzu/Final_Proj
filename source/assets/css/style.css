@@ -3,6 +3,7 @@
 /*=======================================================================
 						Navigation menu
 =========================================================================*/
+
 .angular-google-map-container {
 	height: 400px;
 }
@@ -11,30 +12,66 @@
 	margin-left: 10px;
 }
 
-.change:hover{
-	cursor: pointer;
+.up,
+.up-add.up-add-active {
+	background: transparent;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 15px 20px 15px;
+	border-color: transparent transparent red transparent;
 }
 
-.marked{
-	color:black;
-}
-
-#down{
+.down,
+.down-add.down-add-active {
 	background: transparent;
 	width: 0;
 	height: 0;
 	border-style: solid;
 	border-width: 20px 15px 0 15px;
-	border-color: #558c51 transparent transparent transparent;
+	border-color: red transparent transparent transparent;
 }
 
-#up{
+.classup{
 	background: transparent;
 	width: 0;
 	height: 0;
 	border-style: solid;
 	border-width: 0 15px 20px 15px;
 	border-color: transparent transparent #558c51 transparent;
+}
+
+.classup:hover{
+	cursor: pointer;
+}
+
+.classdown:hover{
+	cursor: pointer;
+}
+
+.up:hover{
+	cursor: pointer;
+}
+
+.down:hover{
+	cursor: pointer;
+}
+
+.rating{
+	margin-left: 10px;
+}
+
+.marked{
+	color:black;
+}
+
+.classdown{
+	background: transparent;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 20px 15px 0 15px;
+	border-color: #558c51 transparent transparent transparent;
 }
 
 .navbar {
