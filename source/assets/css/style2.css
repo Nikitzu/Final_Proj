@@ -3,6 +3,13 @@
 /*=======================================================================
 						Navigation menu
 =========================================================================*/
+.sort{
+	border: transparent;
+	background: transparent;
+	outline: none;
+	color: white;
+}
+
 .angular-google-map-container {
 	height: 400px;
 }
@@ -16,6 +23,7 @@
 	border-style: solid;
 	border-width: 0 15px 20px 15px;
 	border-color: transparent transparent red transparent;
+	outline: none;
 }
 
 .down,
@@ -26,6 +34,7 @@
 	border-style: solid;
 	border-width: 20px 15px 0 15px;
 	border-color: red transparent transparent transparent;
+	outline: none;
 }
 
 .classup{
@@ -35,6 +44,7 @@
 	border-style: solid;
 	border-width: 0 15px 20px 15px;
 	border-color: transparent transparent orange transparent;
+	outline: none;
 }
 
 .classdown{
@@ -44,6 +54,7 @@
 	border-style: solid;
 	border-width: 20px 15px 0 15px;
 	border-color: orange transparent transparent transparent;
+	outline: none;
 }
 
 .classup:hover{
