@@ -6,7 +6,7 @@
 
   app.controller('userCtrl', function($scope) {
     var changeSettings;
-    $scope.changeButton_text = "Change settings";
+    $scope.changeButton_text = "Settings";
     $scope.showSettings = false;
     $scope.showInfo = true;
     $scope.showPost = false;
@@ -14,11 +14,11 @@
       if ($scope.showSettings === false) {
         $scope.showSettings = true;
         $scope.showInfo = false;
-        $scope.changeButton_text = "Save changes";
+        $scope.changeButton_text = "Save";
       } else {
         $scope.showSettings = false;
         $scope.showInfo = true;
-        $scope.changeButton_text = "Change settings";
+        $scope.changeButton_text = "Settings";
       }
     };
     $scope.createButton_text = "Create post";

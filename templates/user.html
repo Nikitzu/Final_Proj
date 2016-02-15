@@ -12,7 +12,8 @@
 <div ng-include="'../templates/navbar.html'"></div>
 <main>
     <div class="col-md-2" ng-include="'../templates/user_side.html'"></div>
-    <button ng-show="showInfo && !showPost || showSettings" id="btn-change1" class="btn col-md-2 col-md-offset-1" ng-click="changeSettings()">{{changeButton_text}}</button>
+    <button id="btn-change2" class="col-md-1" ng-click="createPost()">{{createButton_text}}</button>
+    <button ng-show="showInfo && !showPost || showSettings" id="btn-change1" class="col-md-1" ng-click="changeSettings()">{{changeButton_text}}</button>
     <div class="col-md-10" ng-show="showInfo && !showPost">
         <form class="form-horizontal col-md-12">
             <fieldset>
@@ -45,13 +46,10 @@
     </div>
 
     <form ng-show="showSettings" ng-include="'../templates/user_form.html'" class="form-horizontal col-md-10" method="post" action="http://local.host:3000/registry"></form>
-    <div class="col-md-2">
-        <button id="btn-change2" class="btn col-md-12 btn-change" ng-click="createPost()">{{createButton_text}}</button>
-    </div>
     <div ng-show="templatePanel" class="col-md-9" ng-include="'../templates/articleTemplates/templatesExample.html'"></div>
-    <form ng-show="firstPost" ng-include="'../templates/articleTemplates/photoText.html'" class="form-horizontal col-md-10"></form>
-    <!--<form ng-show="secondPost" ng-include="'../templates/articleTemplates/videoText.html'" class="form-horizontal col-md-10"></form>-->
-    <form ng-show="thirdPost" ng-include="'../templates/articleTemplates/mapText.html'" class="form-horizontal col-md-10"></form>
+    <form ng-show="firstPost" ng-include="'../templates/articleTemplates/photoText.html'" class="form-horizontal col-md-11"></form>
+    <form ng-show="secondPost" ng-include="'../templates/articleTemplates/videoText.html'" class="form-horizontal col-md-11"></form>
+    <form ng-show="thirdPost" ng-include="'../templates/articleTemplates/mapText.html'" class="form-horizontal col-md-11"></form>
 </main>
 
 </div>

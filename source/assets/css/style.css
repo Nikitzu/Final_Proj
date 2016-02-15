@@ -162,13 +162,13 @@ a {
 #btn-change1{
 	background-color: white;
 	border: 1px solid green ;
-	margin-bottom: 30px;
+	margin: 1%;
 }
 
 #btn-change2{
 	background-color: white;
 	border: 1px solid green ;
-	margin-bottom: 30px;
+	margin: 1%;
 }
 
 a:hover {
