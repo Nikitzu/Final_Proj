@@ -45,6 +45,14 @@
 	width:100px;
 }
 
+label{
+	color: #c6c6c6;
+}
+
+p, h6, h5, h4, h3, h2, h1{
+	color: white;
+}
+
 #btn-change1{
 	background-color: #141313;
 	border: 1px solid black;
@@ -90,10 +98,6 @@
 	-ms-transition: all 0.75s;
 	-o-transition: all 0.75s;
 	transition: all 0.0.75s;
-}
-
-label{
-	color: white;
 }
 
 .navbar-default .navbar-nav>li>a:focus, 
