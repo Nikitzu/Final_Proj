@@ -29,11 +29,11 @@
         </div>
         <div class="marked" marked="article"></div>
     </div>
-
-    <div class="form-group col-md-12">
-        <div id="map-canvas"></div>
+    <div class="form-group col-md-12" ng-controller="mapCtrl">
+        <div class="col-md-10 col-md-offset-2">
+            <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+        </div>
     </div>
-
     <div class="form-group">
         <div class="col-md-10 col-md-offset-2">
             <input name="states" id="states" type="text" placeholder="{{translation.TAGS}}" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
