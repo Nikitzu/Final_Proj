@@ -6,7 +6,6 @@
 .sort{
 	border: transparent;
 	background: transparent;
-	outline: none;
 	color: white;
 }
 
@@ -15,7 +14,6 @@
 }
 
 .up,
-
 .up-add.up-add-active {
 	background: transparent;
 	width: 0;
