@@ -46,12 +46,13 @@
             </fieldset>
         </form>
     </div>
-
-    <form ng-show="showSettings" ng-include="'../templates/user_form.html'" class="form-horizontal col-md-10" method="post" action="http://local.host:3000/registry"></form>
-    <div ng-show="templatePanel" class="col-md-9" ng-include="'../templates/articleTemplates/templatesExample.html'"></div>
-    <form ng-show="firstPost" ng-include="'../templates/articleTemplates/photoText.html'" class="form-horizontal col-md-11"></form>
-    <!--<form ng-show="secondPost" ng-include="'../templates/articleTemplates/videoText.html'" class="form-horizontal col-md-11"></form>-->
-    <form ng-show="thirdPost" ng-include="'../templates/articleTemplates/mapText.html'" class="form-horizontal col-md-11"></form>
+    <div ng-controller="mapCtrl">
+        <form ng-show="showSettings" ng-include="'../templates/user_form.html'" class="form-horizontal col-md-10" method="post" action="http://local.host:3000/registry"></form>
+        <div ng-show="templatePanel" class="col-md-9" ng-include="'../templates/articleTemplates/templatesExample.html'"></div>
+        <form ng-show="firstPost" ng-include="'../templates/articleTemplates/photoText.html'" class="form-horizontal col-md-11"></form>
+        <!--<form ng-show="secondPost" ng-include="'../templates/articleTemplates/videoText.html'" class="form-horizontal col-md-11"></form>-->
+        <form ng-show="thirdPost" ng-include="'../templates/articleTemplates/mapText.html'" class="form-horizontal col-md-11"></form>
+    </div>
 </main>
 
 </div>
