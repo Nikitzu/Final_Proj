@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "sendRating.js",
+  "sourceRoot": "..\\..\\..\\app\\services",
+  "sources": [
+    "sendRating.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EAEN,GAAG,CAAC,OAAJ,CAAY,YAAZ,EAA0B,SAAC,KAAD;WACxB,SAAC,MAAD;aACE,KAAK,CAAC,IAAN,CAAW,4BAAX,EAAyC,MAAzC;IADF;EADwB,CAA1B;AAFA"
+}

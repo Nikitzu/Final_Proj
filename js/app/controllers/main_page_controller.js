@@ -5,8 +5,9 @@
   app = angular.module('myApp');
 
   app.controller('mainCtrl', [
-    '$scope', '$routeParams', 'UserDataService', 'getUser', 'getPosts', 'sendRating', 'getHighRate', function($scope, $routeParams, UserDataService, getUser, getPosts, sendRating, getHighRate) {
-      $scope.destinations = {
+    '$scope', '$routeParams', 'UserDataService', 'getUser', 'getPosts', 'sendRating', 'getHighRate', 'TranslationService', function($scope, $routeParams, UserDataService, getUser, getPosts, sendRating, getHighRate, TranslationService) {
+      var destinations;
+      destinations = {
         'user': getPosts(UserDataService.user),
         'all': getHighRate
       };
@@ -14,8 +15,10 @@
         return UserDataService.user = data;
       });
       $scope.posts = [];
+      $scope.predicate = 'score';
+      $scope.$watch('');
       $scope.action = function() {
-        $scope.destinations[$routeParams.destination].get().then(function(posts) {
+        destinations[$routeParams.destination].get().then(function(posts) {
           console.log(posts.data);
           $scope.posts = posts.data;
         }, function(err) {
@@ -36,6 +39,9 @@
         }).error(function() {
           return console.log("already rated");
         });
+      };
+      $scope.order = function(predicate) {
+        return $scope.predicate = predicate;
       };
     }
   ]);

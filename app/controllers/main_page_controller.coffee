@@ -7,10 +7,10 @@ app.controller 'mainCtrl', [
   'getUser',
   'getPosts',
   'sendRating',
-  'getHighRate'
-  ($scope, $routeParams, UserDataService, getUser, getPosts, sendRating, getHighRate) ->
-
-    $scope.destinations =
+  'getHighRate',
+  'TranslationService',
+  ($scope, $routeParams, UserDataService, getUser, getPosts, sendRating, getHighRate, TranslationService) ->
+    destinations =
       'user' : getPosts UserDataService.user
       'all' : getHighRate
 
@@ -18,8 +18,12 @@ app.controller 'mainCtrl', [
       UserDataService.user = data
 
     $scope.posts = []
+    $scope.predicate = 'score'
+#    $scope.translation = TranslationService.translation
+    $scope.$watch('')
+
     $scope.action = ->
-      $scope.destinations[$routeParams.destination].get()
+      destinations[$routeParams.destination].get()
       .then (posts)->
         console.log posts.data
         $scope.posts = posts.data
@@ -43,5 +47,7 @@ app.controller 'mainCtrl', [
       .error ->
         console.log "already rated"
       return
+    $scope.order = (predicate) ->
+      $scope.predicate = predicate
     return
 ]
