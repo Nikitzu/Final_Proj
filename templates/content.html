@@ -15,12 +15,12 @@
                     </div>
                     <div class="col-md-8">
                         <p>
-                            <a href="user/{{post.user.id}}">{{post.user.firstName}} {{post.user.lastName}}</a>
+                            <a href="#/id/{{post.user.id}}">{{post.user.firstName}} {{post.user.lastName}}</a>
                             <time>{{post.createdAt | date}}</time>
                             {{post.title}} {{post.score}}
                         </p>
                         <h1>
-                            <a href="../source/single_blog_page.html"> {{post.title}} </a>
+                            <a href="#/posts/{{post.id}}"> {{post.title}} </a>
                         </h1>
                     </div>
                     <div class="col-md-1">
@@ -28,26 +28,8 @@
                         <h5 class="rating">{{ post.score }}</h5>
                         <input ng-class="myCss" ng-init="myCss='classdown'" ng-mouseenter="myCss='down'" ng-mouseleave="myCss='classdown'" ng-click="changeRating(post, -1)">
                     </div>
-                </div>
-            </article>
-            <article class="blog-item">
-                <div class="row">
-                    <div class="col-md-3">
-                        <a href="#">
-                            <img src="../source/assets/img/coming-soon.jpg" class="img-thumbnail center-block" alt="Blog Post Thumbnail">
-                        </a>
-                    </div>
-                    <div class="col-md-9">
-                        <p>
-                            in
-                            <a href="../source/html5-templates.html">html5</a>
-                            ,
-                            <a href="#">templates</a>
-                            <time>23-july-2015</time>
-                        </p>
-                        <h1>
-                            <a href="../source/single_blog_page.html">50+ best free responsive event template in 2015</a>
-                        </h1>
+                    <div class="col-md-1" ng-repeat="tag in post.tags">
+                        <button class="btn"><a href="#/tag/{{tag.name}}">{{tag.name}}</a></button>
                     </div>
                 </div>
             </article>

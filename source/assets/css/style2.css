@@ -236,7 +236,7 @@ a {
 }
 
 a:hover {
-	color: #000000;
+	color: orange;
 	text-decoration: none;
 }
 
@@ -464,7 +464,7 @@ input[type="checkbox"] {
 }
 
 .blog-item p a:hover {
-	color: #000;
+	color: white;
 }
 
 .blog-item p time {

@@ -3,9 +3,11 @@ app.config ($routeProvider) ->
   $routeProvider
   .when('/',
     redirectTo: '/main/all')
-  .when('/id/:userid/posts/:postid',
-    controller: '',
-    template: '')
+#  .when('/posts/:postid',
+#    templateUrl: '../app/postView.html')
+#  .when('/id/:id',
+#    controller: '',
+#    templateUrl: '../app/userView.html')
   .when('/user',
     controller: 'userCtrl'
     templateUrl: '../templates/user.html')
