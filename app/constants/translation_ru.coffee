@@ -31,5 +31,7 @@ app.constant "translation_ru",
   "COLOR" : "Цвет",
   "light": "День",
   "dark": "Ночь",
-  "HELLO" : "Привет",
-  "HELLO_WORLD" : "Привет мир!"
+  "CREATE": "Создать",
+  "SETTINGS": "Настройки",
+  "SAVE": "Сохранить",
+  "ADD": "Добавить"

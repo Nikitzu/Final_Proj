@@ -6,7 +6,7 @@
 
   app.controller('userCtrl', function($scope) {
     var changeSettings;
-    $scope.changeButton_text = "Settings";
+    $scope.changeButton_text = translation.SETTINGS;
     $scope.showSettings = false;
     $scope.showInfo = true;
     $scope.showPost = false;
@@ -14,14 +14,14 @@
       if ($scope.showSettings === false) {
         $scope.showSettings = true;
         $scope.showInfo = false;
-        $scope.changeButton_text = "Save";
+        $scope.changeButton_text = translation.SAVE;
       } else {
         $scope.showSettings = false;
         $scope.showInfo = true;
-        $scope.changeButton_text = "Settings";
+        $scope.changeButton_text = translation.SETTINGS;
       }
     };
-    $scope.createButton_text = "Create post";
+    $scope.createButton_text = translation.CREATE;
     $scope.templatePanel = false;
     $scope.firstPost = false;
     $scope.secondPost = false;
@@ -30,11 +30,11 @@
       if ($scope.templatePanel === false) {
         $scope.templatePanel = true;
         $scope.firstPost = true;
-        $scope.createButton_text = "Add post";
+        $scope.createButton_text = translation.ADD;
         $scope.showPost = true;
       } else {
         $scope.templatePanel = false;
-        $scope.createButton_text = "Create post";
+        $scope.createButton_text = translation.CREATE;
         $scope.showPost = false;
         $scope.firstPost = false;
         $scope.secondPost = false;

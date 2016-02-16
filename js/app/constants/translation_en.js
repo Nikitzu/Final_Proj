@@ -34,10 +34,12 @@
     "HOME": "Home",
     "RATE": "Rate",
     "COLOR": "Color",
-    "HELLO": "Hello",
-    "HELLO_WORLD": " Hello World!",
     "light": "Light",
-    "dark": "Dark"
+    "dark": "Dark",
+    "CREATE": "Create",
+    "SETTINGS": "Settings",
+    "SAVE": "Сохранить",
+    "ADD": "Add"
   });
 
 }).call(this);
