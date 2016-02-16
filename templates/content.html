@@ -9,7 +9,7 @@
             <article ng-repeat="post in posts | orderBy:predicate:true" class="blog-item">
                 <div class="row">
                     <div class="col-md-3">
-                        <a href="single_blog_page.html">
+                        <a href="#/posts/{{post.id}}">
                             <img ng-src="{{post.url}}" class="img-thumbnail center-block" alt="Blog Post Thumbnail">
                         </a>
                     </div>
@@ -17,7 +17,6 @@
                         <p>
                             <a href="#/id/{{post.user.id}}">{{post.user.firstName}} {{post.user.lastName}}</a>
                             <time>{{post.createdAt | date}}</time>
-                            {{post.title}} {{post.score}}
                         </p>
                         <h1>
                             <a href="#/posts/{{post.id}}"> {{post.title}} </a>
@@ -28,9 +27,11 @@
                         <h5 class="rating">{{ post.score }}</h5>
                         <input ng-class="myCss" ng-init="myCss='classdown'" ng-mouseenter="myCss='down'" ng-mouseleave="myCss='classdown'" ng-click="changeRating(post, -1)">
                     </div>
-                    <div class="col-md-1" ng-repeat="tag in post.tags">
-                        <button class="btn"><a href="#/tag/{{tag.name}}">{{tag.name}}</a></button>
-                    </div>
+                    <ul>
+                        <li style="display: inline" ng-repeat="tag in post.tags">
+                            <a class="btn-xs btn-warning" href="#/tag/{{tag.name}}">{{tag.name}}</a>
+                        </li>
+                    </ul>
                 </div>
             </article>
         </section>

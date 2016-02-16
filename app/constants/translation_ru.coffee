@@ -36,4 +36,10 @@ app.constant "translation_ru",
   "SAVE": "Сохранить",
   "ADD": "Добавить"
   "SUBMIT": "Подтвердить",
-  "CANCEL": "Отмена"
+  "CANCEL": "Отмена",
+  "CATEGORY": "Категория:",
+  "COMPUTER": "Компьютерные технологии",
+  "LANGUAGE": "Языки",
+  "WORLD":"Вокруг света",
+  "BIOLOGY": "Биология",
+  "PHOTO": "Фотография"

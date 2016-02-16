@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "view_controller.js",
+  "sourceRoot": "../../../app/controllers",
+  "sources": [
+    "view_controller.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EAEN,GAAG,CAAC,UAAJ,CAAe,wBAAf,EAAyC;IAAC,QAAD,EAAW,iBAAX,EAA6B,UAA7B,EAAyC,SAAC,MAAD,EAAS,eAAT,EAA0B,QAA1B;aAChF,QAAA,CAAS,EAAT,CAAY,CAAC,GAAb,CAAA,CACA,CAAC,OADD,CACS,SAAC,IAAD;eACP,MAAM,CAAC,IAAP,GAAc;MADP,CADT;IADgF,CAAzC;GAAzC;AAFA"
+}

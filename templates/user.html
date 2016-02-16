@@ -47,6 +47,7 @@
         </form>
     </div>
     <div ng-controller="mapCtrl">
+        <div ng-show="templatePanel" class="col-md-2" ng-include="'../templates/category.html'"></div>
         <form ng-show="showSettings" ng-include="'../templates/user_form.html'" class="form-horizontal col-md-10" method="post" action="http://local.host:3000/registry"></form>
         <div ng-show="templatePanel" class="col-md-9" ng-include="'../templates/articleTemplates/templatesExample.html'"></div>
         <form ng-show="firstPost" ng-include="'../templates/articleTemplates/photoText.html'" class="form-horizontal col-md-11"></form>

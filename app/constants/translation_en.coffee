@@ -36,4 +36,10 @@ app.constant "translation_en",
   "SAVE": "Save",
   "ADD": "Add",
   "SUBMIT": "Submit",
-  "CANCEL": "Cancel"
+  "CANCEL": "Cancel",
+  "CATEGORY": "Category:"
+  "COMPUTER": "Computer Science",
+  "LANGUAGE": "Language",
+  "WORLD":"Arround the world",
+  "BIOLOGY": "Biology",
+  "PHOTO": "Photography"
