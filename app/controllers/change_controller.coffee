@@ -5,7 +5,6 @@ app.controller 'changeCtrl', [
   '$css'
   'TranslationService'
   ($scope, $css, TranslationService) ->
-#    $scope.translation = TranslationService.translation
     @translate = ->
       if @selectedLanguage == 'ru'
         @selectedLanguage = 'en'
@@ -15,7 +14,7 @@ app.controller 'changeCtrl', [
       console.log(TranslationService.translation)
       $scope.translation = TranslationService.translation
       return
-    @selectedLanguage = 'en'
+    @selectedLanguage = 'ru'
     @translate()
 
     @selectedTheme = 'light'

@@ -4,7 +4,6 @@ app = angular.module('myApp', [
   'angular-jqcloud'
   'ui.bootstrap'
   'hc.marked'
- # 'ngResource'
   'door3.css'
   'uiGmapgoogle-maps'
 ])

@@ -1,48 +1,40 @@
 app = angular.module('myApp')
 
 app.controller 'userCtrl', ($scope)->
-  $scope.changeButton_text = translation.SETTINGS
   $scope.showSettings = false
   $scope.showInfo = true
   $scope.showPost = false
   $scope.changeSettings = ->
-    if $scope.showSettings == false
-      $scope.showSettings = true
-      $scope.showInfo = false
-      $scope.changeButton_text = translation.SAVE
-    else
-      $scope.showSettings = false
-      $scope.showInfo = true
-      $scope.changeButton_text = translation.SETTINGS
+    $scope.showSettings = true
+    $scope.showInfo = false
+  $scope.saveSettings = ->
+    $scope.showSettings = false
+    $scope.showInfo = true
     return
 
-  $scope.createButton_text = translation.CREATE
   $scope.templatePanel = false
 
   $scope.firstPost = false
   $scope.secondPost = false
   $scope.thirdPost = false
   $scope.createPost = ->
-    if $scope.templatePanel == false
-      $scope.templatePanel = true
-      $scope.firstPost = true
-      $scope.createButton_text = translation.ADD
-      $scope.showPost = true
-    else
-      $scope.templatePanel = false
-      $scope.createButton_text = translation.CREATE
-      $scope.showPost = false
-      $scope.firstPost = false
-      $scope.secondPost = false
-      $scope.thirdPost = false
-      $scope.action()
-      .success ->
-        console.log "nebeda"
-        return
-      .error ->
-        console.log "beda"
-      changeSettings(false, false, false)
-    return
+    $scope.templatePanel = true
+    $scope.firstPost = true
+    $scope.showPost = true
+  $scope.addPost = ->
+    $scope.templatePanel = false
+    $scope.showPost = false
+    $scope.firstPost = false
+    $scope.secondPost = false
+    $scope.thirdPost = false
+    $scope.action()
+    .success ->
+      console.log "nebeda"
+      return
+    .error ->
+      console.log "beda"
+    changeSettings(false, false, false)
+
 
   $scope.showFirstTemplate = ->
     changeSettings(true, false, false)

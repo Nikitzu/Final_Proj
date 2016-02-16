@@ -5,4 +5,3 @@ app.factory 'Tags--', [
   ($http) ->
     $http.get('http://local.host:3000/tags')
 ]
-#for collecting tags

@@ -38,8 +38,10 @@
     "dark": "Dark",
     "CREATE": "Create",
     "SETTINGS": "Settings",
-    "SAVE": "Сохранить",
-    "ADD": "Add"
+    "SAVE": "Save",
+    "ADD": "Add",
+    "SUBMIT": "Submit",
+    "CANCEL": "Cancel"
   });
 
 }).call(this);

@@ -6,46 +6,38 @@
 
   app.controller('userCtrl', function($scope) {
     var changeSettings;
-    $scope.changeButton_text = translation.SETTINGS;
     $scope.showSettings = false;
     $scope.showInfo = true;
     $scope.showPost = false;
     $scope.changeSettings = function() {
-      if ($scope.showSettings === false) {
-        $scope.showSettings = true;
-        $scope.showInfo = false;
-        $scope.changeButton_text = translation.SAVE;
-      } else {
-        $scope.showSettings = false;
-        $scope.showInfo = true;
-        $scope.changeButton_text = translation.SETTINGS;
-      }
+      $scope.showSettings = true;
+      return $scope.showInfo = false;
     };
-    $scope.createButton_text = translation.CREATE;
+    $scope.saveSettings = function() {
+      $scope.showSettings = false;
+      $scope.showInfo = true;
+    };
     $scope.templatePanel = false;
     $scope.firstPost = false;
     $scope.secondPost = false;
     $scope.thirdPost = false;
     $scope.createPost = function() {
-      if ($scope.templatePanel === false) {
-        $scope.templatePanel = true;
-        $scope.firstPost = true;
-        $scope.createButton_text = translation.ADD;
-        $scope.showPost = true;
-      } else {
-        $scope.templatePanel = false;
-        $scope.createButton_text = translation.CREATE;
-        $scope.showPost = false;
-        $scope.firstPost = false;
-        $scope.secondPost = false;
-        $scope.thirdPost = false;
-        $scope.action().success(function() {
-          console.log("nebeda");
-        }).error(function() {
-          return console.log("beda");
-        });
-        changeSettings(false, false, false);
-      }
+      $scope.templatePanel = true;
+      $scope.firstPost = true;
+      return $scope.showPost = true;
+    };
+    $scope.addPost = function() {
+      $scope.templatePanel = false;
+      $scope.showPost = false;
+      $scope.firstPost = false;
+      $scope.secondPost = false;
+      $scope.thirdPost = false;
+      $scope.action().success(function() {
+        console.log("nebeda");
+      }).error(function() {
+        return console.log("beda");
+      });
+      return changeSettings(false, false, false);
     };
     $scope.showFirstTemplate = function() {
       changeSettings(true, false, false);

@@ -16,7 +16,7 @@
         console.log(TranslationService.translation);
         $scope.translation = TranslationService.translation;
       };
-      this.selectedLanguage = 'en';
+      this.selectedLanguage = 'ru';
       this.translate();
       this.selectedTheme = 'light';
       this.switchTheme = function() {

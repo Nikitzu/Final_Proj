@@ -15,8 +15,8 @@
                     </div>
                     <div class="col-md-8">
                         <p>
-                            <a href="../source/html5-templates.html">html5</a>
-                            <time>{{post.createdAt}}</time>
+                            <a href="user/{{post.user.id}}">{{post.user.firstName}} {{post.user.lastName}}</a>
+                            <time>{{post.createdAt | date}}</time>
                             {{post.title}} {{post.score}}
                         </p>
                         <h1>

@@ -6,4 +6,3 @@ app.controller 'rateCtrl', ['$scope', 'getHighRate', ($scope, getHighRate)->
     return
   return
 ]
-#for collecting highrate publications

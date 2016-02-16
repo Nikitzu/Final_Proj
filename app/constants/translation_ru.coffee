@@ -35,3 +35,5 @@ app.constant "translation_ru",
   "SETTINGS": "Настройки",
   "SAVE": "Сохранить",
   "ADD": "Добавить"
+  "SUBMIT": "Подтвердить",
+  "CANCEL": "Отмена"

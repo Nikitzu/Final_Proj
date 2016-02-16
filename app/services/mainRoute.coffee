@@ -3,8 +3,6 @@ app.config ($routeProvider) ->
   $routeProvider
   .when('/',
     redirectTo: '/main/all'
-#    controller: 'mainCtrl'
-#    templateUrl:'../app/main.html')
   )
   .when('/user',
     controller: 'userCtrl'

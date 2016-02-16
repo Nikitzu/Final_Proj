@@ -1,7 +1,7 @@
 {
   "version": 3,
   "file": "user_data_controller.js",
-  "sourceRoot": "..\\..\\..\\app\\controllers",
+  "sourceRoot": "../../../app/controllers",
   "sources": [
     "user_data_controller.coffee"
   ],

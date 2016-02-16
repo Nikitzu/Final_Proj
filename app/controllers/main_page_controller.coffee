@@ -9,21 +9,19 @@ app.controller 'mainCtrl', [
   'sendRating',
   'getHighRate',
   'TranslationService',
-  ($scope, $routeParams, UserDataService, getUser, getPosts, sendRating, getHighRate, TranslationService) ->
+  ($scope, $routeParams, UserDataService, getUser, getPosts, sendRating, getHighRate) ->
     destinations =
       'user' : getPosts UserDataService.user
       'all' : getHighRate
 
     getUser.success (data) ->
       UserDataService.user = data
-
+    $scope.destination = $routeParams.destination
     $scope.posts = []
     $scope.predicate = 'score'
-#    $scope.translation = TranslationService.translation
-    $scope.$watch('')
 
     $scope.action = ->
-      destinations[$routeParams.destination].get()
+      destinations[$scope.destination].get()
       .then (posts)->
         console.log posts.data
         $scope.posts = posts.data

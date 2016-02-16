@@ -208,13 +208,13 @@ a {
 	color: #000000;
 }
 
-#btn-change1{
+.btn-change1{
 	background-color: white;
 	border: 1px solid green ;
 	margin: 1%;
 }
 
-#btn-change2{
+.btn-change2{
 	background-color: white;
 	border: 1px solid green ;
 	margin: 1%;
