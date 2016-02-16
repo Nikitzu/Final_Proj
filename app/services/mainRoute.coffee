@@ -2,8 +2,10 @@ app = angular.module('myApp')
 app.config ($routeProvider) ->
   $routeProvider
   .when('/',
-    redirectTo: '/main/all'
-  )
+    redirectTo: '/main/all')
+  .when('/id/:userid/posts/:postid',
+    controller: '',
+    template: '')
   .when('/user',
     controller: 'userCtrl'
     templateUrl: '../templates/user.html')
