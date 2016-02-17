@@ -1,4 +1,16 @@
 app = angular.module('myApp')
+app.filter 'byTag', ->
+  (items, tag) ->
+    result = []
+   # console.log("FILTER HAS BYL APPLIED", tag)
+    if !tag then items else
+      for item in items
+        currentTags = item.tags.map (tag) ->
+          console.log tag.name
+          tag.name
+        if currentTags.indexOf(tag) isnt -1 then result.push item
+    return result
+
 
 app.controller 'mainCtrl', [
   '$scope',
@@ -17,6 +29,7 @@ app.controller 'mainCtrl', [
     $scope.destination = $routeParams.destination
     $scope.posts = []
     $scope.predicate = 'score'
+    $scope.filteringTag = 'test'
 
     $scope.action = ->
       destinations[$scope.destination].get()

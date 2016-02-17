@@ -12,6 +12,7 @@ app.controller 'NavBarController', ['$scope', 'UserDataService', 'logoutUser', (
     console.log(data)
     UserDataService.user = data
     $scope.user = data
+
   )
   return
 ]

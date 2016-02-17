@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "changeFactory.js",
+  "sourceRoot": "../../../app/services",
+  "sources": [
+    "changeFactory.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EAEN,GAAG,CAAC,OAAJ,CAAY,eAAZ,EAA6B,SAAC,KAAD;WAC3B,SAAC,QAAD;aACE,KAAK,CAAC,IAAN,CAAW,kCAAX,EAA+C,QAA/C;IADF;EAD2B,CAA7B;AAFA"
+}

@@ -4,6 +4,28 @@
 
   app = angular.module('myApp');
 
+  app.filter('byTag', function() {
+    return function(items, tag) {
+      var currentTags, i, item, len, result;
+      result = [];
+      if (!tag) {
+        items;
+      } else {
+        for (i = 0, len = items.length; i < len; i++) {
+          item = items[i];
+          currentTags = item.tags.map(function(tag) {
+            console.log(tag.name);
+            return tag.name;
+          });
+          if (currentTags.indexOf(tag) !== -1) {
+            result.push(item);
+          }
+        }
+      }
+      return result;
+    };
+  });
+
   app.controller('mainCtrl', [
     '$scope', '$routeParams', 'UserDataService', 'getUser', 'getPosts', 'sendRating', 'getHighRate', 'TranslationService', function($scope, $routeParams, UserDataService, getUser, getPosts, sendRating, getHighRate) {
       var destinations;
@@ -14,6 +36,7 @@
       $scope.destination = $routeParams.destination;
       $scope.posts = [];
       $scope.predicate = 'score';
+      $scope.filteringTag = 'test';
       $scope.action = function() {
         destinations[$scope.destination].get().then(function(posts) {
           console.log(posts.data);

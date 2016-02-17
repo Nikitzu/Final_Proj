@@ -22,6 +22,9 @@
     }).when('/main/:destination', {
       controller: 'mainCtrl',
       templateUrl: '../app/main.html'
+    }).when('/main/tag/:tag', {
+      controller: 'mainCtrl',
+      templateUrl: '../app/main.html'
     }).otherwise({
       redirectTo: '/'
     });

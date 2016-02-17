@@ -5,13 +5,17 @@
   app = angular.module('myApp');
 
   app.controller('changeCtrl', [
-    '$scope', '$css', 'TranslationService', function($scope, $css, TranslationService) {
+    '$scope', '$css', 'TranslationService', "changeFactory", function($scope, $css, TranslationService, changeFactory) {
       this.translate = function() {
         if (this.selectedLanguage === 'ru') {
           this.selectedLanguage = 'en';
         } else {
           this.selectedLanguage = 'ru';
         }
+        changeFactory({
+          theme: this.selectedTheme,
+          language: this.selectedLanguage
+        });
         TranslationService.switchLanguage(this.selectedLanguage);
         console.log(TranslationService.translation);
         $scope.translation = TranslationService.translation;
@@ -25,6 +29,10 @@
         } else {
           this.selectedTheme = 'light';
         }
+        changeFactory({
+          theme: this.selectedTheme,
+          language: this.selectedLanguage
+        });
         if (this.selectedTheme === 'light') {
           $css.add('../source/assets/css/style.css');
           $css.remove('../source/assets/css/style2.css');

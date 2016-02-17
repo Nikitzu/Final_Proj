@@ -1,4 +1,10 @@
-<div class="container col-md-12">
+<div class="container col-md-12" ng-controller="userCtrl">
+    <button ng-show="!templatePanel && !showSettings && destination == 'user' " class="col-md-1 btn-change" ng-click="createPost()">{{translation.CREATE}}</button>
+    <button ng-show="templatePanel && destination == 'user' " ng-click="addPost()" class="col-md-1 btn-change">{{translation.ADD}}</button>
+    <div ng-show="templatePanel && destination == 'user' " class="col-md-2" ng-include="'../templates/category.html'"></div><div ng-show="templatePanel" class="col-md-9" ng-include="'../templates/articleTemplates/templatesExample.html'"></div>
+    <form ng-show="firstPost" ng-include="'../templates/articleTemplates/photoText.html'" class="form-horizontal col-md-11"></form>
+    <!--<form ng-show="secondPost" ng-include="'../templates/articleTemplates/videoText.html'" class="form-horizontal col-md-11"></form>-->
+    <form ng-show="thirdPost" ng-include="'../templates/articleTemplates/mapText.html'" class="form-horizontal col-md-11"></form>
     <div class="row container col-md-12">
         <section class="col-md-12">
             <label>Sort by: </label>
@@ -6,7 +12,7 @@
                 <option ng-click="order('score')">Rating</option>
                 <option ng-click="order('createdAt')">Date</option>
             </select>
-            <article ng-repeat="post in posts | orderBy:predicate:true" class="blog-item">
+            <article ng-repeat="post in posts | orderBy:predicate:true | byTag:filteringTag" class="blog-item">
                 <div class="row">
                     <div class="col-md-3">
                         <a href="#/posts/{{post.id}}">

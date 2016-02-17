@@ -4,12 +4,18 @@ app.controller 'changeCtrl', [
   '$scope'
   '$css'
   'TranslationService'
-  ($scope, $css, TranslationService) ->
+  "changeFactory"
+  ($scope, $css, TranslationService, changeFactory) ->
     @translate = ->
       if @selectedLanguage == 'ru'
         @selectedLanguage = 'en'
       else
         @selectedLanguage = 'ru'
+
+      changeFactory
+        theme: @selectedTheme
+        language: @selectedLanguage
+
       TranslationService.switchLanguage(@selectedLanguage)
       console.log(TranslationService.translation)
       $scope.translation = TranslationService.translation
@@ -23,6 +29,11 @@ app.controller 'changeCtrl', [
         @selectedTheme = 'dark'
       else
         @selectedTheme = 'light'
+
+      changeFactory
+        theme: @selectedTheme
+        language: @selectedLanguage
+
       if @selectedTheme == 'light'
         $css.add '../source/assets/css/style.css'
         $css.remove '../source/assets/css/style2.css'
