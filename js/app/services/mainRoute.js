@@ -7,6 +7,12 @@
   app.config(function($routeProvider) {
     $routeProvider.when('/', {
       redirectTo: '/main/all'
+    }).when('/posts/:postId', {
+      controller: 'viewTemplateController',
+      templateUrl: '../app/postView.html'
+    }).when('/id/:id', {
+      controller: '',
+      templateUrl: '../app/userView.html'
     }).when('/user', {
       controller: 'userCtrl',
       templateUrl: '../templates/user.html'

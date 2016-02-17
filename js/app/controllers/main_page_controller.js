@@ -8,7 +8,7 @@
     '$scope', '$routeParams', 'UserDataService', 'getUser', 'getPosts', 'sendRating', 'getHighRate', 'TranslationService', function($scope, $routeParams, UserDataService, getUser, getPosts, sendRating, getHighRate) {
       var destinations;
       destinations = {
-        'user': getPosts(UserDataService.user),
+        'user': getPosts(UserDataService.user ? UserDataService.user.id : 0),
         'all': getHighRate
       };
       $scope.destination = $routeParams.destination;

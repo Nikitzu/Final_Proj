@@ -45,4 +45,5 @@ app.constant "translation_en",
   "LANGUAGE": "Language",
   "WORLD":"Arround the world",
   "BIOLOGY": "Biology",
-  "PHOTO": "Photography"
+  "PHOTO": "Photography",
+  "USERPUBLICATIONS": "My Publications"

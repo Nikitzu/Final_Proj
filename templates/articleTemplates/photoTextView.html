@@ -1,21 +1,19 @@
-<fieldset style="height: 500px" ng-controller="viewTemplateController">
-    fsgfsgdfsgfsgfsg
+<fieldset style="border: 1px solid green">
     <div class="form-group">
-        <h3>{{post.title}}</h3>
+        <h2>{{post.title}}</h2>
     </div>
     <div class="form-group">
-        <h5>{{post.description}}</h5>
+        <h4>{{post.description}}</h4>
     </div>
     <div class="form-group">
         <img src="{{post.url}}"/>
     </div>
     <div class="form-group">
-        <div class="marked" marked="article">{{post.article}}</div>
+        <div class="marked" marked="post.article"></div>
     </div>
     <div class="form-group">
         <div class="col-md-10 col-md-offset-2" ng-repeat="tag in post.tags">
-            <a href="#/tag/{{tag.text}}">{{tag.text}}</a>
+            <a href="#/tag/{{tag.name}}">{{tag.name}}</a>
         </div>
     </div>
-    jryefyk3eriyf3wgfw4irg
 </fieldset>

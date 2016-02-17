@@ -45,4 +45,5 @@ app.constant "translation_ru",
   "LANGUAGE": "Языки",
   "WORLD":"Вокруг света",
   "BIOLOGY": "Биология",
-  "PHOTO": "Фотография"
+  "PHOTO": "Фотография",
+  "USERPUBLICATIONS": "Мои публикации"

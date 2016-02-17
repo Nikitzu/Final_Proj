@@ -11,7 +11,7 @@ app.controller 'mainCtrl', [
   'TranslationService',
   ($scope, $routeParams, UserDataService, getUser, getPosts, sendRating, getHighRate) ->
     destinations =
-      'user' : getPosts UserDataService.user
+      'user' : getPosts if UserDataService.user then UserDataService.user.id else 0
       'all' : getHighRate
 
     $scope.destination = $routeParams.destination

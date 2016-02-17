@@ -5,12 +5,17 @@
   app = angular.module('myApp');
 
   app.controller('viewTemplateController', [
-    '$scope', 'UserDataService', 'getPosts', function($scope, UserDataService, getPosts) {
-      return getPosts({}).get().success(function(post) {
-        return $scope.post = post;
+    '$scope', '$routeParams', 'getPost', function($scope, $routeParams, getPost) {
+      console.log($routeParams.postId);
+      getPost($routeParams.postId).get().success(function(post) {
+        console.log('POST', post, 'END');
+        $scope.post = post;
+        return $scope.article = post.article;
       });
     }
   ]);
+
+  return;
 
 }).call(this);
 
