@@ -7,8 +7,8 @@ app.controller 'mainCtrl', [
   'getPosts',
   'sendRating',
   'getHighRate',
-  'TranslationService',
-  ($scope, $routeParams, getUser, getPosts, sendRating, getHighRate) ->
+  'SearchService',
+  ($scope, $routeParams, getUser, getPosts, sendRating, getHighRate, SearchService) ->
     destinations =
       'user' : getPosts $scope.user
       'all' : getHighRate
@@ -30,6 +30,7 @@ app.controller 'mainCtrl', [
           console.log(err.data)
           return
       return
+    console.log("POSTS = ", SearchService.getPosts())
     $scope.action()
     $scope.changeRating = (post, inc) ->
       rating =

@@ -5,7 +5,7 @@
   app = angular.module('myApp');
 
   app.controller('mainCtrl', [
-    '$scope', '$routeParams', 'getUser', 'getPosts', 'sendRating', 'getHighRate', 'TranslationService', function($scope, $routeParams, getUser, getPosts, sendRating, getHighRate) {
+    '$scope', '$routeParams', 'getUser', 'getPosts', 'sendRating', 'getHighRate', 'SearchService', function($scope, $routeParams, getUser, getPosts, sendRating, getHighRate, SearchService) {
       var destinations;
       destinations = {
         'user': getPosts($scope.user),
@@ -25,6 +25,7 @@
           console.log(err.data);
         });
       };
+      console.log("POSTS = ", SearchService.getPosts());
       $scope.action();
       $scope.changeRating = function(post, inc) {
         var rating;

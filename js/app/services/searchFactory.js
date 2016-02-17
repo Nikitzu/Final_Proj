@@ -6,7 +6,6 @@
 
   app.factory('searchFactory', function($http) {
     return function(text) {
-      console.log("TEXT: ", text);
       return $http.get('http://localhost:3000/search/' + text);
     };
   });

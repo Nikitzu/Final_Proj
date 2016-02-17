@@ -5,7 +5,7 @@
   app = angular.module('myApp');
 
   app.controller('NavBarController', [
-    '$scope', 'logoutUser', 'searchFactory', 'getUser', function($scope, logoutUser, searchFactory, getUser) {
+    '$scope', 'logoutUser', 'SearchService', 'getUser', function($scope, logoutUser, SearchService, getUser) {
       $scope.logout = function() {
         return logoutUser().then(function() {
           window.location.href = 'http://localhost:8000/app/#/';
@@ -17,9 +17,10 @@
       });
       $scope.searchText = "";
       $scope.searching = function() {
-        return searchFactory($scope.searchText).then(function(data) {
-          console.log(data.data);
-          return $scope.searchText = '';
+        SearchService.loadResults($scope.searchText).then(function(data) {
+          console.log(data);
+          $scope.searchText = '';
+          window.location.href = 'http://localhost:8000/app/#/';
         });
       };
     }
