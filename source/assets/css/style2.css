@@ -3,6 +3,12 @@
 /*=======================================================================
 						Navigation menu
 =========================================================================*/
+.comments{
+	background: transparent;
+	border: transparent;
+	color:white
+}
+
 #sel1{
 	width: 300px;
 }
@@ -103,14 +109,7 @@ p, h6, h5, h4, h3, h2, h1{
 	color: white;
 }
 
-.btn-change1{
-	background-color: #141313;
-	border: 1px solid black;
-	margin: 1%;
-	color: white;
-}
-
-.btn-change2{
+.btn-change{
 	background-color: #141313;
 	border: 1px solid black;
 	margin: 1%;

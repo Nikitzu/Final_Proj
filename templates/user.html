@@ -12,10 +12,10 @@
 <div ng-include="'../templates/navbar.html'"></div>
 <main>
     <div class="col-md-2" ng-include="'../templates/user_side.html'"></div>
-    <button ng-show="!templatePanel && !showSettings" class="col-md-1 btn-change2" ng-click="createPost()">{{translation.CREATE}}</button>
-    <button ng-show="templatePanel" ng-click="addPost()" class="col-md-1 btn-change2">{{translation.ADD}}</button>
-    <button ng-show="!showSettings && !templatePanel" class="col-md-1 btn-change1" ng-click="changeSettings()">{{translation.SETTINGS}}</button>
-    <button ng-show="showSettings" ng-click="saveSettings()" class="col-md-1 btn-change1">{{translation.SAVE}}</button>
+    <button ng-show="!templatePanel && !showSettings" class="col-md-1 btn-change" ng-click="createPost()">{{translation.CREATE}}</button>
+    <button ng-show="templatePanel" ng-click="addPost()" class="col-md-1 btn-change">{{translation.ADD}}</button>
+    <button ng-show="!showSettings && !templatePanel" class="col-md-1 btn-change" ng-click="changeSettings()">{{translation.SETTINGS}}</button>
+    <button ng-show="showSettings" ng-click="saveSettings()" class="col-md-1 btn-change">{{translation.SAVE}}</button>
     <div class="col-md-10" ng-show="showInfo && !showPost">
         <form class="form-horizontal col-md-12">
             <fieldset>
@@ -57,6 +57,7 @@
 </main>
 
 </div>
+
 <script src="../app/components/version/version.js"></script>
 <script src="../app/components/version/version-directive.js"></script>
 <script src="../app/components/version/interpolate-filter.js"></script>

@@ -1,0 +1,22 @@
+<div ng-controller="viewCommentCtrl">
+
+<h4>{{translation.COMMENTS}}:</h4>
+<blockquote ng-repeat="review in reviews">
+    <p><strong>{{translation.RATE}}: {{review.rate}}</strong></p>
+    <textarea disabled class="col-md-12 comments" rows="">{{review.comment}}</textarea>
+    <p><cite>{{translation.NAME}}: {{review.author}}</cite></p>
+</blockquote>
+
+<form ng-controller="addCommentCtrl as add" ng-submit="add.addReview()">
+    <blockquote>
+        <p><strong>{{translation.RATE}}: {{add.viewComment.rate}}</strong></p>
+        <textarea disabled class="col-md-12 comments" rows="5">{{add.viewComment.comment}}</textarea>
+        <p><cite>{{translation.NAME}}: {{add.viewComment.author}}</cite></p>
+    </blockquote>
+
+    <textarea class="form-control input-lg" ng-model="add.viewComment.comment" rows="5" placeholder="{{translation.COMMENTS_PLACEHOLDER}}"></textarea>
+
+    <input class="btn-change col-md-1" type="submit" value="{{translation.SEND}}" />
+</form>
+
+</div>

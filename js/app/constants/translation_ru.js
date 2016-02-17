@@ -5,6 +5,9 @@
   app = angular.module("myApp");
 
   app.constant("translation_ru", {
+    "SEND": "Отправить",
+    "COMMENTS_PLACEHOLDER": "Ваш комментарий",
+    "COMMENTS": "Комментарии",
     "PASSWORD_PLACEHOLDER": "Пароль",
     "PASSWORD": "Пароль",
     "ABOUT_PLACEHOLDER": "Расскажите о себе",

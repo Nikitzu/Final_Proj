@@ -1,5 +1,8 @@
 app = angular.module "myApp"
 app.constant "translation_en",
+  "SEND" : "Send",
+  "COMMENTS_PLACEHOLDER" : "Your comment",
+  "COMMENTS" : "Commentaries",
   "PASSWORD_PLACEHOLDER" : "Password",
   "PASSWORD" : "Password",
   "ABOUT_PLACEHOLDER" : "Tell as about you",
