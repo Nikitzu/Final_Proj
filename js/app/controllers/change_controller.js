@@ -13,7 +13,6 @@
           this.selectedLanguage = 'ru';
         }
         TranslationService.switchLanguage(this.selectedLanguage);
-        console.log(TranslationService.translation);
         $scope.translation = TranslationService.translation;
       };
       this.selectedLanguage = 'ru';

@@ -34,8 +34,8 @@
             <li>
                 <div class="search-widget col-md-12">
                     <div class="input-group margin-bottom-sm">
-                        <input class="form-control" type="text" placeholder="{{translation.SEARCH}}">
-                        <a href="#" class="input-group-addon">
+                        <input class="form-control" type="text" ng-model="searchText" placeholder="{{translation.SEARCH}}">
+                        <a href="" class="input-group-addon" ng-click="searching()">
                             <i class="fa fa-search fa-fw"></i>
                         </a>
                     </div>

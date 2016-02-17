@@ -6,11 +6,8 @@
 
   app.service('UserDataService', [
     'getUser', function(getUser) {
-      this.user = null;
-      console.log("hey");
       this.loadUser = function() {
-        return getUser.then(function(data) {
-          console.log(data);
+        return getUser().then(function(data) {
           return data.data;
         });
       };

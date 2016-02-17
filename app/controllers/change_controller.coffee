@@ -11,7 +11,6 @@ app.controller 'changeCtrl', [
       else
         @selectedLanguage = 'ru'
       TranslationService.switchLanguage(@selectedLanguage)
-      console.log(TranslationService.translation)
       $scope.translation = TranslationService.translation
       return
     @selectedLanguage = 'ru'

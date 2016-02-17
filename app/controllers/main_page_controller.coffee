@@ -3,25 +3,26 @@ app = angular.module('myApp')
 app.controller 'mainCtrl', [
   '$scope',
   '$routeParams'
-  'UserDataService',
   'getUser',
   'getPosts',
   'sendRating',
   'getHighRate',
   'TranslationService',
-  ($scope, $routeParams, UserDataService, getUser, getPosts, sendRating, getHighRate) ->
+  ($scope, $routeParams, getUser, getPosts, sendRating, getHighRate) ->
     destinations =
-      'user' : getPosts if UserDataService.user then UserDataService.user.id else 0
+      'user' : getPosts $scope.user
       'all' : getHighRate
 
     $scope.destination = $routeParams.destination
     $scope.posts = []
     $scope.predicate = 'score'
+    $scope.user = 0
+    getUser().then (data) ->
+      $scope.user = data
 
     $scope.action = ->
       destinations[$scope.destination].get()
       .then (posts)->
-        console.log posts.data
         $scope.posts = posts.data
         return
       ,

@@ -5,18 +5,21 @@
   app = angular.module('myApp');
 
   app.controller('mainCtrl', [
-    '$scope', '$routeParams', 'UserDataService', 'getUser', 'getPosts', 'sendRating', 'getHighRate', 'TranslationService', function($scope, $routeParams, UserDataService, getUser, getPosts, sendRating, getHighRate) {
+    '$scope', '$routeParams', 'getUser', 'getPosts', 'sendRating', 'getHighRate', 'TranslationService', function($scope, $routeParams, getUser, getPosts, sendRating, getHighRate) {
       var destinations;
       destinations = {
-        'user': getPosts(UserDataService.user ? UserDataService.user.id : 0),
+        'user': getPosts($scope.user),
         'all': getHighRate
       };
       $scope.destination = $routeParams.destination;
       $scope.posts = [];
       $scope.predicate = 'score';
+      $scope.user = 0;
+      getUser().then(function(data) {
+        return $scope.user = data;
+      });
       $scope.action = function() {
         destinations[$scope.destination].get().then(function(posts) {
-          console.log(posts.data);
           $scope.posts = posts.data;
         }, function(err) {
           console.log(err.data);

@@ -7,7 +7,6 @@
   app.service('TranslationService', function(langFactory) {
     this.translation = null;
     this.switchLanguage = function(lang) {
-      console.log('SWITCHED', lang);
       this.translation = langFactory(lang);
     };
   });

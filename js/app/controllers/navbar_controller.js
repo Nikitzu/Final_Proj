@@ -5,20 +5,23 @@
   app = angular.module('myApp');
 
   app.controller('NavBarController', [
-    '$scope', 'UserDataService', 'logoutUser', function($scope, UserDataService, logoutUser) {
+    '$scope', 'logoutUser', 'searchFactory', 'getUser', function($scope, logoutUser, searchFactory, getUser) {
       $scope.logout = function() {
         return logoutUser().then(function() {
-          console.log(UserDataService.user);
-          UserDataService.user = null;
           window.location.href = 'http://localhost:8000/app/#/';
         });
       };
-      $scope.user = UserDataService.user;
-      UserDataService.loadUser().then(function(data) {
-        console.log(data);
-        UserDataService.user = data;
+      $scope.user = null;
+      getUser().then(function(data) {
         return $scope.user = data;
       });
+      $scope.searchText = "";
+      $scope.searching = function() {
+        return searchFactory($scope.searchText).then(function(data) {
+          console.log(data.data);
+          return $scope.searchText = '';
+        });
+      };
     }
   ]);
 
