@@ -14,6 +14,11 @@
         });
       };
       $scope.user = UserDataService.user;
+      UserDataService.loadUser().then(function(data) {
+        console.log(data);
+        UserDataService.user = data;
+        return $scope.user = data;
+      });
     }
   ]);
 

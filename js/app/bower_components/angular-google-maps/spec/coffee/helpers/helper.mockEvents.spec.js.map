@@ -1,7 +1,7 @@
 {
   "version": 3,
   "file": "helper.mockEvents.spec.js",
-  "sourceRoot": "..\\..\\..\\..\\..\\..\\..\\app\\bower_components\\angular-google-maps\\spec\\coffee\\helpers",
+  "sourceRoot": "../../../../../../../app/bower_components/angular-google-maps/spec/coffee/helpers",
   "sources": [
     "helper.mockEvents.spec.coffee"
   ],

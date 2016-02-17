@@ -4,9 +4,18 @@
 
   app = angular.module('myApp');
 
-  app.service('UserDataService', function() {
-    this.user = null;
-  });
+  app.service('UserDataService', [
+    'getUser', function(getUser) {
+      this.user = null;
+      console.log("hey");
+      this.loadUser = function() {
+        return getUser.then(function(data) {
+          console.log(data);
+          return data.data;
+        });
+      };
+    }
+  ]);
 
 }).call(this);
 

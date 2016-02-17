@@ -11,9 +11,6 @@
         'user': getPosts(UserDataService.user),
         'all': getHighRate
       };
-      getUser.success(function(data) {
-        return UserDataService.user = data;
-      });
       $scope.destination = $routeParams.destination;
       $scope.posts = [];
       $scope.predicate = 'score';

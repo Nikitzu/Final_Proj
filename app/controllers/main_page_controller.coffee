@@ -14,8 +14,6 @@ app.controller 'mainCtrl', [
       'user' : getPosts UserDataService.user
       'all' : getHighRate
 
-    getUser.success (data) ->
-      UserDataService.user = data
     $scope.destination = $routeParams.destination
     $scope.posts = []
     $scope.predicate = 'score'

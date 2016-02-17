@@ -1,7 +1,7 @@
 {
   "version": 3,
   "file": "google-map-spec-controller.js",
-  "sourceRoot": "..\\..\\..\\..\\..\\..\\..\\app\\bower_components\\angular-google-maps\\spec\\coffee\\bootstrap",
+  "sourceRoot": "../../../../../../../app/bower_components/angular-google-maps/spec/coffee/bootstrap",
   "sources": [
     "google-map-spec-controller.coffee"
   ],

@@ -1,7 +1,7 @@
 {
   "version": 3,
   "file": "karma.conf.js",
-  "sourceRoot": "..\\..\\..\\..\\app\\bower_components\\angular-google-maps",
+  "sourceRoot": "../../../../app/bower_components/angular-google-maps",
   "sources": [
     "karma.conf.coffee"
   ],
