@@ -8,14 +8,12 @@
     return function(items, tag) {
       var currentTags, i, item, len, result;
       result = [];
-      console.log("FILTER HAS BYL APPLIED", tag);
       if (!tag || tag === '') {
         return items;
       } else {
         for (i = 0, len = items.length; i < len; i++) {
           item = items[i];
           currentTags = item.tags.map(function(tag) {
-            console.log(tag.name);
             return tag.name;
           });
           if (currentTags.indexOf(tag) !== -1) {
@@ -51,9 +49,7 @@
           id: post.id,
           score: inc
         };
-        console.log(rating);
         sendRating(rating).success(function(res) {
-          console.log(res);
           post.score = res.score;
         }).error(function() {
           return console.log("already rated");

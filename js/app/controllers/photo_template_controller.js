@@ -4,13 +4,12 @@
 
   app = angular.module('myApp');
 
-  ctor = function($scope, ImageService, saveImage) {
+  ctor = function($scope, ImageService, PostService) {
     var action;
     action = function() {
       var tags;
-      console.log("Child Scope", ImageService.imagelist[0].base64);
       tags = $scope.tags.split(" ");
-      return saveImage({
+      return PostService.saveNewPost({
         title: $scope.title,
         description: $scope.description,
         article: $scope.article,
@@ -20,13 +19,14 @@
           };
         }),
         template: 'photo',
-        img: ImageService.imagelist[0].base64
+        img: ImageService.imagelist[0] ? ImageService.imagelist[0].base64 : '',
+        map: PostService.mapCoordinates
       });
     };
     $scope.setAction(action);
   };
 
-  app.controller('PhotoTemplateCtrl', ['$scope', 'ImageService', 'saveImage', ctor]);
+  app.controller('PhotoTemplateCtrl', ['$scope', 'ImageService', 'PostService', ctor]);
 
 }).call(this);
 

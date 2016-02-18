@@ -1,6 +1,6 @@
 app = angular.module('myApp')
 
-app.controller 'contentCtrl', ($scope)->
+app.controller 'contentCtrl',['$scope' ,'PostService', ($scope, PostService)->
   $scope.showSettings = false
   $scope.showInfo = true
   $scope.showPost = false
@@ -24,37 +24,37 @@ app.controller 'contentCtrl', ($scope)->
   $scope.addPost = ->
     $scope.templatePanel = false
     $scope.showPost = false
-    $scope.firstPost = false
-    $scope.secondPost = false
-    $scope.thirdPost = false
-    $scope.action()
-    .success ->
-      console.log "nebeda"
-      return
-    .error ->
-      console.log "beda"
+    $scope.templateAction()
     changeSettings(false, false, false)
 
+  $scope.templateAction = () ->
+    tags = $scope.tags.split(" ")
+    PostService.saveNewPost
+      title: $scope.title,
+      description: $scope.description,
+      article: $scope.article,
+      tags: tags.map (tag)->
+        {name: tag}
+      template: $scope.template
+      img: if ImageService.imagelist[0] then ImageService.imagelist[0].base64 else ''
+      map: PostService.mapCoordinates
 
   $scope.showFirstTemplate = ->
-    changeSettings(true, false, false)
+    changeSettings(true, false, false, 'photo')
     return
   $scope.showSecondTemplate = ->
-    changeSettings(false, true, false)
+    changeSettings(false, true, false, 'video')
     return
   $scope.showThirdTemplate = ->
-    changeSettings(false, false, true)
+    changeSettings(false, false, true, 'map')
     return
 
-  $scope.action = {}
-  $scope.setAction = (action)->
-    $scope.action = action
-    return
-
-  changeSettings = (first, second, third) ->
+  changeSettings = (first, second, third, template) ->
     $scope.firstPost = first
     $scope.secondPost = second
     $scope.thirdPost = third
+    $scope.template = template
     return
 
   return
+]

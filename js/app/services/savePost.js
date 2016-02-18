@@ -4,7 +4,7 @@
 
   app = angular.module('myApp');
 
-  app.factory('saveImage', function($http) {
+  app.factory('savePost', function($http) {
     return function(post) {
       return $http.post('http://localhost:3000/post/save', post);
     };
@@ -12,4 +12,4 @@
 
 }).call(this);
 
-//# sourceMappingURL=saveImage.js.map
+//# sourceMappingURL=savePost.js.map

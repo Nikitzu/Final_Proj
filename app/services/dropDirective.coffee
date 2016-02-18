@@ -18,7 +18,6 @@ app.directive 'dropDirective', [
         elem.bind 'drop', (event) ->
           event.stopPropagation()
           event.preventDefault()
-          console.log 'what', event.dataTransfer
           dt = event.dataTransfer or event.originalEvent and event.originalEvent.dataTransfer
           files = event.target.files or dt and dt.files
           i = 0
@@ -40,13 +39,11 @@ app.directive 'dropDirective', [
                   URL: URL.createObjectURL(theFile)
                   base64: reader.result
 
-                console.log 'Imagelist', ImageService.imagelist.length
                 ImageService.image = ImageService.imagelist[ImageService.imagelist.length - 1]
                 console.log ImageService.image
                 scope.$apply()
                 return
             )(f)
-            console.log 'Processed', f
             i++
           return
         return

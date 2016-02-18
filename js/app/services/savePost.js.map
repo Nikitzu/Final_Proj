@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "savePost.js",
+  "sourceRoot": "../../../app/services",
+  "sources": [
+    "savePost.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EACN,GAAG,CAAC,OAAJ,CAAY,UAAZ,EAAwB,SAAC,KAAD;WACtB,SAAC,IAAD;aACE,KAAK,CAAC,IAAN,CAAW,iCAAX,EAA8C,IAA9C;IADF;EADsB,CAAxB;AADA"
+}

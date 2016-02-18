@@ -22,7 +22,6 @@
             var dt, f, files, i, reader;
             event.stopPropagation();
             event.preventDefault();
-            console.log('what', event.dataTransfer);
             dt = event.dataTransfer || event.originalEvent && event.originalEvent.dataTransfer;
             files = event.target.files || dt && dt.files;
             i = 0;
@@ -46,13 +45,11 @@
                     URL: URL.createObjectURL(theFile),
                     base64: reader.result
                   });
-                  console.log('Imagelist', ImageService.imagelist.length);
                   ImageService.image = ImageService.imagelist[ImageService.imagelist.length - 1];
                   console.log(ImageService.image);
                   scope.$apply();
                 };
               })(f);
-              console.log('Processed', f);
               i++;
             }
           });

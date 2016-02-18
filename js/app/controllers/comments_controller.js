@@ -24,7 +24,6 @@
     this.addReview = function() {
       $scope.reviews.push(this.viewComment);
       this.createNewReview();
-      console.log($scope.reviews);
     };
   });
 

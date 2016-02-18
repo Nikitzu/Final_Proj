@@ -20,7 +20,6 @@ app.controller 'addCommentCtrl', ($scope) ->
   @addReview = ->
     $scope.reviews.push @viewComment
     @createNewReview()
-    console.log $scope.reviews
     return
 
   return

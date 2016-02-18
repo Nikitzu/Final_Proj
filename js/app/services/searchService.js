@@ -7,10 +7,7 @@
   app.service('SearchService', [
     'searchFactory', function(searchFactory) {
       this.posts = null;
-      this.loadResults = function(text, posts) {
-        if (posts == null) {
-          posts = this.posts;
-        }
+      this.loadResults = function(text) {
         return searchFactory(text).then(function(data) {
           return data.data;
         });

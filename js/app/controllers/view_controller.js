@@ -6,9 +6,7 @@
 
   app.controller('viewTemplateController', [
     '$scope', '$routeParams', 'getPost', function($scope, $routeParams, getPost) {
-      console.log($routeParams.postId);
       getPost($routeParams.postId).get().success(function(post) {
-        console.log('POST', post, 'END');
         $scope.post = post;
         return $scope.article = post.article;
       });
