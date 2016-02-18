@@ -15,6 +15,7 @@ app.controller 'contentCtrl',['$scope' ,'PostService', 'ImageService', ($scope, 
 
   $scope.templatePanel = false
 
+
   $scope.firstPost = false
   $scope.secondPost = false
   $scope.thirdPost = false
