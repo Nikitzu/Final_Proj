@@ -18,7 +18,6 @@
     "SURNAME": "Surname",
     "NAME_PLACEHOLDER": "Name",
     "NAME": "Name",
-    "TAGS_CLOUD": "Tags cloud:",
     "YOUTUBE_VIDEO": "Youtube video",
     "TEMPLATES": "Choose template:",
     "TAGS": "Enter tags",

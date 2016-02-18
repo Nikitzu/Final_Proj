@@ -18,7 +18,6 @@
     "SURNAME": "Фамилия",
     "NAME_PLACEHOLDER": "Имя",
     "NAME": "Имя",
-    "TAGS_CLOUD": "Облако тэгов:",
     "YOUTUBE_VIDEO": "Youtube видео",
     "TEMPLATES": "Выберите шаблон:",
     "TAGS": "Введите тэги",

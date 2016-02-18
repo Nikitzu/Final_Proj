@@ -6,7 +6,7 @@
 
   app.config(function($routeProvider) {
     $routeProvider.when('/', {
-      redirectTo: '/main/all'
+      redirectTo: '/main/all/all'
     }).when('/post/:postId', {
       controller: 'viewTemplateController',
       templateUrl: '../app/postView.html'
@@ -19,10 +19,7 @@
     }).when('/login/:action', {
       controller: 'RegistrationCtrl',
       templateUrl: '../app/registration.html'
-    }).when('/main/:destination', {
-      controller: 'mainCtrl',
-      templateUrl: '../app/main.html'
-    }).when('/main/tag/:tag', {
+    }).when('/main/:destination/:tag', {
       controller: 'mainCtrl',
       templateUrl: '../app/main.html'
     }).otherwise({

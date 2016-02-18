@@ -20,7 +20,7 @@ app.controller 'mainCtrl', [
   'SearchService',
   ($scope, $routeParams, getUser, getPosts, sendRating, getHighRate, SearchService) ->
 
-
+    console.log($routeParams.destination)
     $scope.destination = $routeParams.destination
     $scope.posts = []
     $scope.predicate = 'score'
@@ -29,7 +29,6 @@ app.controller 'mainCtrl', [
       $scope.user = data.data
     .then ->
       $scope.checkPosts()
-   # $scope.filteringTag = 'test'
 
     $scope.action = ->
       $scope.destinations[$scope.destination].get()
@@ -62,6 +61,9 @@ app.controller 'mainCtrl', [
         $scope.destinations =
           'user' : getPosts if $scope.user then $scope.user.id else 0
           'all' : getHighRate
+        if $routeParams.destination is 'tag'
+          $scope.filteringTag = $routeParams.tag
+          $scope.destination = 'all'
         $scope.action()
       return
 

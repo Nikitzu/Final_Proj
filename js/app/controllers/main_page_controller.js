@@ -27,6 +27,7 @@
 
   app.controller('mainCtrl', [
     '$scope', '$routeParams', 'getUser', 'getPosts', 'sendRating', 'getHighRate', 'SearchService', function($scope, $routeParams, getUser, getPosts, sendRating, getHighRate, SearchService) {
+      console.log($routeParams.destination);
       $scope.destination = $routeParams.destination;
       $scope.posts = [];
       $scope.predicate = 'score';
@@ -64,6 +65,10 @@
             'user': getPosts($scope.user ? $scope.user.id : 0),
             'all': getHighRate
           };
+          if ($routeParams.destination === 'tag') {
+            $scope.filteringTag = $routeParams.tag;
+            $scope.destination = 'all';
+          }
           $scope.action();
         }
       };
