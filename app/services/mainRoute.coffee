@@ -10,7 +10,7 @@ app.config ($routeProvider) ->
     controller: '',
     templateUrl: '../app/main.html')
   .when('/user',
-    controller: 'userCtrl'
+    controller: 'contentCtrl'
     templateUrl: '../templates/user.html')
   .when('/login/:action',
     controller: 'RegistrationCtrl'
