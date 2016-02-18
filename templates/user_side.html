@@ -1,13 +1,24 @@
-<div class="col-md-12 navbar sidebar-nav navbar-collapse " role="navigation">
-    <ul class="nav">
-        <li ng-if="user">
-            <a href="#/user"><img src="../source/assets/img/no_photo.jpg" border="0"/></a>
-        </li>
-        <li ng-if="user">
-            <a href="#">{{user.firstName}} {{user.lastName}}</a>
-        </li>
-        <li ng-if="user">
-            <p>{{translation.RATE}}</p>
-        </li>
-    </ul>
+<div class="col-md-12" ng-controller="avatarCtrl">
+    <div flow-init="{target: '/upload'}" flow-files-submitted="$flow.upload()" flow-file-success="$file.msg = $message" flow-name="uploader.flow" flow-files-added="processFiles($files)">
+        <ul class="nav" ng-if="user">
+            <li>
+                <div ng-repeat="image in uploader.flow.files" class="col-md-12">
+                    <img class="col-md-12" class="preview" ng-src="{{imageStrings[$index]}}"/>
+                </div>
+            </li>
+            <li>
+                <p class="col-md-12" style="background-color: transparent">{{user.firstName}} {{user.lastName}}</p>
+            </li>
+            <li class="col-md-12">
+                <button class="btn-change col-md-12" ng-show="!$flow.files.length" flow-btn>{{translation.SELECT_IMAGE}}<input type="file" style="visibility: hidden; position: absolute;"></button>
+                <button class="btn-change col-md-12 ng-hide" ng-show="$flow.files.length" flow-btn>{{translation.CHANGE_IMAGE}}<input type="file" style="visibility: hidden; position: absolute;"></button>
+                <button class="btn-change col-md-12 ng-hide" ng-show="$flow.files.length" ng-click="$flow.cancel()">{{translation.REMOVE_IMAGE}}</button>
+            </li>
+            <li>
+                <div class="col-md-12">
+                    <p>{{translation.RATE}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>

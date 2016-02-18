@@ -39,7 +39,7 @@
     "COLOR": "Color",
     "light": "Light",
     "dark": "Dark",
-    "CREATE": "Create article",
+    "CREATE": "Create",
     "SETTINGS": "Settings",
     "SAVE": "Save",
     "ADD": "Add",
@@ -54,7 +54,10 @@
     "USERPUBLICATIONS": "My Publications",
     "BYRATING": "rating",
     "BYDATE": "date",
-    "SORTBY": "Sort by: "
+    "SORTBY": "Sort by: ",
+    "SELECT_IMAGE": "Select image",
+    "CHANGE_IMAGE": "Change image",
+    "REMOVE_IMAGE": "Remove image"
   });
 
 }).call(this);

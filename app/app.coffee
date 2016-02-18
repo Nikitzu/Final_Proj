@@ -6,6 +6,7 @@ app = angular.module('myApp', [
   'hc.marked'
   'door3.css'
   'uiGmapgoogle-maps'
+  'flow'
 ])
 app.config ($httpProvider) ->
   $httpProvider.defaults.useXDomain = true

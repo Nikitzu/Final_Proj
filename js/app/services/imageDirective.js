@@ -8,7 +8,7 @@
     'ImageService', function(ImageService) {
       return {
         restrict: 'AE',
-        template: '<img ng-src="{{images[0].URL}}" class="col-md-12">' + '<button ng-click="remove()" class="btn-default btn-contact" ng-show="images[images.length - 1].URL">X</button>',
+        template: '<img ng-src="{{images[0].URL}}" class="col-md-12">',
         link: function(scope, elem) {}
       };
     }

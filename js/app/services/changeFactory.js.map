@@ -1,7 +1,7 @@
 {
   "version": 3,
   "file": "changeFactory.js",
-  "sourceRoot": "../../../app/services",
+  "sourceRoot": "..\\..\\..\\app\\services",
   "sources": [
     "changeFactory.coffee"
   ],

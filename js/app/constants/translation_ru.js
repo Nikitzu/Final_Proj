@@ -39,7 +39,7 @@
     "COLOR": "Цвет",
     "light": "День",
     "dark": "Ночь",
-    "CREATE": "Создать статью",
+    "CREATE": "Создать",
     "SETTINGS": "Настройки",
     "SAVE": "Сохранить",
     "ADD": "Добавить",
@@ -54,7 +54,10 @@
     "USERPUBLICATIONS": "Мои публикации",
     "BYRATING": "популярности",
     "BYDATE": "дате",
-    "SORTBY": "Сортировать по: "
+    "SORTBY": "Сортировать по: ",
+    "SELECT_IMAGE": "Выбор фото",
+    "CHANGE_IMAGE": "Изменить",
+    "REMOVE_IMAGE": "Удалить"
   });
 
 }).call(this);

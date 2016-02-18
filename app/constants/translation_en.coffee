@@ -34,7 +34,7 @@ app.constant "translation_en",
   "COLOR" : "Color",
   "light" : "Light",
   "dark" : "Dark",
-  "CREATE": "Create article",
+  "CREATE": "Create",
   "SETTINGS": "Settings",
   "SAVE": "Save",
   "ADD": "Add",
@@ -49,4 +49,7 @@ app.constant "translation_en",
   "USERPUBLICATIONS": "My Publications"
   "BYRATING": "rating",
   "BYDATE":"date",
-  "SORTBY":"Sort by: "
+  "SORTBY":"Sort by: ",
+  "SELECT_IMAGE" : "Select image",
+  "CHANGE_IMAGE" : "Change image",
+  "REMOVE_IMAGE" : "Remove image"

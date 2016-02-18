@@ -1,7 +1,7 @@
 {
   "version": 3,
   "file": "searchService.js",
-  "sourceRoot": "../../../app/services",
+  "sourceRoot": "..\\..\\..\\app\\services",
   "sources": [
     "searchService.coffee"
   ],
