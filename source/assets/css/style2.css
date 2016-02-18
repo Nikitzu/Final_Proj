@@ -3,6 +3,23 @@
 /*=======================================================================
 						Navigation menu
 =========================================================================*/
+.postborder{
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+}
+
+.posttitle{
+	text-align: center;
+	font-size: 30px;
+	color: white;
+}
+
+em{
+	text-align: left;
+	color:white;
+}
+
+
 .comments{
 	background: transparent;
 	border: transparent;
@@ -846,7 +863,7 @@ only screen and (max-device-width : 550px){
 
 .search-widget .input-group .form-control,
 .subscribe-widget .input-group .form-control {
-	background-color: #ffffff;
+	background-color: #141313;
 	/*border: 1px solid #CACACA;*/
 	border: transparent;
 	border-radius: 0px;

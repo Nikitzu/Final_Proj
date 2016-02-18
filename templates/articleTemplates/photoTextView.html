@@ -1,19 +1,19 @@
-<fieldset style="border: 1px solid green">
-    <div class="form-group">
-        <h2>{{post.title}}</h2>
+<div class="col-md-10 col-md-push-1 postborder">
+    <div>
+        <p class="posttitle">{{post.title}}</p><hr>
     </div>
-    <div class="form-group">
-        <h4>{{post.description}}</h4>
+    <div>
+        <em>{{post.description}}</em><hr>
     </div>
-    <div class="form-group">
-        <img src="{{post.url}}"/>
+    <div>
+        <img class="col-md-6" src="{{post.url}}"/><hr>
     </div>
-    <div class="form-group">
+    <div>
         <div class="marked" marked="post.article"></div>
     </div>
-    <div class="form-group">
+    <div>
         <div class="col-md-10 col-md-offset-2" ng-repeat="tag in post.tags">
             <a href="#/tag/{{tag.name}}">{{tag.name}}</a>
         </div>
     </div>
-</fieldset>
+</div>

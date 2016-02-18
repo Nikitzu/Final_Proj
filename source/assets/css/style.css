@@ -3,6 +3,21 @@
 /*=======================================================================
 						Navigation menu
 =========================================================================*/
+.postborder{
+	border-left: 1px solid green;
+	border-right: 1px solid green;
+}
+
+.posttitle{
+	text-align: center;
+	font-size: 30px;
+	color: #000;
+}
+
+em{
+	text-align: left
+}
+
 .comments{
 	background: transparent;
 	border: transparent;
