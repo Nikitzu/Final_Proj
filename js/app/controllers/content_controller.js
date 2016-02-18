@@ -10,7 +10,6 @@
       $scope.showSettings = false;
       $scope.showInfo = true;
       $scope.showPost = false;
-      $scope.tags = $scope.title = $scope.description = $scope.article = '';
       $scope.changeSettings = function() {
         $scope.showSettings = true;
         return $scope.showInfo = false;
@@ -38,22 +37,8 @@
       };
       $scope.videoUrl = '';
       $scope.templateAction = function() {
-        var tags;
-        tags = $scope.tags.split(" ");
-        return PostService.saveNewPost({
-          title: $scope.title,
-          description: $scope.description,
-          article: $scope.article,
-          tags: tags.map(function(tag) {
-            return {
-              name: tag
-            };
-          }),
-          template: $scope.template,
-          img: ImageService.imagelist[0] ? ImageService.imagelist[0].base64 : '',
-          videoLink: $scope.videoUrl,
-          map: PostService.mapCoordinates
-        });
+        $scope.templateData.template = $scope.template;
+        PostService.saveNewPost($scope.templateData);
       };
       $scope.showFirstTemplate = function() {
         changeSettings(true, false, false, 'photo');
@@ -63,6 +48,9 @@
       };
       $scope.showThirdTemplate = function() {
         changeSettings(false, false, true, 'map');
+      };
+      $scope.setData = function(data) {
+        $scope.templateData = data;
       };
       changeSettings = function(first, second, third, template) {
         $scope.firstPost = first;

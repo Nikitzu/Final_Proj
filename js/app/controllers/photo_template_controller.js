@@ -5,11 +5,10 @@
   app = angular.module('myApp');
 
   ctor = function($scope, ImageService, PostService) {
-    var action;
-    action = function() {
-      var tags;
-      tags = $scope.tags.split(" ");
-      return PostService.saveNewPost({
+    var dataFactory;
+    dataFactory = function() {
+      var data;
+      return data = {
         title: $scope.title,
         description: $scope.description,
         article: $scope.article,
@@ -18,12 +17,11 @@
             name: tag
           };
         }),
-        template: 'photo',
         img: ImageService.imagelist[0] ? ImageService.imagelist[0].base64 : '',
         map: PostService.mapCoordinates
-      });
+      };
     };
-    $scope.setAction(action);
+    $scope.setData(data);
   };
 
   app.controller('PhotoTemplateCtrl', ['$scope', 'ImageService', 'PostService', ctor]);
