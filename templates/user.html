@@ -12,8 +12,6 @@
 <div ng-include="'../templates/navbar.html'"></div>
 <main>
     <div class="col-md-2" ng-include="'../templates/user_side.html'"></div>
-    <!--<button ng-show="!templatePanel && !showSettings" class="col-md-1 btn-change" ng-click="createPost()">{{translation.CREATE}}</button>-->
-    <!--<button ng-show="templatePanel" ng-click="addPost()" class="col-md-1 btn-change">{{translation.ADD}}</button>-->
     <button ng-show="!showSettings && !templatePanel" class="col-md-1 btn-change" ng-click="changeSettings()">{{translation.SETTINGS}}</button>
     <button ng-show="showSettings" ng-click="saveSettings()" class="col-md-1 btn-change">{{translation.SAVE}}</button>
     <div class="col-md-10" ng-show="showInfo && !showPost">
@@ -47,12 +45,8 @@
         </form>
     </div>
     <div ng-controller="mapCtrl">
-        <!--<div ng-show="templatePanel" class="col-md-2" ng-include="'../templates/category.html'"></div>-->
         <form ng-show="showSettings" ng-include="'../templates/user_form.html'" class="form-horizontal col-md-10" method="post" action="http://local.host:3000/registry"></form>
         <div ng-show="templatePanel" class="col-md-9" ng-include="'../templates/articleTemplates/templatesExample.html'"></div>
-        <!--<form ng-show="firstPost" ng-include="'../templates/articleTemplates/photoText.html'" class="form-horizontal col-md-11"></form>-->
-        <!--<form ng-show="secondPost" ng-include="'../templates/articleTemplates/videoText.html'" class="form-horizontal col-md-11"></form>-->
-        <!--<form ng-show="thirdPost" ng-include="'../templates/articleTemplates/mapText.html'" class="form-horizontal col-md-11"></form>-->
     </div>
 </main>
 

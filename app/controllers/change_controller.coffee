@@ -4,41 +4,52 @@ app.controller 'changeCtrl', [
   '$scope'
   '$css'
   'TranslationService'
-  "changeFactory"
-  ($scope, $css, TranslationService, changeFactory) ->
-    @translate = ->
-      if @selectedLanguage == 'ru'
-        @selectedLanguage = 'en'
-      else
-        @selectedLanguage = 'ru'
+  'changeFactory',
+  'getUser'
+  ($scope, $css, TranslationService, changeFactory, getUser) ->
 
-      changeFactory
-        theme: @selectedTheme
-        language: @selectedLanguage
-
-      TranslationService.switchLanguage(@selectedLanguage)
+    switchLanguage = ->
+      TranslationService.switchLanguage($scope.selectedLanguage)
       $scope.translation = TranslationService.translation
       return
-    @selectedLanguage = 'ru'
-    @translate()
-
-    @selectedTheme = 'light'
-    @switchTheme = ->
-      if @selectedTheme == 'light'
-        @selectedTheme = 'dark'
-      else
-        @selectedTheme = 'light'
-
-      changeFactory
-        theme: @selectedTheme
-        language: @selectedLanguage
-
-      if @selectedTheme == 'light'
+    switchTheme = ->
+      if $scope.selectedTheme == 'light'
         $css.add '../source/assets/css/style.css'
         $css.remove '../source/assets/css/style2.css'
       else
         $css.remove '../source/assets/css/style.css'
         $css.add '../source/assets/css/style2.css'
+      return
+
+    $scope.translate = ->
+      if $scope.selectedLanguage == 'ru'
+        $scope.selectedLanguage = 'en'
+      else
+        $scope.selectedLanguage = 'ru'
+      changeFactory
+        theme: $scope.selectedTheme
+        language: $scope.selectedLanguage
+      switchLanguage()
+      return
+
+    $scope.switchTheme = ->
+      if $scope.selectedTheme == 'light'
+        $scope.selectedTheme = 'dark'
+      else
+        $scope.selectedTheme = 'light'
+
+      changeFactory
+        theme: $scope.selectedTheme
+        language: $scope.selectedLanguage
+      switchTheme()
+      return
+
+    getUser().then (data) ->
+      $scope.user = data.data
+      $scope.selectedLanguage = $scope.user.language
+      $scope.selectedTheme = $scope.user.theme
+      switchLanguage()
+      switchTheme()
       return
     return
 ]

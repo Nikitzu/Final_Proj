@@ -5,34 +5,14 @@
   app = angular.module('myApp');
 
   app.controller('changeCtrl', [
-    '$scope', '$css', 'TranslationService', "changeFactory", function($scope, $css, TranslationService, changeFactory) {
-      this.translate = function() {
-        if (this.selectedLanguage === 'ru') {
-          this.selectedLanguage = 'en';
-        } else {
-          this.selectedLanguage = 'ru';
-        }
-        changeFactory({
-          theme: this.selectedTheme,
-          language: this.selectedLanguage
-        });
-        TranslationService.switchLanguage(this.selectedLanguage);
+    '$scope', '$css', 'TranslationService', 'changeFactory', 'getUser', function($scope, $css, TranslationService, changeFactory, getUser) {
+      var switchLanguage, switchTheme;
+      switchLanguage = function() {
+        TranslationService.switchLanguage($scope.selectedLanguage);
         $scope.translation = TranslationService.translation;
       };
-      this.selectedLanguage = 'ru';
-      this.translate();
-      this.selectedTheme = 'light';
-      this.switchTheme = function() {
-        if (this.selectedTheme === 'light') {
-          this.selectedTheme = 'dark';
-        } else {
-          this.selectedTheme = 'light';
-        }
-        changeFactory({
-          theme: this.selectedTheme,
-          language: this.selectedLanguage
-        });
-        if (this.selectedTheme === 'light') {
+      switchTheme = function() {
+        if ($scope.selectedTheme === 'light') {
           $css.add('../source/assets/css/style.css');
           $css.remove('../source/assets/css/style2.css');
         } else {
@@ -40,6 +20,37 @@
           $css.add('../source/assets/css/style2.css');
         }
       };
+      $scope.translate = function() {
+        if ($scope.selectedLanguage === 'ru') {
+          $scope.selectedLanguage = 'en';
+        } else {
+          $scope.selectedLanguage = 'ru';
+        }
+        changeFactory({
+          theme: $scope.selectedTheme,
+          language: $scope.selectedLanguage
+        });
+        switchLanguage();
+      };
+      $scope.switchTheme = function() {
+        if ($scope.selectedTheme === 'light') {
+          $scope.selectedTheme = 'dark';
+        } else {
+          $scope.selectedTheme = 'light';
+        }
+        changeFactory({
+          theme: $scope.selectedTheme,
+          language: $scope.selectedLanguage
+        });
+        switchTheme();
+      };
+      getUser().then(function(data) {
+        $scope.user = data.data;
+        $scope.selectedLanguage = $scope.user.language;
+        $scope.selectedTheme = $scope.user.theme;
+        switchLanguage();
+        switchTheme();
+      });
     }
   ]);
 
