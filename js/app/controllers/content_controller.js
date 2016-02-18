@@ -33,6 +33,7 @@
         $scope.templateAction();
         return changeSettings(false, false, false);
       };
+      $scope.videoUrl = '';
       $scope.templateAction = function() {
         var tags;
         tags = $scope.tags.split(" ");
@@ -47,6 +48,7 @@
           }),
           template: $scope.template,
           img: ImageService.imagelist[0] ? ImageService.imagelist[0].base64 : '',
+          videoLink: $scope.videoUrl,
           map: PostService.mapCoordinates
         });
       };

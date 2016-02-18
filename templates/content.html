@@ -2,8 +2,8 @@
     <button ng-show="!templatePanel && !showSettings && destination == 'user' " class="col-md-1 btn-change" ng-click="createPost()">{{translation.CREATE}}</button>
     <button ng-show="templatePanel && destination == 'user' " ng-click="addPost()" class="col-md-1 btn-change">{{translation.ADD}}</button>
     <div ng-controller="mapCtrl">
-        <div ng-show="templatePanel && destination == 'user' " class="col-md-2" ng-include="'../templates/category.html'"></div>
         <div ng-show="templatePanel" class="col-md-9" ng-include="'../templates/articleTemplates/templatesExample.html'"></div>
+        <div ng-show="templatePanel && destination == 'user' " class="col-md-2" ng-include="'../templates/category.html'"></div>
         <form ng-show="firstPost" ng-include="'../templates/articleTemplates/photoText.html'" class="form-horizontal col-md-11"></form>
         <form ng-show="secondPost" ng-include="'../templates/articleTemplates/videoText.html'" class="form-horizontal col-md-11"></form>
         <form ng-show="thirdPost" ng-include="'../templates/articleTemplates/mapText.html'" class="form-horizontal col-md-11"></form>

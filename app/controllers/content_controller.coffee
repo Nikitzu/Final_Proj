@@ -27,6 +27,7 @@ app.controller 'contentCtrl',['$scope' ,'PostService', ($scope, PostService)->
     $scope.templateAction()
     changeSettings(false, false, false)
 
+  $scope.videoUrl = ''
   $scope.templateAction = () ->
     tags = $scope.tags.split(" ")
     PostService.saveNewPost
@@ -37,6 +38,7 @@ app.controller 'contentCtrl',['$scope' ,'PostService', ($scope, PostService)->
         {name: tag}
       template: $scope.template
       img: if ImageService.imagelist[0] then ImageService.imagelist[0].base64 else ''
+      videoLink: $scope.videoUrl
       map: PostService.mapCoordinates
 
   $scope.showFirstTemplate = ->
