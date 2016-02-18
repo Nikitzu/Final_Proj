@@ -39,7 +39,7 @@
     "COLOR": "Color",
     "light": "Light",
     "dark": "Dark",
-    "CREATE": "Create",
+    "CREATE": "Create article",
     "SETTINGS": "Settings",
     "SAVE": "Save",
     "ADD": "Add",

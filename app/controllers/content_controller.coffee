@@ -1,6 +1,6 @@
 app = angular.module('myApp')
 
-app.controller 'userCtrl', ($scope)->
+app.controller 'contentCtrl', ($scope)->
   $scope.showSettings = false
   $scope.showInfo = true
   $scope.showPost = false

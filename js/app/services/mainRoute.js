@@ -12,7 +12,7 @@
       templateUrl: '../app/postView.html'
     }).when('/id/:id', {
       controller: '',
-      templateUrl: '../app/userView.html'
+      templateUrl: '../app/main.html'
     }).when('/user', {
       controller: 'userCtrl',
       templateUrl: '../templates/user.html'

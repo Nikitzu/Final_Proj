@@ -4,7 +4,7 @@
 
   app = angular.module('myApp');
 
-  app.controller('userCtrl', function($scope) {
+  app.controller('contentCtrl', function($scope) {
     var changeSettings;
     $scope.showSettings = false;
     $scope.showInfo = true;

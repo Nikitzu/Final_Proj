@@ -34,7 +34,7 @@ app.constant "translation_ru",
   "COLOR" : "Цвет",
   "light": "День",
   "dark": "Ночь",
-  "CREATE": "Создать",
+  "CREATE": "Создать статью",
   "SETTINGS": "Настройки",
   "SAVE": "Сохранить",
   "ADD": "Добавить"
