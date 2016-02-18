@@ -6,15 +6,12 @@
 
   app.service('SearchService', [
     'searchFactory', function(searchFactory) {
-      this.posts = "hello";
+      this.posts = null;
       this.loadResults = function(text, posts) {
         if (posts == null) {
           posts = this.posts;
         }
         return searchFactory(text).then(function(data) {
-          console.log('BEFORE', posts);
-          posts = data.data;
-          console.log('AFTER', this.posts);
           return data.data;
         });
       };

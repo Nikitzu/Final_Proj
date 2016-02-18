@@ -8,8 +8,9 @@
     return function(items, tag) {
       var currentTags, i, item, len, result;
       result = [];
-      if (!tag) {
-        items;
+      console.log("FILTER HAS BYL APPLIED", tag);
+      if (!tag || tag === '') {
+        return items;
       } else {
         for (i = 0, len = items.length; i < len; i++) {
           item = items[i];
@@ -35,13 +36,8 @@
       getUser().then(function(data) {
         return $scope.user = data.data;
       }).then(function() {
-        $scope.destinations = {
-          'user': getPosts($scope.user ? $scope.user.id : 0),
-          'all': getHighRate
-        };
-        return $scope.action();
+        return $scope.checkPosts();
       });
-      $scope.filteringTag = 'test';
       $scope.action = function() {
         $scope.destinations[$scope.destination].get().then(function(posts) {
           $scope.posts = posts.data;
@@ -49,7 +45,6 @@
           console.log(err.data);
         });
       };
-      console.log("POSTS = ", SearchService.posts);
       $scope.changeRating = function(post, inc) {
         var rating;
         rating = {
@@ -63,6 +58,18 @@
         }).error(function() {
           return console.log("already rated");
         });
+      };
+      $scope.checkPosts = function() {
+        if (SearchService.posts) {
+          $scope.posts = SearchService.posts;
+          SearchService.posts = null;
+        } else {
+          $scope.destinations = {
+            'user': getPosts($scope.user ? $scope.user.id : 0),
+            'all': getHighRate
+          };
+          $scope.action();
+        }
       };
       $scope.order = function(predicate) {
         return $scope.predicate = predicate;

@@ -2,8 +2,8 @@ app = angular.module('myApp')
 app.filter 'byTag', ->
   (items, tag) ->
     result = []
-   # console.log("FILTER HAS BYL APPLIED", tag)
-    if !tag then items else
+    console.log("FILTER HAS BYL APPLIED", tag)
+    if !tag or tag is '' then return items else
       for item in items
         currentTags = item.tags.map (tag) ->
           console.log tag.name
@@ -30,11 +30,8 @@ app.controller 'mainCtrl', [
     getUser().then (data) ->
       $scope.user = data.data
     .then ->
-      $scope.destinations =
-        'user' : getPosts if $scope.user then $scope.user.id else 0
-        'all' : getHighRate
-      $scope.action()
-    $scope.filteringTag = 'test'
+      $scope.checkPosts()
+   # $scope.filteringTag = 'test'
 
     $scope.action = ->
       $scope.destinations[$scope.destination].get()
@@ -46,7 +43,6 @@ app.controller 'mainCtrl', [
           console.log(err.data)
           return
       return
-    console.log("POSTS = ", SearchService.posts)
 
     $scope.changeRating = (post, inc) ->
       rating =
@@ -61,6 +57,18 @@ app.controller 'mainCtrl', [
       .error ->
         console.log "already rated"
       return
+
+    $scope.checkPosts = () ->
+      if SearchService.posts
+        $scope.posts = SearchService.posts
+        SearchService.posts = null
+      else
+        $scope.destinations =
+          'user' : getPosts if $scope.user then $scope.user.id else 0
+          'all' : getHighRate
+        $scope.action()
+      return
+
     $scope.order = (predicate) ->
       $scope.predicate = predicate
     return
