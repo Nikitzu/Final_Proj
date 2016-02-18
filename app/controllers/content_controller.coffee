@@ -4,7 +4,7 @@ app.controller 'contentCtrl',['$scope' ,'PostService', 'ImageService', ($scope, 
   $scope.showSettings = false
   $scope.showInfo = true
   $scope.showPost = false
-  $scope.tags = $scope.title = $scope.description = $scope.article = ''
+  # $scope.tags = $scope.title = $scope.description = $scope.article = ''
   $scope.changeSettings = ->
     $scope.showSettings = true
     $scope.showInfo = false
@@ -32,18 +32,10 @@ app.controller 'contentCtrl',['$scope' ,'PostService', 'ImageService', ($scope, 
 
   $scope.videoUrl = ''
   $scope.templateAction = () ->
-    tags = $scope.tags.split(" ")
-    PostService.saveNewPost
-      title: $scope.title,
-      description: $scope.description,
-      article: $scope.article,
-      tags: tags.map (tag)->
-        {name: tag}
-      template: $scope.template
-      img: if ImageService.imagelist[0] then ImageService.imagelist[0].base64 else ''
-      videoLink: $scope.videoUrl
-      map: PostService.mapCoordinates
-
+    templateData = $scope.templateData()
+    templateData.template = $scope.template
+    PostService.saveNewPost templateData
+    return
   $scope.showFirstTemplate = ->
     changeSettings(true, false, false, 'photo')
     return
@@ -54,6 +46,9 @@ app.controller 'contentCtrl',['$scope' ,'PostService', 'ImageService', ($scope, 
     changeSettings(false, false, true, 'map')
     return
 
+  $scope.setData = (data) ->
+    $scope.templateData = data
+    return
   changeSettings = (first, second, third, template) ->
     $scope.firstPost = first
     $scope.secondPost = second
