@@ -5,7 +5,10 @@
   app = angular.module('myApp');
 
   app.factory('getUser', function($http) {
-    return $http.get('http://localhost:3000/currentUser');
+    console.log("USER");
+    return function() {
+      return $http.get('http://localhost:3000/currentUser');
+    };
   });
 
 }).call(this);

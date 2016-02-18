@@ -17,7 +17,6 @@
           language: this.selectedLanguage
         });
         TranslationService.switchLanguage(this.selectedLanguage);
-        console.log(TranslationService.translation);
         $scope.translation = TranslationService.translation;
       };
       this.selectedLanguage = 'ru';

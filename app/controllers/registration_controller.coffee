@@ -1,6 +1,6 @@
 app = angular.module('myApp')
 
-app.controller 'RegistrationCtrl', ['$scope', '$routeParams', 'UserDataService', 'signupUser', 'loginUser', ($scope, $routeParams,UserDataService, signupUser, loginUser)->
+app.controller 'RegistrationCtrl', ['$scope', '$routeParams', 'signupUser', 'loginUser', ($scope, $routeParams, signupUser, loginUser)->
   $scope.about = ''
   $scope.action = $routeParams.action
   $scope.actions =
@@ -19,7 +19,6 @@ app.controller 'RegistrationCtrl', ['$scope', '$routeParams', 'UserDataService',
   $scope.performAction = ->
     $scope.actions[$scope.action]()
     .success (data) ->
-      UserDataService.user = data
       window.location.href = 'http://localhost:8000/app/#/'
       return
   return

@@ -1,18 +1,22 @@
 app = angular.module('myApp')
 
-app.controller 'NavBarController', ['$scope', 'UserDataService', 'logoutUser', ($scope, UserDataService, logoutUser)->
+app.controller 'NavBarController', ['$scope', 'logoutUser', 'SearchService', 'getUser', ($scope, logoutUser, SearchService, getUser)->
   $scope.logout = ->
     logoutUser().then ->
-      console.log(UserDataService.user)
-      UserDataService.user = null
       window.location.href = 'http://localhost:8000/app/#/'
       return
-  $scope.user = UserDataService.user
-  UserDataService.loadUser().then( (data) ->
-    console.log(data)
-    UserDataService.user = data
+  $scope.user = null
+  getUser().then (data) ->
     $scope.user = data
 
-  )
+  $scope.searchText = ""
+  $scope.searching = () ->
+    SearchService.loadResults($scope.searchText).then (data) ->
+      console.log(data)
+      $scope.searchText = ''
+      window.location.href = 'http://localhost:8000/app/#/'
+      return
+    return
+
   return
 ]
