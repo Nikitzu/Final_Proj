@@ -5,11 +5,12 @@
   app = angular.module('myApp');
 
   app.controller('contentCtrl', [
-    '$scope', 'PostService', function($scope, PostService) {
+    '$scope', 'PostService', 'ImageService', function($scope, PostService, ImageService) {
       var changeSettings;
       $scope.showSettings = false;
       $scope.showInfo = true;
       $scope.showPost = false;
+      $scope.tags = $scope.title = $scope.description = $scope.article = '';
       $scope.changeSettings = function() {
         $scope.showSettings = true;
         return $scope.showInfo = false;
@@ -22,6 +23,7 @@
       $scope.firstPost = false;
       $scope.secondPost = false;
       $scope.thirdPost = false;
+      $scope.template = 'photo';
       $scope.createPost = function() {
         $scope.templatePanel = true;
         $scope.firstPost = true;
@@ -30,8 +32,9 @@
       $scope.addPost = function() {
         $scope.templatePanel = false;
         $scope.showPost = false;
+        changeSettings(false, false, false, $scope.template);
         $scope.templateAction();
-        return changeSettings(false, false, false);
+        return changeSettings(false, false, false, $scope.template);
       };
       $scope.videoUrl = '';
       $scope.templateAction = function() {

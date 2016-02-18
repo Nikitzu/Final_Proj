@@ -38,7 +38,7 @@
     <div class="form-group">
         <label for="states" class="col-md-2 control-label">{{translation.TAGS}}</label>
         <div class="col-md-10">
-            <input name="states" id="states" type="text" placeholder="{{translation.TAGS}}" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
+            <input name="states" id="states" type="text" placeholder="{{translation.TAGS}}" ng-model="tags" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
         </div>
     </div>
 </fieldset>

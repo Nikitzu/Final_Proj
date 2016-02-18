@@ -1,9 +1,10 @@
 app = angular.module('myApp')
 
-app.controller 'contentCtrl',['$scope' ,'PostService', ($scope, PostService)->
+app.controller 'contentCtrl',['$scope' ,'PostService', 'ImageService', ($scope, PostService, ImageService)->
   $scope.showSettings = false
   $scope.showInfo = true
   $scope.showPost = false
+  $scope.tags = $scope.title = $scope.description = $scope.article = ''
   $scope.changeSettings = ->
     $scope.showSettings = true
     $scope.showInfo = false
@@ -17,6 +18,7 @@ app.controller 'contentCtrl',['$scope' ,'PostService', ($scope, PostService)->
   $scope.firstPost = false
   $scope.secondPost = false
   $scope.thirdPost = false
+  $scope.template = 'photo'
   $scope.createPost = ->
     $scope.templatePanel = true
     $scope.firstPost = true
@@ -24,8 +26,9 @@ app.controller 'contentCtrl',['$scope' ,'PostService', ($scope, PostService)->
   $scope.addPost = ->
     $scope.templatePanel = false
     $scope.showPost = false
+    changeSettings(false, false, false, $scope.template)
     $scope.templateAction()
-    changeSettings(false, false, false)
+    changeSettings(false, false, false, $scope.template)
 
   $scope.videoUrl = ''
   $scope.templateAction = () ->
