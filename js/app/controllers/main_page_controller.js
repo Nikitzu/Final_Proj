@@ -25,7 +25,7 @@
           console.log(err.data);
         });
       };
-      console.log("POSTS = ", SearchService.getPosts());
+      console.log("POSTS = ", SearchService.posts);
       $scope.action();
       $scope.changeRating = function(post, inc) {
         var rating;

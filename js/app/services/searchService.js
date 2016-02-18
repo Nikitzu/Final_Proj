@@ -7,12 +7,6 @@
   app.service('SearchService', [
     'searchFactory', function(searchFactory) {
       this.posts = "hello";
-      this.setPosts = function(posts) {
-        return this.posts = posts;
-      };
-      this.getPosts = function() {
-        return this.posts;
-      };
       this.loadResults = function(text, posts) {
         if (posts == null) {
           posts = this.posts;
@@ -20,7 +14,7 @@
         return searchFactory(text).then(function(data) {
           console.log('BEFORE', posts);
           posts = data.data;
-          console.log('AFTER', posts);
+          console.log('AFTER', this.posts);
           return data.data;
         });
       };

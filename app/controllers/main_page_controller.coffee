@@ -30,7 +30,7 @@ app.controller 'mainCtrl', [
           console.log(err.data)
           return
       return
-    console.log("POSTS = ", SearchService.getPosts())
+    console.log("POSTS = ", SearchService.posts)
     $scope.action()
     $scope.changeRating = (post, inc) ->
       rating =
