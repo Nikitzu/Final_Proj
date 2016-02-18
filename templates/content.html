@@ -7,10 +7,10 @@
     <form ng-show="thirdPost" ng-include="'../templates/articleTemplates/mapText.html'" class="form-horizontal col-md-11"></form>
     <div class="row container col-md-12">
         <section class="col-md-12">
-            <label>Sort by: </label>
+            <label>{{translation.SORTBY}}</label>
             <select class="btn sort">
-                <option ng-click="order('score')">Rating</option>
-                <option ng-click="order('createdAt')">Date</option>
+                <option ng-click="order('score')">{{translation.BYRATING}}</option>
+                <option ng-click="order('createdAt')">{{translation.BYDATE}}</option>
             </select>
             <article ng-repeat="post in posts | orderBy:predicate:true | byTag:filteringTag" class="blog-item">
                 <div class="row">

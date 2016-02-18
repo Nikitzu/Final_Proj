@@ -27,25 +27,29 @@
   });
 
   app.controller('mainCtrl', [
-    '$scope', '$routeParams', 'UserDataService', 'getUser', 'getPosts', 'sendRating', 'getHighRate', 'TranslationService', function($scope, $routeParams, UserDataService, getUser, getPosts, sendRating, getHighRate) {
-      var destinations;
-      destinations = {
-        'user': getPosts(UserDataService.user ? UserDataService.user.id : 0),
-        'all': getHighRate
-      };
+    '$scope', '$routeParams', 'getUser', 'getPosts', 'sendRating', 'getHighRate', 'SearchService', function($scope, $routeParams, getUser, getPosts, sendRating, getHighRate, SearchService) {
       $scope.destination = $routeParams.destination;
       $scope.posts = [];
       $scope.predicate = 'score';
+      $scope.user = null;
+      getUser().then(function(data) {
+        return $scope.user = data.data;
+      }).then(function() {
+        $scope.destinations = {
+          'user': getPosts($scope.user ? $scope.user.id : 0),
+          'all': getHighRate
+        };
+        return $scope.action();
+      });
       $scope.filteringTag = 'test';
       $scope.action = function() {
-        destinations[$scope.destination].get().then(function(posts) {
-          console.log(posts.data);
+        $scope.destinations[$scope.destination].get().then(function(posts) {
           $scope.posts = posts.data;
         }, function(err) {
           console.log(err.data);
         });
       };
-      $scope.action();
+      console.log("POSTS = ", SearchService.posts);
       $scope.changeRating = function(post, inc) {
         var rating;
         rating = {

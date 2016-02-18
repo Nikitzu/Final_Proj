@@ -8,7 +8,7 @@
     '$scope', 'getUser', function($scope, getUser) {
       $scope.user = null;
       getUser().then(function(data) {
-        return $scope.user = data;
+        return $scope.user = data.data;
       });
     }
   ]);

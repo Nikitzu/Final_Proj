@@ -51,7 +51,10 @@
     "WORLD": "Arround the world",
     "BIOLOGY": "Biology",
     "PHOTO": "Photography",
-    "USERPUBLICATIONS": "My Publications"
+    "USERPUBLICATIONS": "My Publications",
+    "BYRATING": "rating",
+    "BYDATE": "date",
+    "SORTBY": "Sort by: "
   });
 
 }).call(this);

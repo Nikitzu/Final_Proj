@@ -47,3 +47,6 @@ app.constant "translation_en",
   "BIOLOGY": "Biology",
   "PHOTO": "Photography",
   "USERPUBLICATIONS": "My Publications"
+  "BYRATING": "rating",
+  "BYDATE":"date",
+  "SORTBY":"Sort by: "

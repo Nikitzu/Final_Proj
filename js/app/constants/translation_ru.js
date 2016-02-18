@@ -51,7 +51,10 @@
     "WORLD": "Вокруг света",
     "BIOLOGY": "Биология",
     "PHOTO": "Фотография",
-    "USERPUBLICATIONS": "Мои публикации"
+    "USERPUBLICATIONS": "Мои публикации",
+    "BYRATING": "популярности",
+    "BYDATE": "дате",
+    "SORTBY": "Сортировать по: "
   });
 
 }).call(this);
