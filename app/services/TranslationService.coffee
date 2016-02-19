@@ -2,7 +2,7 @@ app = angular.module 'myApp'
 
 app.service 'TranslationService', (langFactory)->
   @translation = null
-  @switchLanguage = (lang) ->
+  @changeLanguage = (lang) ->
     @translation = langFactory(lang)
     return
   return

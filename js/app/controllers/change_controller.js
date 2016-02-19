@@ -6,12 +6,11 @@
 
   app.controller('changeCtrl', [
     '$scope', '$css', 'TranslationService', 'changeFactory', 'getUser', function($scope, $css, TranslationService, changeFactory, getUser) {
-      var switchLanguage, switchTheme;
-      switchLanguage = function() {
-        TranslationService.switchLanguage($scope.selectedLanguage);
+      $scope.changeLanguage = function() {
+        TranslationService.changeLanguage($scope.selectedLanguage);
         $scope.translation = TranslationService.translation;
       };
-      switchTheme = function() {
+      $scope.changeTheme = function() {
         if ($scope.selectedTheme === 'light') {
           $css.add('../source/assets/css/style.css');
           $css.remove('../source/assets/css/style2.css');
@@ -20,7 +19,7 @@
           $css.add('../source/assets/css/style2.css');
         }
       };
-      $scope.translate = function() {
+      $scope.switchLanguage = function() {
         if ($scope.selectedLanguage === 'ru') {
           $scope.selectedLanguage = 'en';
         } else {
@@ -30,7 +29,7 @@
           theme: $scope.selectedTheme,
           language: $scope.selectedLanguage
         });
-        switchLanguage();
+        $scope.changeLanguage();
       };
       $scope.switchTheme = function() {
         if ($scope.selectedTheme === 'light') {
@@ -42,18 +41,18 @@
           theme: $scope.selectedTheme,
           language: $scope.selectedLanguage
         });
-        switchTheme();
+        $scope.changeTheme();
       };
       $scope.selectedLanguage = 'en';
       $scope.selectedTheme = 'light';
-      switchLanguage();
-      switchTheme();
+      $scope.changeLanguage();
+      $scope.changeTheme();
       getUser().then(function(data) {
         $scope.user = data.data;
         $scope.selectedLanguage = $scope.user.language;
         $scope.selectedTheme = $scope.user.theme;
-        switchLanguage();
-        switchTheme();
+        $scope.changeLanguage();
+        $scope.changeTheme();
       });
     }
   ]);

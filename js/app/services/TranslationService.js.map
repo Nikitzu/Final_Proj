@@ -1,7 +1,7 @@
 {
   "version": 3,
   "file": "TranslationService.js",
-  "sourceRoot": "..\\..\\..\\app\\services",
+  "sourceRoot": "../../../app/services",
   "sources": [
     "TranslationService.coffee"
   ],

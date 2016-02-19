@@ -8,11 +8,11 @@ app.controller 'changeCtrl', [
   'getUser'
   ($scope, $css, TranslationService, changeFactory, getUser) ->
 
-    switchLanguage = ->
-      TranslationService.switchLanguage($scope.selectedLanguage)
+    $scope.changeLanguage = ->
+      TranslationService.changeLanguage($scope.selectedLanguage)
       $scope.translation = TranslationService.translation
       return
-    switchTheme = ->
+    $scope.changeTheme = ->
       if $scope.selectedTheme == 'light'
         $css.add '../source/assets/css/style.css'
         $css.remove '../source/assets/css/style2.css'
@@ -21,7 +21,7 @@ app.controller 'changeCtrl', [
         $css.add '../source/assets/css/style2.css'
       return
 
-    $scope.translate = ->
+    $scope.switchLanguage = ->
       if $scope.selectedLanguage == 'ru'
         $scope.selectedLanguage = 'en'
       else
@@ -29,7 +29,7 @@ app.controller 'changeCtrl', [
       changeFactory
         theme: $scope.selectedTheme
         language: $scope.selectedLanguage
-      switchLanguage()
+      $scope.changeLanguage()
       return
 
     $scope.switchTheme = ->
@@ -41,20 +41,20 @@ app.controller 'changeCtrl', [
       changeFactory
         theme: $scope.selectedTheme
         language: $scope.selectedLanguage
-      switchTheme()
+      $scope.changeTheme()
       return
 
     $scope.selectedLanguage = 'en'
     $scope.selectedTheme = 'light'
-    switchLanguage()
-    switchTheme()
+    $scope.changeLanguage()
+    $scope.changeTheme()
 
     getUser().then (data) ->
       $scope.user = data.data
       $scope.selectedLanguage = $scope.user.language
       $scope.selectedTheme = $scope.user.theme
-      switchLanguage()
-      switchTheme()
+      $scope.changeLanguage()
+      $scope.changeTheme()
       return
     return
 ]
