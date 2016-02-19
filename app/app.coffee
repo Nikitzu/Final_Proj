@@ -7,6 +7,7 @@ app = angular.module('myApp', [
   'door3.css'
   'uiGmapgoogle-maps'
   'flow'
+  'infinite-scroll'
 ])
 app.config ($httpProvider) ->
   $httpProvider.defaults.useXDomain = true
