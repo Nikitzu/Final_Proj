@@ -8,7 +8,7 @@
     var dataFactory;
     dataFactory = function() {
       var data, tags;
-      tags = $scope.tagsMap ? $scope.tagsMap.split(" ") : [];
+      tags = $scope.tags ? $scope.tags.split(" ") : [];
       return data = {
         title: $scope.title,
         description: $scope.description,

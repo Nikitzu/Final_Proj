@@ -5,11 +5,16 @@
   app = angular.module('myApp');
 
   app.controller('tagController', [
-    '$scope', 'getTags', function($scope, getTags) {
-      getTags.then(function(tags) {
-        console.log("TAGS HERE", tags);
-        return $scope.words = tags;
-      });
+    '$scope', '$timeout', 'getTags', function($scope, $timeout, getTags) {
+      var poll;
+      poll = function() {
+        getTags.then(function(tags) {
+          console.log("TAGS HERE", tags);
+          return $scope.words = tags;
+        });
+      };
+      poll();
+      $timeout(poll, 5000);
       $scope.colors = ['#800026', '#bd0026', '#e31a1c', '#fc4e2a', '#fd8d3c', '#feb24c', '#fed976'];
     }
   ]);

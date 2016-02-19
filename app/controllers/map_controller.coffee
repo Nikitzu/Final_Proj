@@ -19,11 +19,11 @@ app.controller 'mapCtrl',[
       pointX: 0
       pointY: 0
     dataFactory = ->
-      tags = if $scope.tagsMap then $scope.tagsMap.split(" ") else []
+      tags = if $scope.tags then $scope.tags.split(" ") else []
       data =
-        title: $scope.titleMap,
-        description: $scope.descriptionMap,
-        article: $scope.articleMap,
+        title: $scope.title,
+        description: $scope.description,
+        article: $scope.article,
         tags: tags.map (tag)->
           {name: tag}
         img: if ImageService.imagelist[0] then ImageService.imagelist[0].base64 else ''

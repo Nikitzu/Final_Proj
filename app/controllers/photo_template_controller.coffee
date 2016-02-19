@@ -1,7 +1,7 @@
 app = angular.module('myApp')
 ctor = ($scope, ImageService)->
   dataFactory = ->
-    tags = if $scope.tagsMap then $scope.tagsMap.split(" ") else []
+    tags = if $scope.tags then $scope.tags.split(" ") else []
     data =
       title: $scope.title,
       description: $scope.description,

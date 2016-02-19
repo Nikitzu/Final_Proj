@@ -22,11 +22,11 @@
       };
       dataFactory = function() {
         var data, tags;
-        tags = $scope.tagsMap ? $scope.tagsMap.split(" ") : [];
+        tags = $scope.tags ? $scope.tags.split(" ") : [];
         return data = {
-          title: $scope.titleMap,
-          description: $scope.descriptionMap,
-          article: $scope.articleMap,
+          title: $scope.title,
+          description: $scope.description,
+          article: $scope.article,
           tags: tags.map(function(tag) {
             return {
               name: tag

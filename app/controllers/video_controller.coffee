@@ -14,7 +14,7 @@ app.controller 'videoCtrl', ($scope)->
       $scope.resUrl.replace('&','?')
 
   dataFactory = ->
-    tags = if $scope.tagsMap then $scope.tagsMap.split(" ") else []
+    tags = if $scope.tags then $scope.tags.split(" ") else []
     data =
       title: $scope.title,
       description: $scope.description,
