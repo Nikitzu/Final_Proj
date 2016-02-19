@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="col-md-10 col-md-push-1 postborder" ng-controller="mapViewCtrl">
+    <div>
+        <p class="posttitle">{{post.title}}</p><hr>
+    </div>
+    <div>
+        <em>{{post.description}}</em><hr>
+    </div>
+    <div>
+        <div class="col-md-6">
+            <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+                <ui-gmap-marker coords="marker.coords" options="marker.options" idkey="marker.id"></ui-gmap-marker>
+                <ui-gmap-marker coords="m.coords" icon="m.icon" idkey="m.id"></ui-gmap-marker>
+            </ui-gmap-google-map>
+        </div>
+    </div>
+    <div>
+        <div class="marked" marked="post.article"></div>
+    </div>
+    <div>
+        <div class="col-md-10 col-md-offset-2" ng-repeat="tag in post.tags">
+            <a href="#/tag/{{tag.name}}">{{tag.name}}</a>
+        </div>
+    </div>
+</div>
+<div class="col-md-10 col-md-push-1" ng-include="'../../templates/comments.html'"></div>

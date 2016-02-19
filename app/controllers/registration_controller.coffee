@@ -19,6 +19,8 @@ app.controller 'RegistrationCtrl', ['$scope', '$routeParams', 'signupUser', 'log
   $scope.performAction = ->
     $scope.actions[$scope.action]()
     .success (data) ->
+      $scope.switchTheme()
+      $scope.translate()
       window.location.href = 'http://localhost:8000/app/#/'
       return
   return

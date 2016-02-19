@@ -44,6 +44,11 @@ app.controller 'changeCtrl', [
       switchTheme()
       return
 
+    $scope.selectedLanguage = 'en'
+    $scope.selectedTheme = 'light'
+    switchLanguage()
+    switchTheme()
+
     getUser().then (data) ->
       $scope.user = data.data
       $scope.selectedLanguage = $scope.user.language

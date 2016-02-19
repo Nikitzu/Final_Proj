@@ -32,7 +32,7 @@
         <label for="description" class="col-md-2 control-label">{{translation.YOUTUBE_VIDEO}}</label>
         <div class="col-md-10">
             <input class="form-control" placeholder="URL" ng-model="videoUrl">
-            <iframe ng-controller="videoCtrl" ng-show="videoUrl" width="100%" height="440"  ng-src="{{embeddify(videoUrl) | trustAsResourceUrl}}" frameborder="0" allowfullscreen></iframe>
+            <iframe ng-show="videoUrl" width="100%" height="440"  ng-src="{{embeddify(videoUrl) | trustAsResourceUrl}}" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
     <div class="form-group">

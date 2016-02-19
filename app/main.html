@@ -11,7 +11,7 @@
 <div ng-include="'../templates/navbar.html'"></div>
 <main>
     <div ng-controller="userDataCtrl" ng-if="destination == 'user' " class="col-md-2" ng-include="'../templates/user_side.html'"></div>
-    <div ng-if="destination != 'user' "  class="col-md-3" ng-include="'../templates/tagsCloud.html'"></div>
+    <div ng-if="destination != 'user'"  class="col-md-3" ng-include="'../templates/tagsCloud.html'"></div>
     <div class="col-md-9" ng-if="(destination == 'all' && !templatePanel) || (destination == 'user' && !templatePanel)" ng-include="'../templates/content.html'"></div>
 </main>
 <script src="components/version/version.js"></script>
