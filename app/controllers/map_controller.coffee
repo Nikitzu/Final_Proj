@@ -39,8 +39,8 @@ app.controller 'mapCtrl',[
     $scope.showMap = false
 
     $scope.mapReady = () ->
-      $scope.showMap = true
       uiGmapGoogleMapApi.then ->
+        $scope.showMap = true
         $scope.map =
           center:
             latitude: $scope.latitude

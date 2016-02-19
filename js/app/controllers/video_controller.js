@@ -15,11 +15,11 @@
   app.controller('videoCtrl', function($scope) {
     var dataFactory;
     $scope.embeddify = function(videoUrl) {
-      var resUrl;
       if (videoUrl) {
-        resUrl = videoUrl.replace('watch?v=', 'embed/');
-        resUrl.replace('&index=18&', '?');
-        return resUrl.replace('&', '?');
+        console.log("embeddify");
+        $scope.resUrl = videoUrl.replace('watch?v=', 'embed/');
+        $scope.resUrl.replace('&index=18&', '?');
+        return $scope.resUrl.replace('&', '?');
       }
     };
     dataFactory = function() {
@@ -35,7 +35,7 @@
           };
         }),
         template: 'video',
-        videoLink: $scope.videoUrl
+        videoLink: $scope.resUrl
       };
     };
     $scope.postVideo = function() {

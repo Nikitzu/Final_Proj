@@ -48,8 +48,8 @@
       });
       $scope.showMap = false;
       $scope.mapReady = function() {
-        $scope.showMap = true;
         uiGmapGoogleMapApi.then(function() {
+          $scope.showMap = true;
           $scope.map = {
             center: {
               latitude: $scope.latitude,
