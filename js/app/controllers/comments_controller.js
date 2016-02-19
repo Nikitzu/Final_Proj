@@ -16,7 +16,7 @@
       });
       this.viewComment = {
         rate: $scope.rate,
-        author: $scope.user.firstName
+        author: $scope.user.firstName + ' ' + $scope.user.lastName
       };
       this.createNewReview = function() {
         this.viewComment = {

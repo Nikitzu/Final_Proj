@@ -8,12 +8,13 @@
     '$scope', '$routeParams', 'getPost', function($scope, $routeParams, getPost) {
       getPost($routeParams.postId).get().success(function(post) {
         $scope.post = post;
-        return $scope.article = post.article;
+        return $scope.mapFunction();
       });
+      $scope.setData = function(data) {
+        return $scope.mapFunction = data;
+      };
     }
   ]);
-
-  return;
 
 }).call(this);
 

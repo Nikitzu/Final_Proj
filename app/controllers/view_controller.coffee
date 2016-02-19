@@ -6,7 +6,10 @@ app.controller 'viewTemplateController', [
   ($scope, $routeParams, getPost) ->
     getPost($routeParams.postId).get().success (post) ->
       $scope.post = post
-      $scope.article = post.article
+#      $scope.article = post.article
+      $scope.mapFunction()
+
+    $scope.setData = (data) ->
+      $scope.mapFunction = data
     return
 ]
-return

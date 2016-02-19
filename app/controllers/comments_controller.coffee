@@ -13,7 +13,7 @@ app.controller 'addCommentCtrl', ['$scope','getUser', ($scope, getUser) ->
 
   @viewComment =
     rate: $scope.rate
-    author: $scope.user.firstName
+    author: $scope.user.firstName + ' ' + $scope.user.lastName
 
   @createNewReview = ->
     @viewComment =

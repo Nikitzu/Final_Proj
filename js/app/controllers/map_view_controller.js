@@ -6,35 +6,41 @@
 
   app.controller('mapViewCtrl', [
     '$scope', 'uiGmapGoogleMapApi', function($scope, uiGmapGoogleMapApi) {
-      uiGmapGoogleMapApi.then(function() {
-        $scope.map = {
-          center: {
-            latitude: 60,
-            longitude: 60
-          },
-          zoom: 5
-        };
-        $scope.options = {
-          scrollwheel: false
-        };
-        $scope.marker2 = {
-          id: 1,
-          coords: {
-            latitude: 65,
-            longitude: 65
-          }
-        };
-        return $scope.marker = {
-          id: 0,
-          coords: {
-            latitude: 60,
-            longitude: 60
-          },
-          options: {
-            icon: '../../source/assets/img/blue_marker.png'
-          }
-        };
-      });
+      var dataFactory;
+      dataFactory = function() {
+        var markerCoords;
+        markerCoords = $scope.post.map;
+        return uiGmapGoogleMapApi.then(function() {
+          $scope.map = {
+            center: {
+              latitude: markerCoords[1],
+              longitude: markerCoords[0]
+            },
+            zoom: 4
+          };
+          $scope.options = {
+            scrollwheel: false
+          };
+          $scope.marker2 = {
+            id: 1,
+            coords: {
+              latitude: markerCoords[3],
+              longitude: markerCoords[2]
+            }
+          };
+          return $scope.marker = {
+            id: 0,
+            coords: {
+              latitude: markerCoords[1],
+              longitude: markerCoords[0]
+            },
+            options: {
+              icon: '../../source/assets/img/blue_marker.png'
+            }
+          };
+        });
+      };
+      $scope.setData(dataFactory);
     }
   ]);
 

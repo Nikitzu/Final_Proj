@@ -5,8 +5,11 @@
   app = angular.module('myApp');
 
   app.controller('avatarCtrl', [
-    '$scope', 'PhotoLoader', function($scope, PhotoLoader) {
-      $scope.imageStrings = [];
+    '$scope', 'PhotoLoader', 'getUser', function($scope, PhotoLoader, getUser) {
+      $scope.imageStrings = 'http://bygaga.com.ua/uploads/posts/1350145508_prikolnie_kartinki_skuchayu_567_2657-27.jpg';
+      getUser().then(function(data) {
+        return $scope.imageStrings = data.data.avatar.url;
+      });
       $scope.processFiles = function(files) {
         angular.forEach(files, function(flowFile, i) {
           var fileReader;
@@ -15,7 +18,7 @@
           fileReader.onload = function(event) {
             var uri;
             uri = event.target.result;
-            $scope.imageStrings[i] = uri;
+            $scope.imageStrings = uri;
             PhotoLoader({
               img: uri
             });
