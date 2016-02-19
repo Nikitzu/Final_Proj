@@ -8,7 +8,7 @@
     </form>
 </div>
 <div class="col-md-12">
-    <blockquote ng-repeat="review in reviews">
+    <div ng-repeat="review in reviews">
         <textarea disabled class="col-md-11 comments" rows="">{{review.comment}}</textarea>
         <div class="col-md-1">
             <input type="image" src="/source/assets/img/hand_contra.png">
@@ -16,6 +16,7 @@
             <!--<h5 class="rating">{{ post.score }}</h5>-->
         </div>
         <div class="col-md-2"><p><cite>{{translation.NAME}}: {{review.author}}</cite></p></div>
-    </blockquote>
+        <div class="col-md-12"><hr></div>
+    </div>
 </div>
 </div>
