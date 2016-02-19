@@ -1,6 +1,6 @@
 app = angular.module('myApp')
 
-app.controller 'avatarCtrl', ($scope) ->
+app.controller 'avatarCtrl',['$scope', 'PhotoLoader',($scope, PhotoLoader) ->
   $scope.imageStrings = []
 
   $scope.processFiles = (files) ->
@@ -10,6 +10,7 @@ app.controller 'avatarCtrl', ($scope) ->
       fileReader.onload = (event) ->
         uri = event.target.result
         $scope.imageStrings[i] = uri
+        PhotoLoader({img:uri})
 
         console.log(uri)
         return
@@ -17,3 +18,4 @@ app.controller 'avatarCtrl', ($scope) ->
     return
 
   return
+]

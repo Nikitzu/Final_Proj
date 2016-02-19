@@ -15,7 +15,6 @@ app.controller 'contentCtrl',['$scope' ,'PostService', 'ImageService', ($scope, 
 
   $scope.templatePanel = false
 
-
   $scope.firstPost = false
   $scope.secondPost = false
   $scope.thirdPost = false
@@ -35,6 +34,7 @@ app.controller 'contentCtrl',['$scope' ,'PostService', 'ImageService', ($scope, 
   $scope.templateAction = () ->
     templateData = $scope.templateData()
     templateData.template = $scope.template
+    templateData.videoLink = $scope.videoUrl
     PostService.saveNewPost templateData
     return
   $scope.showFirstTemplate = ->

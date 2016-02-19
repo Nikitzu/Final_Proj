@@ -40,6 +40,7 @@
         var templateData;
         templateData = $scope.templateData();
         templateData.template = $scope.template;
+        templateData.videoLink = $scope.videoUrl;
         PostService.saveNewPost(templateData);
       };
       $scope.showFirstTemplate = function() {

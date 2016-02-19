@@ -4,22 +4,27 @@
 
   app = angular.module('myApp');
 
-  app.controller('avatarCtrl', function($scope) {
-    $scope.imageStrings = [];
-    $scope.processFiles = function(files) {
-      angular.forEach(files, function(flowFile, i) {
-        var fileReader;
-        fileReader = new FileReader;
-        fileReader.readAsDataURL(flowFile.file);
-        fileReader.onload = function(event) {
-          var uri;
-          uri = event.target.result;
-          $scope.imageStrings[i] = uri;
-          console.log(uri);
-        };
-      });
-    };
-  });
+  app.controller('avatarCtrl', [
+    '$scope', 'PhotoLoader', function($scope, PhotoLoader) {
+      $scope.imageStrings = [];
+      $scope.processFiles = function(files) {
+        angular.forEach(files, function(flowFile, i) {
+          var fileReader;
+          fileReader = new FileReader;
+          fileReader.readAsDataURL(flowFile.file);
+          fileReader.onload = function(event) {
+            var uri;
+            uri = event.target.result;
+            $scope.imageStrings[i] = uri;
+            PhotoLoader({
+              img: uri
+            });
+            console.log(uri);
+          };
+        });
+      };
+    }
+  ]);
 
 }).call(this);
 

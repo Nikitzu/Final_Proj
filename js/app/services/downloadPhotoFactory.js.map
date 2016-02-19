@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "downloadPhotoFactory.js",
+  "sourceRoot": "../../../app/services",
+  "sources": [
+    "downloadPhotoFactory.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EAEN,GAAG,CAAC,OAAJ,CAAY,aAAZ,EAA2B,SAAC,KAAD;WACzB,SAAC,IAAD;aACE,KAAK,CAAC,IAAN,CAAW,8BAAX,EAA4C,IAA5C;IADF;EADyB,CAA3B;AAFA"
+}
