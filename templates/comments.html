@@ -9,9 +9,13 @@
 </div>
 <div class="col-md-12">
     <blockquote ng-repeat="review in reviews">
-        <p><strong>{{translation.RATE}}: {{review.rate}}</strong></p>
-        <textarea disabled class="col-md-12 comments" rows="">{{review.comment}}</textarea>
-        <p><cite>{{translation.NAME}}: {{review.author}}</cite></p>
+        <textarea disabled class="col-md-11 comments" rows="">{{review.comment}}</textarea>
+        <div class="col-md-1">
+            <input type="image" src="/source/assets/img/hand_contra.png">
+            <!--<input ng-class="myCssVar" ng-init="myCssVar='classup'" ng-mouseenter="myCssVar='up'" ng-mouseleave="myCssVar='classup'" ng-click="changeRating(post, +1)">-->
+            <!--<h5 class="rating">{{ post.score }}</h5>-->
+        </div>
+        <div class="col-md-2"><p><cite>{{translation.NAME}}: {{review.author}}</cite></p></div>
     </blockquote>
 </div>
 </div>

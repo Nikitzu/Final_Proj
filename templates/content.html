@@ -25,7 +25,7 @@
                             </a>
                             <iframe ng-if="post.videoLink" height="220" ng-src="{{post.videoLink | trustAsResourceUrl}}" frameborder="0" allowfullscreen></iframe>
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-7">
                             <p>
                                 <a href="#/id/{{post.user.id}}">{{post.user.firstName}} {{post.user.lastName}}</a>
                                 <time>{{post.createdAt | date}}</time>
@@ -39,12 +39,14 @@
                             <h5 class="rating">{{ post.score }}</h5>
                             <input ng-class="myCss" ng-init="myCss='classdown'" ng-mouseenter="myCss='down'" ng-mouseleave="myCss='classdown'" ng-click="changeRating(post, -1)">
                         </div>
-                        <ul>
-                            <li style="display: inline" ng-repeat="tag in post.tags">
-                                <a class="btn-xs btn-warning" href="#/main/tag/{{tag.name}}">{{tag.name}}</a>
-                            </li>
-                        </ul>
-                        <button ng-click="removePost(post)">del</button>
+                        <div class="col-md-1"><button ng-if="destination == 'user'" class="btn-change btn" ng-click="removePost(post)">Del</button></div>
+                        <div class="col-md-2">
+                            <ul>
+                                <li style="display: inline" ng-repeat="tag in post.tags">
+                                    <a class="btn-xs btn-warning" href="#/main/tag/{{tag.name}}">{{tag.name}}</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </article>
             </div>

@@ -1,7 +1,7 @@
 {
   "version": 3,
   "file": "map_view_controller.js",
-  "sourceRoot": "..\\..\\..\\app\\controllers",
+  "sourceRoot": "../../../app/controllers",
   "sources": [
     "map_view_controller.coffee"
   ],
