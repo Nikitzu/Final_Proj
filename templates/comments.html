@@ -1,9 +1,9 @@
-<div ng-controller="viewCommentCtrl" style="margin-top: 20px">
+<div ng-controller="viewCommentCtrl" class="comments_div">
 
 <h4>{{translation.COMMENTS}}:</h4>
 <div class="col-md-12">
     <form ng-controller="addCommentCtrl as add" ng-submit="add.addReview()">
-        <textarea class="form-control input-lg" ng-model="add.viewComment.comment" rows="5" placeholder="{{translation.COMMENTS_PLACEHOLDER}}"></textarea>
+        <textarea class="form-control input-lg" ng-model="add.viewComment.comment" rows="5" placeholder="{{translation.COMMENTS_PLACEHOLDER}}" required></textarea>
         <input class="btn-change col-md-1" type="submit" value="{{translation.SEND}}" />
     </form>
 </div>

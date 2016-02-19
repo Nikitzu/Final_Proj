@@ -31,5 +31,5 @@
             <input name="states" id="states" type="text" placeholder="{{translation.TAGS}}" ng-model="tags" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
         </div>
     </div>
-    <button ng-click="postVideo()" class="col-md-5 col-md-push-3 btn-change" style="margin-bottom: 50px">{{translation.ADD}}</button>
+    <button ng-click="postVideo()" class="col-md-5 col-md-push-3 btn-change post_button">{{translation.ADD}}</button>
 </fieldset>

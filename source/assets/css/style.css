@@ -3,6 +3,39 @@
 /*=======================================================================
 						Navigation menu
 =========================================================================*/
+.social_button{
+	height: 40px;
+}
+
+.input_for_avatar{
+	visibility: hidden;
+	position: absolute;
+}
+
+.user_avatar{
+	background-color: transparent;
+}
+
+.tag_li{
+	display: inline;
+}
+
+.comments_div{
+	margin-top: 20px;
+}
+
+.post_button{
+	margin-bottom: 50px;
+}
+
+.img_container{
+	min-height: 300px;
+}
+
+.img_div{
+	border: 1px dashed lightgrey;
+}
+
 .img_size{
 	max-height: 220px; !important;
 }
