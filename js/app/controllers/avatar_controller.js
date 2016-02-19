@@ -6,9 +6,11 @@
 
   app.controller('avatarCtrl', [
     '$scope', 'PhotoLoader', 'getUser', function($scope, PhotoLoader, getUser) {
-      $scope.imageStrings = 'http://bygaga.com.ua/uploads/posts/1350145508_prikolnie_kartinki_skuchayu_567_2657-27.jpg';
+      var defaultAvatar;
+      defaultAvatar = 'http://bygaga.com.ua/uploads/posts/1350145508_prikolnie_kartinki_skuchayu_567_2657-27.jpg';
+      $scope.imageStrings = defaultAvatar;
       getUser().then(function(data) {
-        return $scope.imageStrings = data.data.avatar.url;
+        return $scope.imageStrings = data.data.avatar ? data.data.avatar.url : defaultAvatar;
       });
       $scope.processFiles = function(files) {
         angular.forEach(files, function(flowFile, i) {

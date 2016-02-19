@@ -1,9 +1,10 @@
 app = angular.module('myApp')
 
 app.controller 'avatarCtrl',['$scope', 'PhotoLoader', 'getUser',($scope, PhotoLoader,getUser ) ->
-  $scope.imageStrings = 'http://bygaga.com.ua/uploads/posts/1350145508_prikolnie_kartinki_skuchayu_567_2657-27.jpg'
+  defaultAvatar = 'http://bygaga.com.ua/uploads/posts/1350145508_prikolnie_kartinki_skuchayu_567_2657-27.jpg'
+  $scope.imageStrings = defaultAvatar
   getUser().then (data) ->
-    $scope.imageStrings = data.data.avatar.url
+    $scope.imageStrings = if data.data.avatar then data.data.avatar.url else defaultAvatar
 
   $scope.processFiles = (files) ->
     angular.forEach files, (flowFile, i) ->

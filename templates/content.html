@@ -1,11 +1,9 @@
 <div><div class="col-md-12" ng-controller="contentCtrl">
     <div class="col-md-12">
         <button ng-show="!templatePanel && !showSettings && destination == 'user' " class="col-md-5 col-md-push-3 btn-change" ng-click="createPost()">{{translation.CREATE}}</button>
-        <div>
-            <div ng-show="templatePanel" class="col-md-7 col-md-push-3" ng-include="'../templates/articleTemplates/templatesExample.html'"></div>
-            <div ng-show="templatePanel && destination == 'user' " class="col-md-9 col-md-push-3" ng-include="'../templates/category.html'"></div>
-            <form ng-show="thirdPost" ng-include="'../templates/articleTemplates/mapText.html'" class="form-horizontal col-md-12"></form>
-        </div>
+        <div ng-show="templatePanel" class="col-md-7 col-md-push-3" ng-include="'../templates/articleTemplates/templatesExample.html'"></div>
+        <div ng-show="templatePanel && destination == 'user' " class="col-md-9 col-md-push-3" ng-include="'../templates/category.html'"></div>
+        <form ng-show="thirdPost" ng-include="'../templates/articleTemplates/mapText.html'" class="form-horizontal col-md-12"></form>
         <form ng-show="firstPost" ng-include="'../templates/articleTemplates/photoText.html'" class="form-horizontal col-md-12"></form>
         <form ng-show="secondPost" ng-include="'../templates/articleTemplates/videoText.html'" class="form-horizontal col-md-12"></form>
     </div>
