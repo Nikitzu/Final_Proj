@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "deletePost.js",
+  "sourceRoot": "..\\..\\..\\app\\services",
+  "sources": [
+    "deletePost.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EACN,GAAG,CAAC,OAAJ,CAAY,SAAZ,EAAuB,SAAC,KAAD;WACrB,SAAC,EAAD;aACE,KAAK,CAAC,QAAD,CAAL,CAAa,6BAAA,GAA8B,EAA3C;IADF;EADqB,CAAvB;AADA"
+}

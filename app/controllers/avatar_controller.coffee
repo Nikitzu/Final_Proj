@@ -4,6 +4,7 @@ app.controller 'avatarCtrl',['$scope', 'PhotoLoader', 'getUser',($scope, PhotoLo
   $scope.imageStrings = 'http://bygaga.com.ua/uploads/posts/1350145508_prikolnie_kartinki_skuchayu_567_2657-27.jpg'
   getUser().then (data) ->
     $scope.imageStrings = data.data.avatar.url
+
   $scope.processFiles = (files) ->
     angular.forEach files, (flowFile, i) ->
 
