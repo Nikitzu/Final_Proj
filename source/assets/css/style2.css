@@ -3,6 +3,10 @@
 /*=======================================================================
 						Navigation menu
 =========================================================================*/
+.img_size{
+	max-height: 220px; !important;
+}
+
 .postborder{
 	border-left: 1px solid white;
 	border-right: 1px solid white;

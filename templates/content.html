@@ -21,7 +21,7 @@
                     <div class="row">
                         <div class="col-md-3">
                             <a href="#/posts/{{post.id}}">
-                                <img ng-if="post.url" ng-src="{{post.url}}" class="img-thumbnail center-block" alt="Blog Post Thumbnail">
+                                <img ng-if="post.url" ng-src="{{post.url}}" class="img-thumbnail center-block img_size" alt="Blog Post Thumbnail">
                             </a>
                             <iframe ng-if="post.videoLink" height="220" ng-src="{{post.videoLink | trustAsResourceUrl}}" frameborder="0" allowfullscreen></iframe>
                         </div>
