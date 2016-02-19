@@ -19,9 +19,9 @@
     <div>
         <div class="marked" marked="post.article"></div>
     </div>
-    <div>
-        <div class="col-md-10 col-md-offset-2" ng-repeat="tag in post.tags">
-            <a href="#/tag/{{tag.name}}">{{tag.name}}</a>
+    <div class="col-md-12">
+        <div class="col-md-1" ng-repeat="tag in post.tags">
+            <a class="btn-xs btn-warning" href="#/tag/{{tag.name}}">{{tag.name}}</a>
         </div>
     </div>
 </div>

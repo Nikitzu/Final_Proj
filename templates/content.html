@@ -20,17 +20,20 @@
                         <div class="col-md-3">
                             <a href="#/post/{{post.id}}">
                                 <img ng-if="post.url" ng-src="{{post.url}}" class="img-thumbnail center-block img_size" alt="Blog Post Thumbnail">
+                                <iframe class="col-md-12" ng-if="post.videoLink" ng-src="{{post.videoLink | trustAsResourceUrl}}" frameborder="0" allowfullscreen></iframe>
                             </a>
-                            <iframe ng-if="post.videoLink" height="220" ng-src="{{post.videoLink | trustAsResourceUrl}}" frameborder="0" allowfullscreen></iframe>
                         </div>
                         <div class="col-md-7">
                             <p>
                                 <a href="#/id/{{post.user.id}}">{{post.user.firstName}} {{post.user.lastName}}</a>
                                 <time>{{post.createdAt | date}}</time>
                             </p>
-                            <h1>
-                                <a href="#/post/{{post.id}}">{{post.title}}</a>
-                            </h1>
+                            <h2>
+                                <a href="#/post/{{post.id}}">{{post.title | limitTo: 30}}</a>
+                            </h2>
+                            <p>
+                                <em>{{post.description | limitTo: 500}}</em><a href="#/post/{{post.id}}">...</a>
+                            </p>
                         </div>
                         <div class="col-md-1">
                             <input ng-class="myCssVar" ng-init="myCssVar='classup'" ng-mouseenter="myCssVar='up'" ng-mouseleave="myCssVar='classup'" ng-click="changeRating(post, +1)">
@@ -38,7 +41,7 @@
                             <input ng-class="myCss" ng-init="myCss='classdown'" ng-mouseenter="myCss='down'" ng-mouseleave="myCss='classdown'" ng-click="changeRating(post, -1)">
                         </div>
                         <div class="col-md-1"><button ng-if="destination == 'user'" class="btn-change btn-xs" ng-click="removePost(post)">Delete</button></div>
-                        <div class="col-md-2">
+                        <div class="col-md-10 col-md-push-3">
                             <ul>
                                 <li class="tag_li" ng-repeat="tag in post.tags">
                                     <a class="btn-xs btn-warning" href="#/main/tag/{{tag.name}}">{{tag.name}}</a>
