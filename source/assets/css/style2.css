@@ -3,6 +3,14 @@
 /*=======================================================================
 						Navigation menu
 =========================================================================*/
+.btn-change1{
+	background-color: #141313;
+	border: 1px solid black;
+	margin: 1%;
+	color: white;
+	outline: none;
+}
+
 .social_button{
 	height: 40px;
 }

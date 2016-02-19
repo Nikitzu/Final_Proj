@@ -257,6 +257,12 @@ em{
 /*=============================================================================
 								Global
 ================================================================================*/
+.btn-change1{
+	background-color: white;
+	border: 1px solid green ;
+	margin: 1%;
+	outline: none;
+}
 
 body {
 	background-color: #fbfff8;
