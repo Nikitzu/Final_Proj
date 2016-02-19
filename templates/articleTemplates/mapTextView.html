@@ -5,11 +5,11 @@
     <div>
         <em>{{post.description}}</em><hr>
     </div>
-    <div>
-        <div class="col-md-6">
+    <div class="form-group col-md-12">
+        <div class="col-md-10">
             <ui-gmap-google-map center='map.center' zoom='map.zoom'>
                 <ui-gmap-marker coords="marker.coords" options="marker.options" idkey="marker.id"></ui-gmap-marker>
-                <ui-gmap-marker coords="m.coords" icon="m.icon" idkey="m.id"></ui-gmap-marker>
+                <ui-gmap-marker coords="marker2.coords" icon="marker2.icon" idkey="marker2.id"></ui-gmap-marker>
             </ui-gmap-google-map>
         </div>
     </div>

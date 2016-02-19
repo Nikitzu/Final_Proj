@@ -6,26 +6,30 @@
 
   app.controller('viewCommentCtrl', function($scope) {
     $scope.reviews = [];
-    $scope.author = 'Artur';
     $scope.rate = 0;
   });
 
-  app.controller('addCommentCtrl', function($scope) {
-    this.viewComment = {
-      rate: $scope.rate,
-      author: $scope.author
-    };
-    this.createNewReview = function() {
+  app.controller('addCommentCtrl', [
+    '$scope', 'getUser', function($scope, getUser) {
+      getUser().then(function(data) {
+        return $scope.user = data.data;
+      });
       this.viewComment = {
         rate: $scope.rate,
-        author: $scope.author
+        author: $scope.user.firstName
       };
-    };
-    this.addReview = function() {
-      $scope.reviews.push(this.viewComment);
-      this.createNewReview();
-    };
-  });
+      this.createNewReview = function() {
+        this.viewComment = {
+          rate: $scope.rate,
+          author: $scope.user.firstName
+        };
+      };
+      this.addReview = function() {
+        $scope.reviews.push(this.viewComment);
+        this.createNewReview();
+      };
+    }
+  ]);
 
 }).call(this);
 
