@@ -12,22 +12,22 @@
   app.controller('addCommentCtrl', [
     '$scope', 'getUser', function($scope, getUser) {
       getUser().then(function(data) {
-        return $scope.user = data.data;
-      });
-      this.viewComment = {
-        rate: $scope.rate,
-        author: $scope.user.firstName + ' ' + $scope.user.lastName
-      };
-      this.createNewReview = function() {
+        $scope.user = data.data;
         this.viewComment = {
           rate: $scope.rate,
-          author: $scope.user.firstName
+          author: $scope.user.firstName + ' ' + $scope.user.lastName
         };
-      };
-      this.addReview = function() {
-        $scope.reviews.push(this.viewComment);
-        this.createNewReview();
-      };
+        this.createNewReview = function() {
+          this.viewComment = {
+            rate: $scope.rate,
+            author: $scope.user.firstName
+          };
+        };
+        return this.addReview = function() {
+          $scope.reviews.push(this.viewComment);
+          this.createNewReview();
+        };
+      });
     }
   ]);
 

@@ -11,20 +11,20 @@ app.controller 'addCommentCtrl', ['$scope','getUser', ($scope, getUser) ->
   getUser().then (data) ->
     $scope.user = data.data
 
-  @viewComment =
-    rate: $scope.rate
-    author: $scope.user.firstName + ' ' + $scope.user.lastName
-
-  @createNewReview = ->
     @viewComment =
       rate: $scope.rate
-      author: $scope.user.firstName
-    return
+      author: $scope.user.firstName + ' ' + $scope.user.lastName
 
-  @addReview = ->
-    $scope.reviews.push @viewComment
-    @createNewReview()
-    return
+    @createNewReview = ->
+      @viewComment =
+        rate: $scope.rate
+        author: $scope.user.firstName
+      return
+
+    @addReview = ->
+      $scope.reviews.push @viewComment
+      @createNewReview()
+      return
 
   return
 ]

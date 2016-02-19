@@ -27,8 +27,8 @@
       };
       $scope.performAction = function() {
         return $scope.actions[$scope.action]().success(function() {
-          $scope.switchTheme();
-          $scope.translate();
+          $scope.changeTheme();
+          $scope.changeLanguage();
           window.location.href = 'http://localhost:8000/app/#/';
         });
       };

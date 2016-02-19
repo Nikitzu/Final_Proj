@@ -31,6 +31,9 @@ app.controller 'mainCtrl', [
       $scope.user = data.data
     .then ->
       $scope.checkPosts()
+    , ->
+      $scope.checkPosts()
+
 
     $scope.action = ->
       $scope.destinations[$scope.destination].get()

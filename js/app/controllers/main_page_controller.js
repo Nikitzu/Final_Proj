@@ -39,6 +39,8 @@
         return $scope.user = data.data;
       }).then(function() {
         return $scope.checkPosts();
+      }, function() {
+        return $scope.checkPosts();
       });
       $scope.action = function() {
         $scope.destinations[$scope.destination].get().then(function(posts) {
