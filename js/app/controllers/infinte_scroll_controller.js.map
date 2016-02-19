@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "infinte_scroll_controller.js",
+  "sourceRoot": "../../../app/controllers",
+  "sources": [
+    "infinte_scroll_controller.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EAEN,GAAG,CAAC,UAAJ,CAAe,mBAAf,EAAoC,SAAC,MAAD;IAClC,MAAM,CAAC,KAAP,GAAe;IACf,MAAM,CAAC,QAAP,GAAkB,SAAA;MAChB,IAAG,MAAM,CAAC,KAAK,CAAC,MAAb,GAAsB,MAAM,CAAC,KAAhC;QACE,MAAM,CAAC,KAAP,IAAgB,EADlB;;IADgB;EAFgB,CAApC;AAFA"
+}

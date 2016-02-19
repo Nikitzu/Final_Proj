@@ -9,41 +9,43 @@
         <form ng-show="firstPost" ng-include="'../templates/articleTemplates/photoText.html'" class="form-horizontal col-md-12"></form>
         <form ng-show="secondPost" ng-include="'../templates/articleTemplates/videoText.html'" class="form-horizontal col-md-12"></form>
     </div>
-    <div class="row container col-md-12">
+    <div class="row container col-md-12" ng-controller="infiniteScrolCtrl">
         <section class="col-md-12">
             <label>{{translation.SORTBY}}</label>
             <select class="btn sort">
                 <option ng-click="order('score')">{{translation.BYRATING}}</option>
                 <option ng-click="order('createdAt')">{{translation.BYDATE}}</option>
             </select>
-            <article ng-repeat="post in posts | orderBy:predicate:true | byTag:filteringTag" class="blog-item">
-                <div class="row">
-                    <div class="col-md-3">
-                        <a href="#/posts/{{post.id}}">
-                            <img ng-src="{{post.url}}" class="img-thumbnail center-block" alt="Blog Post Thumbnail">
-                        </a>
+            <div infinite-scroll="loadMore()">
+                <article ng-repeat="post in posts | orderBy:predicate:true | limitTo: limit | byTag:filteringTag" class="blog-item">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <a href="#/posts/{{post.id}}">
+                                <img ng-src="{{post.url}}" class="img-thumbnail center-block" alt="Blog Post Thumbnail">
+                            </a>
+                        </div>
+                        <div class="col-md-8">
+                            <p>
+                                <a href="#/id/{{post.user.id}}">{{post.user.firstName}} {{post.user.lastName}}</a>
+                                <time>{{post.createdAt | date}}</time>
+                            </p>
+                            <h1>
+                                <a href="#/post/{{post.id}}"> {{post.title}} </a>
+                            </h1>
+                        </div>
+                        <div class="col-md-1">
+                            <input ng-class="myCssVar" ng-init="myCssVar='classup'" ng-mouseenter="myCssVar='up'" ng-mouseleave="myCssVar='classup'" ng-click="changeRating(post, +1)">
+                            <h5 class="rating">{{ post.score }}</h5>
+                            <input ng-class="myCss" ng-init="myCss='classdown'" ng-mouseenter="myCss='down'" ng-mouseleave="myCss='classdown'" ng-click="changeRating(post, -1)">
+                        </div>
+                        <ul>
+                            <li style="display: inline" ng-repeat="tag in post.tags">
+                                <a class="btn-xs btn-warning" href="#/tag/{{tag.name}}">{{tag.name}}</a>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-md-8">
-                        <p>
-                            <a href="#/id/{{post.user.id}}">{{post.user.firstName}} {{post.user.lastName}}</a>
-                            <time>{{post.createdAt | date}}</time>
-                        </p>
-                        <h1>
-                            <a href="#/post/{{post.id}}"> {{post.title}} </a>
-                        </h1>
-                    </div>
-                    <div class="col-md-1">
-                        <input ng-class="myCssVar" ng-init="myCssVar='classup'" ng-mouseenter="myCssVar='up'" ng-mouseleave="myCssVar='classup'" ng-click="changeRating(post, +1)">
-                        <h5 class="rating">{{ post.score }}</h5>
-                        <input ng-class="myCss" ng-init="myCss='classdown'" ng-mouseenter="myCss='down'" ng-mouseleave="myCss='classdown'" ng-click="changeRating(post, -1)">
-                    </div>
-                    <ul>
-                        <li style="display: inline" ng-repeat="tag in post.tags">
-                            <a class="btn-xs btn-warning" href="#/tag/{{tag.name}}">{{tag.name}}</a>
-                        </li>
-                    </ul>
-                </div>
-            </article>
+                </article>
+            </div>
         </section>
     </div>
 </div>
