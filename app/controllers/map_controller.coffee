@@ -11,12 +11,35 @@ app.controller 'mapCtrl',[
   '$window',
   'uiGmapGoogleMapApi',
   'PostService',
-  ($scope, $window, uiGmapGoogleMapApi, PostService) ->
+  'ImageService',
+  ($scope, $window, uiGmapGoogleMapApi, PostService, ImageService) ->
+    $scope.mapCoordinates =
+      currentX: 0
+      currentY: 0
+      pointX: 0
+      pointY: 0
+    dataFactory = ->
+      tags = if $scope.tagsMap then $scope.tagsMap.split(" ") else []
+      data =
+        title: $scope.titleMap,
+        description: $scope.descriptionMap,
+        article: $scope.articleMap,
+        tags: tags.map (tag)->
+          {name: tag}
+        img: if ImageService.imagelist[0] then ImageService.imagelist[0].base64 else ''
+        map: $scope.mapCoordinates
+        template: 'map'
+    $scope.postMap  = () ->
+      $scope.setData(dataFactory)
+      $scope.addPost()
     $window.navigator.geolocation.getCurrentPosition (position) ->
-      PostService.mapCoordinates.currentY = $scope.latitude = position.coords.latitude
-      PostService.mapCoordinates.currentX = $scope.longitude = position.coords.longitude
+      $scope.mapCoordinates.currentY = $scope.latitude = position.coords.latitude
+      $scope.mapCoordinates.currentX = $scope.longitude = position.coords.longitude
       console.log($scope.latitude, $scope.longitude)
-    $scope.mapReady= ->
+    $scope.showMap = false
+
+    $scope.mapReady = () ->
+      $scope.showMap = true
       uiGmapGoogleMapApi.then ->
         $scope.map =
           center:
@@ -26,8 +49,8 @@ app.controller 'mapCtrl',[
           markers: []
           events: click: (map, eventName, originalEventArgs) ->
             e = originalEventArgs[0]
-            PostService.mapCoordinates.pointY = lat = e.latLng.lat()
-            PostService.mapCoordinates.pointX = lon = e.latLng.lng()
+            $scope.mapCoordinates.pointY = lat = e.latLng.lat()
+            $scope.mapCoordinates.pointX = lon = e.latLng.lng()
             marker =
               id: Date.now()
               coords:
@@ -46,5 +69,6 @@ app.controller 'mapCtrl',[
             longitude: $scope.longitude
           options:
             icon: '../../source/assets/img/blue_marker.png'
+      return
     return
 ]

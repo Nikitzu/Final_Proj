@@ -6,12 +6,6 @@
 
   app.service('PostService', [
     'savePost', function(savePost) {
-      this.mapCoordinates = {
-        currentX: 0,
-        currentY: 0,
-        pointX: 0,
-        pointY: 0
-      };
       this.saveNewPost = function(post) {
         return savePost(post).then(function(data) {
           return data.data;

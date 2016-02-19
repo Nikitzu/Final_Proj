@@ -12,14 +12,44 @@
   });
 
   app.controller('mapCtrl', [
-    '$scope', '$window', 'uiGmapGoogleMapApi', 'PostService', function($scope, $window, uiGmapGoogleMapApi, PostService) {
+    '$scope', '$window', 'uiGmapGoogleMapApi', 'PostService', 'ImageService', function($scope, $window, uiGmapGoogleMapApi, PostService, ImageService) {
+      var dataFactory;
+      $scope.mapCoordinates = {
+        currentX: 0,
+        currentY: 0,
+        pointX: 0,
+        pointY: 0
+      };
+      dataFactory = function() {
+        var data, tags;
+        tags = $scope.tagsMap ? $scope.tagsMap.split(" ") : [];
+        return data = {
+          title: $scope.titleMap,
+          description: $scope.descriptionMap,
+          article: $scope.articleMap,
+          tags: tags.map(function(tag) {
+            return {
+              name: tag
+            };
+          }),
+          img: ImageService.imagelist[0] ? ImageService.imagelist[0].base64 : '',
+          map: $scope.mapCoordinates,
+          template: 'map'
+        };
+      };
+      $scope.postMap = function() {
+        $scope.setData(dataFactory);
+        return $scope.addPost();
+      };
       $window.navigator.geolocation.getCurrentPosition(function(position) {
-        PostService.mapCoordinates.currentY = $scope.latitude = position.coords.latitude;
-        PostService.mapCoordinates.currentX = $scope.longitude = position.coords.longitude;
+        $scope.mapCoordinates.currentY = $scope.latitude = position.coords.latitude;
+        $scope.mapCoordinates.currentX = $scope.longitude = position.coords.longitude;
         return console.log($scope.latitude, $scope.longitude);
       });
+      $scope.showMap = false;
       $scope.mapReady = function() {
-        return uiGmapGoogleMapApi.then(function() {
+        $scope.showMap = true;
+        uiGmapGoogleMapApi.then(function() {
           $scope.map = {
             center: {
               latitude: $scope.latitude,
@@ -31,8 +61,8 @@
               click: function(map, eventName, originalEventArgs) {
                 var e, lat, lon, marker;
                 e = originalEventArgs[0];
-                PostService.mapCoordinates.pointY = lat = e.latLng.lat();
-                PostService.mapCoordinates.pointX = lon = e.latLng.lng();
+                $scope.mapCoordinates.pointY = lat = e.latLng.lat();
+                $scope.mapCoordinates.pointX = lon = e.latLng.lng();
                 marker = {
                   id: Date.now(),
                   coords: {

@@ -1,14 +1,14 @@
-<fieldset>
+<fieldset ng-controller="mapCtrl">
     <div class="form-group">
         <label for="title" class="col-md-2 control-label">{{translation.TITLE}}</label>
         <div class="col-md-10">
-            <input ng-model="description" type="text" id="description" class="form-control" placeholder="{{translation.TITLE_PLACEHOLDER}}">
+            <input ng-model="descriptionMap" type="text" id="description" class="form-control" placeholder="{{translation.TITLE_PLACEHOLDER}}">
         </div>
     </div>
     <div class="form-group">
         <label for="description" class="col-md-2 control-label">{{translation.DESCRIPTION}}</label>
         <div class="col-md-10">
-            <input ng-model="title" type="text" id="title" class="form-control" placeholder="{{translation.DESCRIPTION_PLACEHOLDER}}">
+            <input ng-model="titleMap" type="text" id="title" class="form-control" placeholder="{{translation.DESCRIPTION_PLACEHOLDER}}">
         </div>
     </div>
     <div class="form-group">
@@ -24,11 +24,14 @@
     <div class="form-group">
         <label for="textArea" class="col-md-2 control-label">{{translation.ARTICLE}}</label>
         <div class="col-md-6">
-            <textarea ng-model="article" class="form-control" rows="30" id="textArea" placeholder="{{translation.ARTICLE_PLACEHOLDER}}"></textarea>
+            <textarea ng-model="articleMap" class="form-control" rows="30" id="textArea" placeholder="{{translation.ARTICLE_PLACEHOLDER}}"></textarea>
         </div>
         <div class="marked" marked="article"></div>
     </div>
-    <div class="form-group col-md-12">
+    <div class="form-group">
+        <button ng-click="mapReady()" ng-hide="showMap" class="col-md-5 col-md-push-3 btn-change">Show Map</button>
+    </div>
+    <div class="form-group col-md-12" ng-show="showMap">
         <div class="col-md-10 col-md-offset-2">
             <ui-gmap-google-map center='map.center' zoom='map.zoom' events="map.events">
                 <ui-gmap-marker coords="marker.coords" options="marker.options" idkey="marker.id"></ui-gmap-marker>
@@ -39,9 +42,10 @@
     <div class="form-group">
         <label for="states" class="col-md-2 control-label">{{translation.TAGS}}</label>
         <div class="col-md-10">
-            <input name="states" id="states" type="text" placeholder="{{translation.TAGS}}" ng-model="tags" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
+            <input name="states" id="states" type="text" placeholder="{{translation.TAGS}}" ng-model="tagsMap" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
         </div>
     </div>
+    <button ng-click="postMap()" class="col-md-5 col-md-push-3 btn-change" style="margin-bottom: 50px">{{translation.ADD}}</button>
 </fieldset>
 
 

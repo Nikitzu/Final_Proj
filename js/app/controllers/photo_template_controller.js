@@ -4,12 +4,11 @@
 
   app = angular.module('myApp');
 
-  ctor = function($scope, ImageService, PostService) {
+  ctor = function($scope, ImageService) {
     var dataFactory;
     dataFactory = function() {
       var data, tags;
-      console.log($scope.title, $scope.tags);
-      tags = $scope.tags.split(" ");
+      tags = $scope.tagsMap ? $scope.tagsMap.split(" ") : [];
       return data = {
         title: $scope.title,
         description: $scope.description,
@@ -20,13 +19,16 @@
           };
         }),
         img: ImageService.imagelist[0] ? ImageService.imagelist[0].base64 : '',
-        map: PostService.mapCoordinates
+        template: 'photo'
       };
     };
-    $scope.setData(dataFactory);
+    $scope.postPhoto = function() {
+      $scope.setData(dataFactory);
+      return $scope.addPost();
+    };
   };
 
-  app.controller('PhotoTemplateCtrl', ['$scope', 'ImageService', 'PostService', ctor]);
+  app.controller('PhotoTemplateCtrl', ['$scope', 'ImageService', ctor]);
 
 }).call(this);
 

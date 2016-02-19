@@ -22,7 +22,6 @@
       $scope.firstPost = false;
       $scope.secondPost = false;
       $scope.thirdPost = false;
-      $scope.template = 'photo';
       $scope.createPost = function() {
         $scope.templatePanel = true;
         $scope.firstPost = true;
@@ -32,34 +31,27 @@
         $scope.templatePanel = false;
         $scope.showPost = false;
         changeSettings(false, false, false, $scope.template);
-        $scope.templateAction();
-        return changeSettings(false, false, false, $scope.template);
+        return $scope.templateAction();
       };
-      $scope.videoUrl = '';
       $scope.templateAction = function() {
-        var templateData;
-        templateData = $scope.templateData();
-        templateData.template = $scope.template;
-        templateData.videoLink = $scope.videoUrl;
-        PostService.saveNewPost(templateData);
+        PostService.saveNewPost($scope.templateData());
       };
       $scope.showFirstTemplate = function() {
-        changeSettings(true, false, false, 'photo');
+        changeSettings(true, false, false);
       };
       $scope.showSecondTemplate = function() {
-        changeSettings(false, true, false, 'video');
+        changeSettings(false, true, false);
       };
       $scope.showThirdTemplate = function() {
-        changeSettings(false, false, true, 'map');
+        changeSettings(false, false, true);
       };
       $scope.setData = function(data) {
         $scope.templateData = data;
       };
-      changeSettings = function(first, second, third, template) {
+      changeSettings = function(first, second, third) {
         $scope.firstPost = first;
         $scope.secondPost = second;
         $scope.thirdPost = third;
-        $scope.template = template;
       };
     }
   ]);

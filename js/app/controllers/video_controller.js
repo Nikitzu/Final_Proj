@@ -13,11 +13,34 @@
   ]);
 
   app.controller('videoCtrl', function($scope) {
+    var dataFactory;
     $scope.embeddify = function(videoUrl) {
       var resUrl;
-      resUrl = videoUrl.replace('watch?v=', 'embed/');
-      resUrl.replace('&index=18&', '?');
-      return resUrl.replace('&', '?');
+      if (videoUrl) {
+        resUrl = videoUrl.replace('watch?v=', 'embed/');
+        resUrl.replace('&index=18&', '?');
+        return resUrl.replace('&', '?');
+      }
+    };
+    dataFactory = function() {
+      var data, tags;
+      tags = $scope.tagsMap ? $scope.tagsMap.split(" ") : [];
+      return data = {
+        title: $scope.title,
+        description: $scope.description,
+        article: $scope.article,
+        tags: tags.map(function(tag) {
+          return {
+            name: tag
+          };
+        }),
+        template: 'video',
+        videoLink: $scope.videoUrl
+      };
+    };
+    $scope.postVideo = function() {
+      $scope.setData(dataFactory);
+      return $scope.addPost();
     };
   });
 

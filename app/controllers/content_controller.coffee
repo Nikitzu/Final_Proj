@@ -4,7 +4,6 @@ app.controller 'contentCtrl',['$scope' ,'PostService', 'ImageService', ($scope, 
   $scope.showSettings = false
   $scope.showInfo = true
   $scope.showPost = false
-  # $scope.tags = $scope.title = $scope.description = $scope.article = ''
   $scope.changeSettings = ->
     $scope.showSettings = true
     $scope.showInfo = false
@@ -18,7 +17,6 @@ app.controller 'contentCtrl',['$scope' ,'PostService', 'ImageService', ($scope, 
   $scope.firstPost = false
   $scope.secondPost = false
   $scope.thirdPost = false
-  $scope.template = 'photo'
   $scope.createPost = ->
     $scope.templatePanel = true
     $scope.firstPost = true
@@ -28,33 +26,28 @@ app.controller 'contentCtrl',['$scope' ,'PostService', 'ImageService', ($scope, 
     $scope.showPost = false
     changeSettings(false, false, false, $scope.template)
     $scope.templateAction()
-    changeSettings(false, false, false, $scope.template)
 
-  $scope.videoUrl = ''
   $scope.templateAction = () ->
-    templateData = $scope.templateData()
-    templateData.template = $scope.template
-    templateData.videoLink = $scope.videoUrl
-    PostService.saveNewPost templateData
+    PostService.saveNewPost $scope.templateData()
     return
   $scope.showFirstTemplate = ->
-    changeSettings(true, false, false, 'photo')
+    changeSettings(true, false, false)
     return
   $scope.showSecondTemplate = ->
-    changeSettings(false, true, false, 'video')
+    changeSettings(false, true, false)
     return
   $scope.showThirdTemplate = ->
-    changeSettings(false, false, true, 'map')
+    changeSettings(false, false, true)
     return
 
   $scope.setData = (data) ->
     $scope.templateData = data
     return
-  changeSettings = (first, second, third, template) ->
+
+  changeSettings = (first, second, third) ->
     $scope.firstPost = first
     $scope.secondPost = second
     $scope.thirdPost = third
-    $scope.template = template
     return
 
   return

@@ -34,4 +34,5 @@
             <input ng-model="tags" name="states" id="states" data-items="4" type="text" placeholder="{{translation.TAGS}}" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
         </div>
     </div>
+    <button ng-click="postPhoto()" class="col-md-5 col-md-push-3 btn-change" style="margin-bottom: 50px">{{translation.ADD}}</button>
 </fieldset>
