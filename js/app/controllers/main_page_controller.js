@@ -27,13 +27,15 @@
 
   app.controller('mainCtrl', [
     '$scope', '$routeParams', 'getUser', 'getPosts', 'sendRating', 'getHighRate', 'SearchService', function($scope, $routeParams, getUser, getPosts, sendRating, getHighRate, SearchService) {
+      var userId;
       console.log($routeParams.destination);
       $scope.destination = $routeParams.destination;
       $scope.posts = [];
       $scope.predicate = 'score';
       $scope.user = null;
-      getUser().then(function(data) {
-        console.log(data);
+      userId = $scope.destination === 'id' ? $routeParams.param : null;
+      getUser(userId).then(function(data) {
+        console.log("USERDATA", userId, data.data);
         return $scope.user = data.data;
       }).then(function() {
         return $scope.checkPosts();
@@ -41,6 +43,7 @@
       $scope.action = function() {
         $scope.destinations[$scope.destination].get().then(function(posts) {
           $scope.posts = posts.data;
+          console.log("performing action", $routeParams.destination, $routeParams.param, posts.data, posts.data === $scope.posts);
         }, function(err) {
           console.log(err.data);
         });
@@ -64,10 +67,11 @@
         } else {
           $scope.destinations = {
             'user': getPosts($scope.user ? $scope.user.id : 0),
-            'all': getHighRate
+            'all': getHighRate,
+            'id': getPosts($routeParams.param ? $routeParams.param : 999)
           };
           if ($routeParams.destination === 'tag') {
-            $scope.filteringTag = $routeParams.tag;
+            $scope.filteringTag = $routeParams.param;
             $scope.destination = 'all';
           }
           $scope.action();

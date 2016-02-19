@@ -5,8 +5,12 @@
   app = angular.module('myApp');
 
   app.factory('getUser', function($http) {
-    return function() {
-      return $http.get('http://localhost:3000/currentUser');
+    return function(id) {
+      if (id) {
+        return $http.get('http://localhost:3000/user/' + id);
+      } else {
+        return $http.get('http://localhost:3000/currentUser');
+      }
     };
   });
 

@@ -7,15 +7,14 @@ app.config ($routeProvider) ->
     controller: 'viewTemplateController'
     templateUrl: '../app/postView.html')
   .when('/id/:id',
-    controller: '',
-    templateUrl: '../app/main.html')
+    redirectTo: '/main/id/:id')
   .when('/user',
     controller: 'contentCtrl'
     templateUrl: '../templates/user.html')
   .when('/login/:action',
     controller: 'RegistrationCtrl'
     templateUrl: '../app/registration.html')
-  .when('/main/:destination/:tag',
+  .when('/main/:destination/:param',
     controller: 'mainCtrl'
     templateUrl: '../app/main.html')
   .otherwise redirectTo: '/'

@@ -25,8 +25,9 @@ app.controller 'mainCtrl', [
     $scope.posts = []
     $scope.predicate = 'score'
     $scope.user = null
-    getUser().then (data) ->
-      console.log(data)
+    userId = if $scope.destination is 'id' then $routeParams.param else null
+    getUser(userId).then (data) ->
+      console.log "USERDATA", userId, data.data
       $scope.user = data.data
     .then ->
       $scope.checkPosts()
@@ -35,6 +36,7 @@ app.controller 'mainCtrl', [
       $scope.destinations[$scope.destination].get()
       .then (posts)->
         $scope.posts = posts.data
+        console.log "performing action", $routeParams.destination, $routeParams.param, posts.data, (posts.data is $scope.posts)
         return
       ,
         (err) ->
@@ -62,8 +64,9 @@ app.controller 'mainCtrl', [
         $scope.destinations =
           'user' : getPosts if $scope.user then $scope.user.id else 0
           'all' : getHighRate
+          'id' : getPosts(if $routeParams.param then $routeParams.param else 999)
         if $routeParams.destination is 'tag'
-          $scope.filteringTag = $routeParams.tag
+          $scope.filteringTag = $routeParams.param
           $scope.destination = 'all'
         $scope.action()
       return

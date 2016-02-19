@@ -1,5 +1,7 @@
 app = angular.module('myApp')
 
 app.factory 'getUser', ($http) ->
-  ->
-    $http.get('http://localhost:3000/currentUser')
+  (id)->
+    if id
+    then $http.get('http://localhost:3000/user/'+id)
+    else $http.get('http://localhost:3000/currentUser')
