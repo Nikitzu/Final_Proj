@@ -44,6 +44,10 @@
         });
         switchTheme();
       };
+      $scope.selectedLanguage = 'en';
+      $scope.selectedTheme = 'light';
+      switchLanguage();
+      switchTheme();
       getUser().then(function(data) {
         $scope.user = data.data;
         $scope.selectedLanguage = $scope.user.language;

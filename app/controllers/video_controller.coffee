@@ -9,9 +9,9 @@ app.filter 'trustAsResourceUrl', [
 app.controller 'videoCtrl', ($scope)->
   $scope.embeddify = (videoUrl)->
     if videoUrl
-      resUrl = videoUrl.replace('watch?v=','embed/')
-      resUrl.replace('&index=18&', '?')
-      resUrl.replace('&','?')
+      $scope.resUrl = videoUrl.replace('watch?v=','embed/')
+      $scope.resUrl.replace('&index=18&', '?')
+      $scope.resUrl.replace('&','?')
 
   dataFactory = ->
     tags = if $scope.tagsMap then $scope.tagsMap.split(" ") else []
@@ -22,7 +22,7 @@ app.controller 'videoCtrl', ($scope)->
       tags: tags.map (tag)->
         {name: tag}
       template: 'video'
-      videoLink: $scope.videoUrl
+      videoLink: $scope.resUrl
   $scope.postVideo  = () ->
     $scope.setData(dataFactory)
     $scope.addPost()
