@@ -1,7 +1,7 @@
 {
   "version": 3,
   "file": "downloadPhotoFactory.js",
-  "sourceRoot": "../../../app/services",
+  "sourceRoot": "..\\..\\..\\app\\services",
   "sources": [
     "downloadPhotoFactory.coffee"
   ],
