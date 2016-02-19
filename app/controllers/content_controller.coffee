@@ -1,6 +1,6 @@
 app = angular.module('myApp')
 
-app.controller 'contentCtrl',['$scope' ,'PostService', 'ImageService', ($scope, PostService, ImageService)->
+app.controller 'contentCtrl',['$scope' ,'PostService', 'ImageService',($scope, PostService, ImageService)->
   $scope.showSettings = false
   $scope.showInfo = true
   $scope.showPost = false
@@ -43,6 +43,13 @@ app.controller 'contentCtrl',['$scope' ,'PostService', 'ImageService', ($scope, 
   $scope.setData = (data) ->
     $scope.templateData = data
     return
+
+  $scope.removePost = (post) ->
+    PostService.deletePost(post.id).then (result)->
+      if result
+        idx = $scope.posts.indexOf(post)
+        if idx > -1
+          $scope.posts.splice(idx, 1)
 
   changeSettings = (first, second, third) ->
     $scope.firstPost = first

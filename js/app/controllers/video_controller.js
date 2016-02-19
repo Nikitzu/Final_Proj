@@ -16,7 +16,6 @@
     var dataFactory;
     $scope.embeddify = function(videoUrl) {
       if (videoUrl) {
-        console.log("embeddify");
         $scope.resUrl = videoUrl.replace('watch?v=', 'embed/');
         $scope.resUrl.replace('&index=18&', '?');
         return $scope.resUrl.replace('&', '?');

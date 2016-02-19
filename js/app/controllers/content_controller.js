@@ -48,6 +48,17 @@
       $scope.setData = function(data) {
         $scope.templateData = data;
       };
+      $scope.removePost = function(post) {
+        return PostService.deletePost(post.id).then(function(result) {
+          var idx;
+          if (result) {
+            idx = $scope.posts.indexOf(post);
+            if (idx > -1) {
+              return $scope.posts.splice(idx, 1);
+            }
+          }
+        });
+      };
       changeSettings = function(first, second, third) {
         $scope.firstPost = first;
         $scope.secondPost = second;
