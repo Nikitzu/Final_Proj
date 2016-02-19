@@ -7,11 +7,11 @@
                 </div>
             </li>
             <li>
-                <p class="col-md-12" style="background-color: transparent">{{user.firstName}} {{user.lastName}}</p>
+                <p class="col-md-12 user_avatar">{{user.firstName}} {{user.lastName}}</p>
             </li>
             <li class="col-md-12">
-                <button class="btn-change col-md-12" ng-show="!$flow.files.length" flow-btn>{{translation.SELECT_IMAGE}}<input type="file" style="visibility: hidden; position: absolute"></button>
-                <button class="btn-change col-md-12 ng-hide" ng-show="$flow.files.length" flow-btn>{{translation.CHANGE_IMAGE}}<input type="file" style="visibility: hidden; position: absolute"></button>
+                <button class="btn-change col-md-12" ng-show="!$flow.files.length" flow-btn>{{translation.SELECT_IMAGE}}<input type="file" class="input_for_avatar"></button>
+                <button class="btn-change col-md-12 ng-hide" ng-show="$flow.files.length" flow-btn>{{translation.CHANGE_IMAGE}}<input type="file" class="input_for_avatar"></button>
                 <button class="btn-change col-md-12 ng-hide" ng-show="$flow.files.length" ng-click="$flow.cancel()">{{translation.REMOVE_IMAGE}}</button>
             </li>
             <li>
