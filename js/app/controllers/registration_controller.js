@@ -26,11 +26,9 @@
         }
       };
       $scope.performAction = function() {
-        return $scope.actions[$scope.action]().success(function(data) {
-          if (user.theme) {
-            $scope.switchTheme();
-            $scope.translate();
-          }
+        return $scope.actions[$scope.action]().success(function() {
+          $scope.switchTheme();
+          $scope.translate();
           window.location.href = 'http://localhost:8000/app/#/';
         });
       };
