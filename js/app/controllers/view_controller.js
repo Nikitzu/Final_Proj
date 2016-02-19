@@ -7,12 +7,8 @@
   app.controller('viewTemplateController', [
     '$scope', '$routeParams', 'getPost', function($scope, $routeParams, getPost) {
       getPost($routeParams.postId).get().success(function(post) {
-        $scope.post = post;
-        return $scope.mapFunction();
+        return $scope.post = post;
       });
-      $scope.setData = function(data) {
-        return $scope.mapFunction = data;
-      };
     }
   ]);
 

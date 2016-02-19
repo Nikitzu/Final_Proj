@@ -5,11 +5,13 @@
   app = angular.module('myApp');
 
   app.controller('mapViewCtrl', [
-    '$scope', 'uiGmapGoogleMapApi', function($scope, uiGmapGoogleMapApi) {
-      var dataFactory;
-      dataFactory = function() {
-        var markerCoords;
-        markerCoords = $scope.post.map;
+    '$scope', '$routeParams', 'getPost', 'uiGmapGoogleMapApi', function($scope, $routeParams, getPost, uiGmapGoogleMapApi) {
+      var mapFunction;
+      getPost($routeParams.postId).get().success(function(post) {
+        $scope.post = post;
+        return mapFunction(post.map);
+      });
+      mapFunction = function(markerCoords) {
         return uiGmapGoogleMapApi.then(function() {
           $scope.map = {
             center: {
@@ -17,9 +19,6 @@
               longitude: markerCoords[0]
             },
             zoom: 4
-          };
-          $scope.options = {
-            scrollwheel: false
           };
           $scope.marker2 = {
             id: 1,
@@ -40,7 +39,6 @@
           };
         });
       };
-      $scope.setData(dataFactory);
     }
   ]);
 

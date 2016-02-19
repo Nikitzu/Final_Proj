@@ -1,25 +1,27 @@
-app = angular.module 'myApp'
+app = angular.module('myApp')
 
-app.controller 'mapViewCtrl',[
-  '$scope',
-  'uiGmapGoogleMapApi',
-  ($scope, uiGmapGoogleMapApi) ->
-    dataFactory = ->
-      markerCoords = $scope.post.map
+app.controller 'mapViewCtrl', [
+  '$scope'
+  '$routeParams'
+  'getPost'
+  'uiGmapGoogleMapApi'
+  ($scope, $routeParams, getPost, uiGmapGoogleMapApi) ->
+    getPost($routeParams.postId).get().success (post) ->
+      $scope.post = post
+      mapFunction(post.map)
+
+    mapFunction = (markerCoords) ->
       uiGmapGoogleMapApi.then ->
         $scope.map =
           center:
             latitude: markerCoords[1]
             longitude: markerCoords[0]
           zoom: 4
-        $scope.options = scrollwheel: false
-
         $scope.marker2 =
           id: 1
           coords:
             latitude: markerCoords[3]
             longitude: markerCoords[2]
-
         $scope.marker =
           id: 0
           coords:
@@ -27,6 +29,5 @@ app.controller 'mapViewCtrl',[
             longitude: markerCoords[0]
           options:
             icon: '../../source/assets/img/blue_marker.png'
-    $scope.setData(dataFactory)
     return
 ]

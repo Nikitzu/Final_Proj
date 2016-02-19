@@ -26,6 +26,7 @@ app.controller 'mainCtrl', [
     $scope.predicate = 'score'
     $scope.user = null
     getUser().then (data) ->
+      console.log(data)
       $scope.user = data.data
     .then ->
       $scope.checkPosts()

@@ -27,8 +27,10 @@
       };
       $scope.performAction = function() {
         return $scope.actions[$scope.action]().success(function(data) {
-          $scope.switchTheme();
-          $scope.translate();
+          if (user.theme) {
+            $scope.switchTheme();
+            $scope.translate();
+          }
           window.location.href = 'http://localhost:8000/app/#/';
         });
       };

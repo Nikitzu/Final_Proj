@@ -33,6 +33,7 @@
       $scope.predicate = 'score';
       $scope.user = null;
       getUser().then(function(data) {
+        console.log(data);
         return $scope.user = data.data;
       }).then(function() {
         return $scope.checkPosts();
