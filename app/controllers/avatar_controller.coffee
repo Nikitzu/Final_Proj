@@ -20,6 +20,5 @@ app.controller 'avatarCtrl',['$scope', 'PhotoLoader', 'getUser',($scope, PhotoLo
         return
       return
     return
-
   return
 ]

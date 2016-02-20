@@ -21,8 +21,8 @@ app.controller 'mapCtrl',[
     dataFactory = ->
       tags = if $scope.tags then $scope.tags.split(" ") else []
       data =
-        title: $scope.title,
-        description: $scope.description,
+        title: $scope.title_,
+        description: $scope.description_,
         article: $scope.article,
         tags: tags.map (tag)->
           {name: tag}
