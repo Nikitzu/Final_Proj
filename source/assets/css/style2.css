@@ -3,6 +3,13 @@
 /*=======================================================================
 						Navigation menu
 =========================================================================*/
+.select{
+	outline: none;
+	border:transparent;
+	background-color: #1e1e1e;
+	color: white;
+}
+
 .bordgr{
 	border-bottom: 1px solid white;
 }

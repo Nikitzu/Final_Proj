@@ -10,7 +10,7 @@
     <div class="row container col-md-12" ng-controller="infiniteScrolCtrl">
         <section class="col-md-12">
             <label>{{translation.SORTBY}}</label>
-            <select class="btn sort">
+            <select class="select" role="menu">
                 <option ng-click="order('score')">{{translation.BYRATING}}</option>
                 <option ng-click="order('createdAt')">{{translation.BYDATE}}</option>
             </select>
@@ -45,7 +45,7 @@
                         <div class="col-md-10 col-md-push-3">
                             <ul>
                                 <li class="tag_li" ng-repeat="tag in post.tags">
-                                    <a class="btn-xs btn-warning" href="#/main/tag/{{tag.name}}">{{tag.name}}</a>
+                                    <a class="btn-xs tagbutton" href="#/main/tag/{{tag.name}}">{{tag.name}}</a>
                                 </li>
                             </ul>
                         </div>

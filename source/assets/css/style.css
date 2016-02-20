@@ -3,6 +3,13 @@
 /*=======================================================================
 						Navigation menu
 =========================================================================*/
+.select{
+	outline: none;
+	border:transparent;
+	background-color: white;
+	color: black;
+}
+
 .na:active{
 	color: orange;
 }
@@ -456,7 +463,6 @@ form {
 	border-radius: 0px;
 	box-shadow: none;
 	height: auto;
-
 	margin-bottom: 5px;
 }
 
