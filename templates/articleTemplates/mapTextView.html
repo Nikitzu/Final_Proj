@@ -8,6 +8,9 @@
     <div>
         <img class="col-md-6" src="{{post.url}}"/>
     </div>
+    <div>
+        <div class="marked" marked="post.article"></div>
+    </div>
     <div class="form-group col-md-12">
         <div class="col-md-10">
             <ui-gmap-google-map center='map.center' zoom='map.zoom'>
@@ -15,9 +18,6 @@
                 <ui-gmap-marker coords="marker2.coords" icon="marker2.icon" idkey="marker2.id"></ui-gmap-marker>
             </ui-gmap-google-map>
         </div>
-    </div>
-    <div>
-        <div class="marked" marked="post.article"></div>
     </div>
     <div class="col-md-12">
         <div class="col-md-1" ng-repeat="tag in post.tags">

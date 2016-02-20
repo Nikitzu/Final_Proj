@@ -43,13 +43,20 @@ div.jqcloud { color: #09f; }
 div.jqcloud a { color: inherit; }
 div.jqcloud a:hover { color: #0df; }
 div.jqcloud a:hover { color: #0cf; }
-div.jqcloud span.w10 { color: #19980f; }
-div.jqcloud span.w9 { color: #29801e; }
-div.jqcloud span.w8 { color: #24661c; }
-div.jqcloud span.w7 { color: #1e5e22; }
-div.jqcloud span.w6 { color: #176b06; }
-div.jqcloud span.w5 { color: #338c21; }
-div.jqcloud span.w4 { color: #52cb3a; }
-div.jqcloud span.w3 { color: #6feb56; }
-div.jqcloud span.w2 { color: #97e84a; }
-div.jqcloud span.w1 { color: #bbfa7f; }
+div.jqcloud span.w10 { color: #b4221d; }
+div.jqcloud span.w9 { color: #9c211c; }
+div.jqcloud span.w8 { color: #8a1f1a; }
+div.jqcloud span.w7 { color: #800026; }
+div.jqcloud span.w6 { color: #bd0026; }
+div.jqcloud span.w5 { color: #e31a1c; }
+div.jqcloud span.w4 { color: #fc4e2a; }
+div.jqcloud span.w3 { color: #fd8d3c; }
+div.jqcloud span.w2 { color: #feb24c; }
+div.jqcloud span.w1 { color: #fed976; }
+/*'#214819'*/
+/*'#176b06'*/
+/*'#338c21'*/
+/*'#52cb3a'*/
+/*'#6feb56'*/
+/*'#97e84a'*/
+/*'#bbfa7f'*/
