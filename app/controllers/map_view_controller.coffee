@@ -8,7 +8,8 @@ app.controller 'mapViewCtrl', [
   ($scope, $routeParams, getPost, uiGmapGoogleMapApi) ->
     getPost($routeParams.postId).get().success (post) ->
       $scope.post = post
-      mapFunction(post.map)
+      if post.map
+        mapFunction(post.map)
 
     mapFunction = (markerCoords) ->
       uiGmapGoogleMapApi.then ->

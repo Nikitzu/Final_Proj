@@ -9,7 +9,9 @@
       var mapFunction;
       getPost($routeParams.postId).get().success(function(post) {
         $scope.post = post;
-        return mapFunction(post.map);
+        if (post.map) {
+          return mapFunction(post.map);
+        }
       });
       mapFunction = function(markerCoords) {
         return uiGmapGoogleMapApi.then(function() {

@@ -2,8 +2,8 @@
 
 <h4>{{translation.COMMENTS}}:</h4>
 <div class="col-md-12">
-    <form ng-controller="addCommentCtrl as add" ng-submit="add.addReview()">
-        <textarea class="form-control input-lg" ng-model="add.viewComment.comment" rows="5" placeholder="{{translation.COMMENTS_PLACEHOLDER}}" required></textarea>
+    <form ng-controller="addCommentCtrl" ng-submit="addReview()">
+        <textarea class="form-control input-lg" ng-model="viewComment.comment" rows="5" placeholder="{{translation.COMMENTS_PLACEHOLDER}}" required></textarea>
         <input class="btn-change col-md-1" type="submit" value="{{translation.SEND}}" />
     </form>
 </div>
@@ -11,11 +11,11 @@
     <div ng-repeat="review in reviews">
         <textarea disabled class="col-md-11 comments" rows="">{{review.comment}}</textarea>
         <div class="col-md-1">
-            <input type="image" src="/source/assets/img/hand_contra.png">
+            <div type="image" style="background: image('/source/assets/img/hand_contra.png')"></div>
             <!--<input ng-class="myCssVar" ng-init="myCssVar='classup'" ng-mouseenter="myCssVar='up'" ng-mouseleave="myCssVar='classup'" ng-click="changeRating(post, +1)">-->
             <!--<h5 class="rating">{{ post.score }}</h5>-->
         </div>
-        <div class="col-md-2"><p><cite>{{translation.NAME}}: <a href="#/main/user/all">{{review.author}}</a></cite></p></div>
+        <div class="col-md-4"><p><cite>{{translation.NAME}}: <a href="#/main/user/all">{{review.author}}</a></cite></p></div>
         <div class="col-md-12"><hr></div>
     </div>
 </div>

@@ -13,19 +13,20 @@
     '$scope', 'getUser', function($scope, getUser) {
       getUser().then(function(data) {
         $scope.user = data.data;
-        this.viewComment = {
+        $scope.viewComment = {
           rate: $scope.rate,
           author: $scope.user.firstName + ' ' + $scope.user.lastName
         };
-        this.createNewReview = function() {
-          this.viewComment = {
+        $scope.createNewReview = function() {
+          $scope.viewComment = {
             rate: $scope.rate,
-            author: $scope.user.firstName
+            author: $scope.user.firstName + ' ' + $scope.user.lastName
           };
         };
-        return this.addReview = function() {
-          $scope.reviews.push(this.viewComment);
-          this.createNewReview();
+        return $scope.addReview = function() {
+          console.log("ADDREVIEW");
+          $scope.reviews.push($scope.viewComment);
+          $scope.createNewReview();
         };
       });
     }
