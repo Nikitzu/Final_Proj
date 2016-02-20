@@ -25,6 +25,24 @@
     };
   });
 
+  app.filter('byCategory', function() {
+    return function(items_, category) {
+      var i, item, len, result;
+      result = [];
+      if (!category || category === '') {
+        return items_;
+      } else {
+        for (i = 0, len = items_.length; i < len; i++) {
+          item = items_[i];
+          if (item.category === category) {
+            result.push(item);
+          }
+        }
+      }
+      return result;
+    };
+  });
+
   app.controller('mainCtrl', [
     '$scope', '$routeParams', 'getUser', 'getPosts', 'sendRating', 'getHighRate', 'SearchService', function($scope, $routeParams, getUser, getPosts, sendRating, getHighRate, SearchService) {
       var userId;
@@ -45,7 +63,7 @@
       $scope.action = function() {
         $scope.destinations[$scope.destination].get().then(function(posts) {
           $scope.posts = posts.data;
-          console.log("performing action", $routeParams.destination, $routeParams.param, posts.data, posts.data === $scope.posts);
+          console.log("performing action", $scope.destination, $scope.filteringCategory, $scope.filteringTag, posts.data, posts.data === $scope.posts);
         }, function(err) {
           console.log(err.data);
         });
@@ -74,6 +92,10 @@
           };
           if ($routeParams.destination === 'tag') {
             $scope.filteringTag = $routeParams.param;
+            $scope.destination = 'all';
+          }
+          if ($routeParams.destination === 'category') {
+            $scope.filteringCategory = $routeParams.param;
             $scope.destination = 'all';
           }
           $scope.action();

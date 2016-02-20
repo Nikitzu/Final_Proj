@@ -52,3 +52,4 @@ app.constant "translation_en",
   "SELECT_IMAGE" : "Select image",
   "CHANGE_IMAGE" : "Change image",
   "REMOVE_IMAGE" : "Remove image"
+  "language"

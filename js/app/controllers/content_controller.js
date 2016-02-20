@@ -5,7 +5,7 @@
   app = angular.module('myApp');
 
   app.controller('contentCtrl', [
-    '$scope', 'PostService', 'ImageService', function($scope, PostService, ImageService) {
+    '$scope', 'PostService', function($scope, PostService) {
       var changeSettings;
       $scope.showSettings = false;
       $scope.showInfo = true;
@@ -63,6 +63,9 @@
         $scope.firstPost = first;
         $scope.secondPost = second;
         $scope.thirdPost = third;
+      };
+      $scope.setCategory = function(category) {
+        $scope.category = category;
       };
     }
   ]);

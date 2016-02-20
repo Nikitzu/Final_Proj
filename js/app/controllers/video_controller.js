@@ -25,6 +25,7 @@
       var data, tags;
       tags = $scope.tags ? $scope.tags.split(" ") : [];
       return data = {
+        category: $scope.category,
         title: $scope.title,
         description: $scope.description,
         article: $scope.article,

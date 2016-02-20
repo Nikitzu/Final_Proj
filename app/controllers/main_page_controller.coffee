@@ -1,7 +1,9 @@
 app = angular.module('myApp')
+
 app.filter 'byTag', ->
   (items, tag) ->
     result = []
+#    console.log 'TAG', tag
     if !tag or tag is '' then return items else
       for item in items
         currentTags = item.tags.map (tag) ->
@@ -9,6 +11,14 @@ app.filter 'byTag', ->
         if currentTags.indexOf(tag) isnt -1 then result.push item
     return result
 
+app.filter 'byCategory', ->
+  (items_, category) ->
+#    console.log 'CATEGORY', category
+    result = []
+    if !category or category is '' then return items_ else
+      for item in items_
+        if item.category is category then result.push item
+    return result
 
 app.controller 'mainCtrl', [
   '$scope',
@@ -39,7 +49,7 @@ app.controller 'mainCtrl', [
       $scope.destinations[$scope.destination].get()
       .then (posts)->
         $scope.posts = posts.data
-        console.log "performing action", $routeParams.destination, $routeParams.param, posts.data, (posts.data is $scope.posts)
+        console.log "performing action", $scope.destination, $scope.filteringCategory, $scope.filteringTag, posts.data, (posts.data is $scope.posts)
         return
       ,
         (err) ->
@@ -70,6 +80,9 @@ app.controller 'mainCtrl', [
           'id' : getPosts(if $routeParams.param then $routeParams.param else 999)
         if $routeParams.destination is 'tag'
           $scope.filteringTag = $routeParams.param
+          $scope.destination = 'all'
+        if $routeParams.destination is 'category'
+          $scope.filteringCategory = $routeParams.param
           $scope.destination = 'all'
         $scope.action()
       return

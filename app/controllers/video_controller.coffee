@@ -16,6 +16,7 @@ app.controller 'videoCtrl', ($scope)->
   dataFactory = ->
     tags = if $scope.tags then $scope.tags.split(" ") else []
     data =
+      category: $scope.category
       title: $scope.title,
       description: $scope.description,
       article: $scope.article,

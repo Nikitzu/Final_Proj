@@ -15,7 +15,7 @@
                 <option ng-click="order('createdAt')">{{translation.BYDATE}}</option>
             </select>
             <div infinite-scroll="loadMore()">
-                <article ng-repeat="post in posts | orderBy:predicate:true | limitTo: limit | byTag:filteringTag" class="blog-item">
+                <article ng-repeat="post in posts | orderBy:predicate:true | limitTo: limit | byTag:filteringTag | byCategory:filteringCategory" class="blog-item">
                     <div class="row">
                         <div class="col-md-3">
                             <a href="#/post/{{post.id}}">

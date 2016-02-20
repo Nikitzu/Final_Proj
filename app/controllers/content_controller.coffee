@@ -1,6 +1,6 @@
 app = angular.module('myApp')
 
-app.controller 'contentCtrl',['$scope' ,'PostService', 'ImageService',($scope, PostService, ImageService)->
+app.controller 'contentCtrl',['$scope' ,'PostService',($scope, PostService)->
   $scope.showSettings = false
   $scope.showInfo = true
   $scope.showPost = false
@@ -57,5 +57,8 @@ app.controller 'contentCtrl',['$scope' ,'PostService', 'ImageService',($scope, P
     $scope.thirdPost = third
     return
 
+  $scope.setCategory = (category) ->
+    $scope.category = category
+    return
   return
 ]

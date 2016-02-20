@@ -7,9 +7,11 @@
   ctor = function($scope, ImageService) {
     var dataFactory;
     dataFactory = function() {
-      var data, tags;
+      var data, img, tags;
       tags = $scope.tags ? $scope.tags.split(" ") : [];
+      img = ImageService.imagelist[0] ? ImageService.imagelist[0].base64 : '';
       return data = {
+        category: $scope.category,
         title: $scope.title,
         description: $scope.description,
         article: $scope.article,
@@ -18,7 +20,7 @@
             name: tag
           };
         }),
-        img: ImageService.imagelist[0] ? ImageService.imagelist[0].base64 : '',
+        img: img,
         template: 'photo'
       };
     };

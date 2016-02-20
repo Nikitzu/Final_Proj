@@ -1,12 +1,12 @@
 <form role="form">
     <div class="col-md-12 row">
         <label for="sel1" class="control-label col-md-2">{{translation.CATEGORY}}</label>
-        <select class="form-control col-md-7" id="sel1">
-            <option>{{translation.COMPUTER}}</option>
-            <option>{{translation.LANGUAGE}}</option>
-            <option>{{translation.WORLD}}</option>
-            <option>{{translation.BIOLOGY}}</option>
-            <option>{{translation.PHOTO}}</option>
+        <select ng-model="category" ng-change="setCategory(category)" class="form-control col-md-7" id="sel1">
+            <option value="computer">{{translation.COMPUTER}}</option>
+            <option value="language">{{translation.LANGUAGE}}</option>
+            <option value="world">{{translation.WORLD}}</option>
+            <option value="biology">{{translation.BIOLOGY}}</option>
+            <option value="photo">{{translation.PHOTO}}</option>
         </select>
     </div>
 </form>
