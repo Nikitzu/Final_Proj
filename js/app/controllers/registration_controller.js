@@ -32,8 +32,7 @@
       };
       $scope.performAction = function() {
         return $scope.actions[$scope.action]().success(function() {
-          $scope.changeTheme();
-          $scope.changeLanguage();
+          $scope.changeAll();
           window.location.href = 'http://localhost:8000/app/#/';
         }).error(function() {
           return $scope.openPopUp($scope.translation.INCORRECT_DATA);

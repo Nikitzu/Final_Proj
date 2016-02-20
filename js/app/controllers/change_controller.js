@@ -6,6 +6,15 @@
 
   app.controller('changeCtrl', [
     '$scope', '$css', 'TranslationService', 'changeFactory', 'getUser', function($scope, $css, TranslationService, changeFactory, getUser) {
+      $scope.changeAll = function() {
+        getUser().then(function(data) {
+          $scope.user = data.data;
+          $scope.selectedLanguage = $scope.user.language;
+          $scope.selectedTheme = $scope.user.theme;
+          $scope.changeLanguage();
+          $scope.changeTheme();
+        });
+      };
       $scope.changeLanguage = function() {
         TranslationService.changeLanguage($scope.selectedLanguage);
         $scope.translation = TranslationService.translation;
@@ -51,13 +60,7 @@
       $scope.selectedTheme = 'light';
       $scope.changeLanguage();
       $scope.changeTheme();
-      getUser().then(function(data) {
-        $scope.user = data.data;
-        $scope.selectedLanguage = $scope.user.language;
-        $scope.selectedTheme = $scope.user.theme;
-        $scope.changeLanguage();
-        $scope.changeTheme();
-      });
+      $scope.changeAll();
     }
   ]);
 

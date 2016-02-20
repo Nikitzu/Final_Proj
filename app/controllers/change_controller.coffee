@@ -8,6 +8,16 @@ app.controller 'changeCtrl', [
   'getUser'
   ($scope, $css, TranslationService, changeFactory, getUser) ->
 
+    $scope.changeAll = ->
+      getUser().then (data) ->
+        $scope.user = data.data
+        $scope.selectedLanguage = $scope.user.language
+        $scope.selectedTheme = $scope.user.theme
+        $scope.changeLanguage()
+        $scope.changeTheme()
+        return
+      return
+
     $scope.changeLanguage = ->
       TranslationService.changeLanguage($scope.selectedLanguage)
       $scope.translation = TranslationService.translation
@@ -53,13 +63,7 @@ app.controller 'changeCtrl', [
     $scope.selectedTheme = 'light'
     $scope.changeLanguage()
     $scope.changeTheme()
+    $scope.changeAll()
 
-    getUser().then (data) ->
-      $scope.user = data.data
-      $scope.selectedLanguage = $scope.user.language
-      $scope.selectedTheme = $scope.user.theme
-      $scope.changeLanguage()
-      $scope.changeTheme()
-      return
     return
 ]
