@@ -11,9 +11,7 @@
     <div ng-repeat="review in reviews">
         <textarea disabled class="col-md-11 comments" rows="">{{review.comment}}</textarea>
         <div class="col-md-1">
-            <div type="image" style="background: image('/source/assets/img/hand_contra.png')"></div>
-            <!--<input ng-class="myCssVar" ng-init="myCssVar='classup'" ng-mouseenter="myCssVar='up'" ng-mouseleave="myCssVar='classup'" ng-click="changeRating(post, +1)">-->
-            <!--<h5 class="rating">{{ post.score }}</h5>-->
+            <input type="button" ng-class="myVar" ng-init="myVar='like'" ng-mouseup="myVar='like'" ng-mousedown="myVar='likedone'">
         </div>
         <div class="col-md-4"><p><cite>{{translation.NAME}}: <a href="#/main/user/all">{{review.author}}</a></cite></p></div>
         <div class="col-md-12"><hr></div>

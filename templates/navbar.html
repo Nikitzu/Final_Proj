@@ -9,10 +9,10 @@
     </div>
     <div class="collapse navbar-collapse col-md-12" id="bs-example-navbar-collapse-2">
         <ul class="nav navbar-nav navbar-left col-md-9">
-            <li class="active"><a href="#/main">{{translation.MAIN}}<span class="sr-only">(current)</span></a></li>
-            <li ng-if="user"><a href="#/main/user/all">{{translation.USERPUBLICATIONS}}</a></li>
-            <li ng-if="!user"><a href="#/login/signup">{{translation.SIGN_UP}}</a></li>
-            <li ng-if="!user"><a href="#/login/login">{{translation.SIGN_IN}}</a></li>
+            <li ng-class="{active : destination == 'all'}"><a href="#/main">{{translation.MAIN}}</a></li>
+            <li ng-class="{active : destination == 'user'}" ng-if="user"><a href="#/main/user/all">{{translation.USERPUBLICATIONS}}</a></li>
+            <li ng-class="{active : action == 'signup'}" ng-if="!user"><a href="#/login/signup">{{translation.SIGN_UP}}</a></li>
+            <li ng-class="{active : action == 'login'}" ng-if="!user"><a href="#/login/login">{{translation.SIGN_IN}}</a></li>
             <li ng-if="user" ng-click="logout()"><a href="#/">{{translation.SIGN_OUT}}</a></li>
             <li ng-if="user" class="navbar-right">
                 <a href="" ng-click="switchTheme()">
@@ -24,7 +24,7 @@
                     {{selectedLanguage}}
                 </a>
             </li>
-            <li ng-if="user" class="navbar-right">
+            <li ng-class="{active : showSettings || showInfo}" ng-if="user" class="navbar-right">
                 <a href="#/user">
                     {{translation.HOME}}
                 </a>

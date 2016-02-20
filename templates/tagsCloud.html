@@ -1,3 +1,4 @@
 <div ng-controller="tagController">
-    <jqcloud words="words" width="inherit" height="300" colors="{{colors}}" delay="10" steps="7" font-size="{from:0.09, to:0.04}"></jqcloud>
+    <div ng-include="'../templates/category.html'"></div>
+    <jqcloud class="col-md-12" words="words" width="inherit" height="300" colors="{{colors}}" delay="10" steps="7" font-size="{from:0.09, to:0.04}"></jqcloud>
 </div>

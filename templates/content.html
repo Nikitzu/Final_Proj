@@ -27,6 +27,7 @@
                             <p>
                                 <a href="#/id/{{post.user.id}}">{{post.user.firstName}} {{post.user.lastName}}</a>
                                 <time>{{post.createdAt | date}}</time>
+                                <a>daefewdfcv{{post.category}}</a>
                             </p>
                             <h2>
                                 <a href="#/post/{{post.id}}">{{post.title | limitTo: 30}}</a>
@@ -36,9 +37,9 @@
                             </p>
                         </div>
                         <div class="col-md-1">
-                            <input ng-class="myCssVar" ng-init="myCssVar='classup'" ng-mouseenter="myCssVar='up'" ng-mouseleave="myCssVar='classup'" ng-click="changeRating(post, +1)">
+                            <input ng-class="myCssVar" ng-init="myCssVar='classup'" ng-mousedown="myCssVar='up'" ng-mouseup="myCssVar='classup'" ng-click="changeRating(post, +1)">
                             <h5 class="rating">{{ post.score }}</h5>
-                            <input ng-class="myCss" ng-init="myCss='classdown'" ng-mouseenter="myCss='down'" ng-mouseleave="myCss='classdown'" ng-click="changeRating(post, -1)">
+                            <input ng-class="myCss" ng-init="myCss='classdown'" ng-mousedown="myCss='down'" ng-mouseup="myCss='classdown'" ng-click="changeRating(post, -1)">
                         </div>
                         <div class="col-md-1"><button ng-if="destination == 'user'" class="btn-change btn-xs" ng-click="removePost(post)">Delete</button></div>
                         <div class="col-md-10 col-md-push-3">

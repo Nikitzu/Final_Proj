@@ -1,10 +1,10 @@
 <div class="col-md-10 col-md-push-1 postborder" ng-controller="videoCtrl">
-    <div>
-        <p class="posttitle">{{post.title}}</p><hr>
+    <div class="bordgr">
+        <p class="posttitle">{{post.title}}</p>
     </div>
-    <div>
-        <em>{{post.description}}</em><hr>
-    </div>
+    <div class="bordgr"><br>
+        <p><em>{{post.description}}</em><br><br></p>
+    </div><br>
     <div>
         <iframe class="col-md-6" height="440" ng-src="{{post.videoLink | trustAsResourceUrl}}" frameborder="0" allowfullscreen></iframe>
     </div>
