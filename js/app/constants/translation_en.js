@@ -57,7 +57,8 @@
     "SELECT_IMAGE": "Select image",
     "CHANGE_IMAGE": "Change image",
     "REMOVE_IMAGE": "Remove image",
-    "SELECT_THEME": "Select theme"
+    "SELECT_THEME": "Select theme",
+    "INCORRECT_DATA": "Incorrect login or password"
   });
 
 }).call(this);

@@ -8,6 +8,11 @@
     '$scope', '$routeParams', 'signupUser', 'loginUser', function($scope, $routeParams, signupUser, loginUser) {
       $scope.about = '';
       $scope.action = $routeParams.action;
+      $scope.showPopUpMsg = false;
+      $scope.openPopUp = function(text) {
+        $scope.showPopUpMsg = true;
+        $scope.popUpMsgContent = text;
+      };
       $scope.actions = {
         'signup': function() {
           return signupUser({
@@ -30,10 +35,25 @@
           $scope.changeTheme();
           $scope.changeLanguage();
           window.location.href = 'http://localhost:8000/app/#/';
-        }).error(function() {});
+        }).error(function() {
+          return $scope.openPopUp($scope.translation.INCORRECT_DATA);
+        });
       };
     }
   ]);
+
+  app.directive('popUpMsg', function() {
+    return {
+      restrict: 'E',
+      scope: false,
+      template: '<div id="popUpMsg-bg" ng-show="showPopUpMsg"><div id="popUpMsg"><div class="close" ng-click="closePopUp()">x</div><div class="content">{{popUpMsgContent}}</div><button ng-click="closePopUp()">Ok</button></div></div>',
+      controller: function($scope) {
+        $scope.closePopUp = function() {
+          $scope.showPopUpMsg = false;
+        };
+      }
+    };
+  });
 
 }).call(this);
 

@@ -57,7 +57,8 @@
     "SELECT_IMAGE": "Выбор фото",
     "CHANGE_IMAGE": "Изменить",
     "REMOVE_IMAGE": "Удалить",
-    "SELECT_THEME": "Выберите тему"
+    "SELECT_THEME": "Выберите тему",
+    "INCORRECT_DATA": "Неверный логин или пароль"
   });
 
 }).call(this);
