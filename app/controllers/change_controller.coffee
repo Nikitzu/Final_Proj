@@ -13,23 +13,17 @@ app.controller 'changeCtrl', [
       $scope.translation = TranslationService.translation
       return
 
-    $scope.changeTagColor = ->
-      if $scope.selectedTheme == 'light'
-        $css.add 'bower_components/jqcloud2/dist/jqcloud.css'
-        $css.remove 'bower_components/jqcloud2/dist/jqcloud2.css'
-      else
-        $css.remove 'bower_components/jqcloud2/dist/jqcloud.css'
-        $css.add 'bower_components/jqcloud2/dist/jqcloud2.css'
-      return
-
     $scope.changeTheme = ->
-      $scope.changeTagColor()
       if $scope.selectedTheme == 'light'
         $css.add '../source/assets/css/style.css'
         $css.remove '../source/assets/css/style2.css'
+        $css.add 'bower_components/jqcloud2/dist/jqcloud.css'
+        $css.remove 'bower_components/jqcloud2/dist/jqcloud2.css'
       else
         $css.remove '../source/assets/css/style.css'
         $css.add '../source/assets/css/style2.css'
+        $css.remove 'bower_components/jqcloud2/dist/jqcloud.css'
+        $css.add 'bower_components/jqcloud2/dist/jqcloud2.css'
       return
 
     $scope.switchLanguage = ->
