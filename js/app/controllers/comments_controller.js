@@ -6,7 +6,6 @@
 
   app.controller('viewCommentCtrl', function($scope) {
     $scope.reviews = [];
-    $scope.rate = 0;
   });
 
   app.controller('addCommentCtrl', [
@@ -14,12 +13,10 @@
       getUser().then(function(data) {
         $scope.user = data.data;
         $scope.viewComment = {
-          rate: $scope.rate,
           author: $scope.user.firstName + ' ' + $scope.user.lastName
         };
         $scope.createNewReview = function() {
           $scope.viewComment = {
-            rate: $scope.rate,
             author: $scope.user.firstName + ' ' + $scope.user.lastName
           };
         };

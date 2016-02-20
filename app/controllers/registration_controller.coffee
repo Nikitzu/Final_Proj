@@ -23,5 +23,7 @@ app.controller 'RegistrationCtrl', ['$scope', '$routeParams', 'signupUser', 'log
       $scope.changeLanguage()
       window.location.href = 'http://localhost:8000/app/#/'
       return
+    .error () ->
+
   return
 ]
