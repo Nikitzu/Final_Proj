@@ -52,6 +52,7 @@
       $scope.changeLanguage();
       $scope.changeTheme();
       getUser().then(function(data) {
+        console.log("USER HERE", data);
         $scope.user = data.data;
         $scope.selectedLanguage = $scope.user.language;
         $scope.selectedTheme = $scope.user.theme;

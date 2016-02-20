@@ -3,6 +3,26 @@
 /*=======================================================================
 						Navigation menu
 =========================================================================*/
+.errorup{
+	background: transparent;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 15px 20px 15px;
+	border-color: transparent transparent red transparent;
+	outline: none;
+}
+
+.errordown{
+	background: transparent;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 20px 15px 0 15px;
+	border-color: red transparent transparent transparent;
+	outline: none;
+}
+
 #popUpMsg-bg {
 	position: absolute;
 	left: 0;
@@ -36,6 +56,10 @@
 	background: lightgray;
 	padding: 5px 20px;
 	cursor: pointer;
+}
+
+ul{
+	list-style-type: none;
 }
 
 .tagbutton{
