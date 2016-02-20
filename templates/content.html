@@ -27,7 +27,7 @@
                             <p>
                                 <a href="#/id/{{post.user.id}}">{{post.user.firstName}} {{post.user.lastName}}</a>
                                 <time>{{post.createdAt | date}}</time>
-                                <a>{{translation[post.category.toUpperCase()]}}</a>
+                                <a href="#/main/category/{{post.category}}">{{translation[post.category.toUpperCase()]}}</a>
                             </p>
                             <h2>
                                 <a href="#/post/{{post.id}}">{{post.title | limitTo: 30}}</a>
