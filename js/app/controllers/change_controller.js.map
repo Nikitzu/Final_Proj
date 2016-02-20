@@ -1,7 +1,7 @@
 {
   "version": 3,
   "file": "change_controller.js",
-  "sourceRoot": "..\\..\\..\\app\\controllers",
+  "sourceRoot": "../../../app/controllers",
   "sources": [
     "change_controller.coffee"
   ],
