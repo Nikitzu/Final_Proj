@@ -3,6 +3,20 @@
 /*=======================================================================
 						Navigation menu
 =========================================================================*/
+ul{
+	list-style-type: none;
+}
+
+.tagbutton{
+	background-color: orange;
+	color: black;
+	display: inline;
+}
+
+.tagbutton:hover{
+	color: #2b2b2b;
+}
+
 .select{
 	outline: none;
 	border:transparent;

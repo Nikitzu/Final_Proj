@@ -13,7 +13,8 @@
     </div>
     <div class="col-md-12">
         <div class="col-md-1" ng-repeat="tag in post.tags">
-            <a class="btn-xs btn-warning" href="#/main/tag/{{tag.name}}">{{tag.name}}</a>
+            <ul><li><a class="btn-xs tagbutton" href="#/main/tag/{{tag.name}}">{{tag.name}}</a></li></ul>
+
         </div>
     </div>
 </div>

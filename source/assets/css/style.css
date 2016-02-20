@@ -3,6 +3,16 @@
 /*=======================================================================
 						Navigation menu
 =========================================================================*/
+.tagbutton{
+	background-color: green;
+	color: white;
+	display: inline;
+}
+
+.tagbutton:hover{
+	color: lightgray;
+}
+
 .select{
 	outline: none;
 	border:transparent;
