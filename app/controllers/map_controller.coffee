@@ -43,8 +43,10 @@ app.controller 'mapCtrl',[
         $scope.showMap = true
         $scope.map =
           center:
-            latitude: $scope.latitude
+            latitude: $scope.latitude,
             longitude: $scope.longitude
+#            latitude: 36.990282103105066,
+#            longitude: -122.06149578094482
           zoom: 5
           markers: []
           events: click: (map, eventName, originalEventArgs) ->
