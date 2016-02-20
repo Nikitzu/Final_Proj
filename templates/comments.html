@@ -3,17 +3,17 @@
 <h4>{{translation.COMMENTS}}:</h4>
 <div class="col-md-12">
     <form ng-controller="addCommentCtrl" ng-submit="addReview()">
-        <textarea class="form-control input-lg" ng-model="viewComment.comment" rows="5" placeholder="{{translation.COMMENTS_PLACEHOLDER}}" required></textarea>
+        <textarea class="form-control input-lg" ng-model="viewComment.body" rows="5" placeholder="{{translation.COMMENTS_PLACEHOLDER}}" required></textarea>
         <input class="btn-change col-md-1" type="submit" value="{{translation.SEND}}" />
     </form>
 </div>
 <div class="col-md-12">
     <div ng-repeat="review in reviews">
-        <textarea disabled class="col-md-11 comments" rows="">{{review.comment}}</textarea>
+        <textarea disabled class="col-md-11 comments" rows="">{{review.body}}</textarea>
         <div class="col-md-1">
-            <input type="button" ng-class="myVar" ng-init="myVar='like'" ng-mouseup="myVar='like'" ng-mousedown="myVar='likedone'">
+            <input type="button" ng-class="myVar" ng-init="myVar='like'" ng-mouseup="myVar='like'" ng-mousedown="myVar='likedone'; like(review.id)">
         </div>
-        <div class="col-md-4"><p><cite>{{translation.NAME}}: <a href="#/main/user/all">{{review.author}}</a></cite></p></div>
+        <div class="col-md-4"><p><cite>{{translation.NAME}}: <a href="#/id/{{review.user.id}}">{{review.user.firstName}} {{review.user.lastName}}</a></cite></p></div>
         <div class="col-md-12"><hr></div>
     </div>
 </div>

@@ -4,7 +4,8 @@ app.controller 'viewTemplateController', [
   '$routeParams'
   'getPost'
   ($scope, $routeParams, getPost) ->
-    getPost($routeParams.postId).get().success (post) ->
-      $scope.post = post
+    $scope.postPromise = getPost($routeParams.postId).get().then (post) ->
+      console.log('get post',post)
+      $scope.post = post.data
     return
 ]
