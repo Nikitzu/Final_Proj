@@ -46,7 +46,7 @@
     "CANCEL": "Cancel",
     "CATEGORY": "Category:",
     "COMPUTER": "Computer Science",
-    "LANGUAGE": "Language",
+    "LANGUAGE": "Languages",
     "WORLD": "Arround the world",
     "BIOLOGY": "Biology",
     "PHOTO": "Photography",
@@ -56,8 +56,9 @@
     "SORTBY": "Sort by: ",
     "SELECT_IMAGE": "Select image",
     "CHANGE_IMAGE": "Change image",
-    "REMOVE_IMAGE": "Remove image"
-  }, "language");
+    "REMOVE_IMAGE": "Remove image",
+    "SELECT_THEME": "Select theme"
+  });
 
 }).call(this);
 

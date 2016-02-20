@@ -51,4 +51,5 @@ app.constant "translation_ru",
   "SORTBY":"Сортировать по: ",
   "SELECT_IMAGE" : "Выбор фото",
   "CHANGE_IMAGE" : "Изменить",
-  "REMOVE_IMAGE" : "Удалить"
+  "REMOVE_IMAGE" : "Удалить",
+  "SELECT_THEME": "Выберите тему"

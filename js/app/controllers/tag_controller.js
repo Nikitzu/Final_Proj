@@ -9,7 +9,6 @@
       var poll;
       poll = function() {
         getTags.then(function(tags) {
-          console.log("TAGS HERE", tags);
           return $scope.words = tags;
         });
       };
