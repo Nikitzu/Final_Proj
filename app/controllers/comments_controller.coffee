@@ -14,7 +14,6 @@ app.factory 'likeComment', ($http) ->
 app.controller 'viewCommentCtrl', ['$scope', 'getComments', 'likeComment', ($scope, getComments, likeComment) ->
   $scope.commentsPromise = $scope.postPromise.then ->
     getComments($scope.post.id).then (comments)->
-      console.log("AAAAAA",comments.data)
       $scope.reviews = comments.data
       return
   $scope.like = (id) ->
@@ -40,11 +39,9 @@ app.controller 'addCommentCtrl', ['$scope','getUser', 'postComment', ($scope, ge
       $scope.createNewReview()
 
     $scope.addReview = ->
-      console.log("ADDREVIEW")
       postComment($scope.viewComment)
       .then (comment)->
         $scope.reviews.push comment.data
-        console.log "NEBEDA", comment.data
         $scope.createNewReview()
         return
       , ->

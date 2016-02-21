@@ -6,7 +6,6 @@
 
   app.factory('getTags', function($http) {
     return $http.get('http://localhost:3000/tags').then(function(data) {
-      console.log(data);
       return data.data;
     });
   });

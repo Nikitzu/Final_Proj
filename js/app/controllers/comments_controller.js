@@ -30,7 +30,6 @@
     '$scope', 'getComments', 'likeComment', function($scope, getComments, likeComment) {
       $scope.commentsPromise = $scope.postPromise.then(function() {
         return getComments($scope.post.id).then(function(comments) {
-          console.log("AAAAAA", comments.data);
           $scope.reviews = comments.data;
         });
       });
@@ -59,10 +58,8 @@
           return $scope.createNewReview();
         });
         return $scope.addReview = function() {
-          console.log("ADDREVIEW");
           postComment($scope.viewComment).then(function(comment) {
             $scope.reviews.push(comment.data);
-            console.log("NEBEDA", comment.data);
             $scope.createNewReview();
           }, function() {
             return console.log("BEDA");

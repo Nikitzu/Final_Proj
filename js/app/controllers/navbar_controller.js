@@ -18,7 +18,6 @@
       $scope.searchText = "";
       $scope.searching = function() {
         SearchService.loadResults($scope.searchText).then(function(data) {
-          console.log(data);
           $scope.searchText = '';
           SearchService.posts = data;
           window.location.href = 'http://localhost:8000/app/#/';

@@ -16,7 +16,6 @@ app.controller 'avatarCtrl',['$scope', 'PhotoLoader', 'getUser',($scope, PhotoLo
         $scope.imageStrings = uri
         PhotoLoader({img:uri})
 
-        console.log(uri)
         return
       return
     return

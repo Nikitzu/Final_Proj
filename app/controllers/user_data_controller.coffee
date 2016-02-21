@@ -10,7 +10,6 @@ app.controller 'userDataCtrl',['$scope', 'getUser', 'updateFactory',($scope, get
       firstName: $scope.user.firstName
       lastName: $scope.user.lastName
       about: $scope.user.about
-    console.log($scope.user,post)
     updateFactory(post)
 
   return

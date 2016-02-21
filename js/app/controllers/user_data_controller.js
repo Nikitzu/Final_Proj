@@ -18,7 +18,6 @@
           lastName: $scope.user.lastName,
           about: $scope.user.about
         };
-        console.log($scope.user, post);
         return updateFactory(post);
       };
     }

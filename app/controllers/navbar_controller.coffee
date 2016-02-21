@@ -12,7 +12,6 @@ app.controller 'NavBarController', ['$scope', 'logoutUser', 'SearchService', 'ge
   $scope.searchText = ""
   $scope.searching = () ->
     SearchService.loadResults($scope.searchText).then (data) ->
-      console.log(data)
       $scope.searchText = ''
       SearchService.posts = data
       window.location.href = 'http://localhost:8000/app/#/'

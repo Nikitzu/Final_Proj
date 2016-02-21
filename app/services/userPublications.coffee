@@ -5,4 +5,3 @@ app.factory 'UserPublications', [
   ($http) ->
     $http.get('http://local.host:3000/publications')
 ]
-#for user's publications

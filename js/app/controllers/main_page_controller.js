@@ -46,14 +46,12 @@
   app.controller('mainCtrl', [
     '$scope', '$routeParams', 'getUser', 'getPosts', 'sendRating', 'getHighRate', 'SearchService', function($scope, $routeParams, getUser, getPosts, sendRating, getHighRate, SearchService) {
       var userId;
-      console.log($routeParams.destination);
       $scope.destination = $routeParams.destination;
       $scope.posts = [];
       $scope.predicate = 'score';
       $scope.user = null;
       userId = $scope.destination === 'id' ? $routeParams.param : null;
       getUser(userId).then(function(data) {
-        console.log("USERDATA", userId, data.data);
         return $scope.user = data.data;
       }).then(function() {
         return $scope.checkPosts();
@@ -67,7 +65,6 @@
             return post.createdAt = Date.parse(post.createdAt);
           });
           $scope.posts = posts.data;
-          console.log("performing action", $scope.destination, $scope.filteringCategory, $scope.filteringTag, posts.data, posts.data === $scope.posts);
         }, function(err) {
           console.log(err.data);
         });

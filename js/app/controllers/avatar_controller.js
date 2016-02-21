@@ -24,7 +24,6 @@
             PhotoLoader({
               img: uri
             });
-            console.log(uri);
           };
         });
       };

@@ -44,8 +44,7 @@
       };
       $window.navigator.geolocation.getCurrentPosition(function(position) {
         $scope.mapCoordinates.currentY = $scope.latitude = position.coords.latitude;
-        $scope.mapCoordinates.currentX = $scope.longitude = position.coords.longitude;
-        return console.log($scope.latitude, $scope.longitude);
+        return $scope.mapCoordinates.currentX = $scope.longitude = position.coords.longitude;
       });
       $scope.showMap = false;
       $scope.mapReady = function() {
@@ -72,7 +71,6 @@
                   }
                 };
                 $scope.map.markers[0] = marker;
-                console.log($scope.map.markers);
                 $scope.$apply();
               }
             }

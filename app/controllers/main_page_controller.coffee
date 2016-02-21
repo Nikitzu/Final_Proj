@@ -3,7 +3,6 @@ app = angular.module('myApp')
 app.filter 'byTag', ->
   (items, tag) ->
     result = []
-#    console.log 'TAG', tag
     if !tag or tag is '' then return items else
       for item in items
         currentTags = item.tags.map (tag) ->
@@ -13,7 +12,6 @@ app.filter 'byTag', ->
 
 app.filter 'byCategory', ->
   (items_, category) ->
-#    console.log 'CATEGORY', category
     result = []
     if !category or category is '' then return items_ else
       for item in items_
@@ -30,14 +28,12 @@ app.controller 'mainCtrl', [
   'SearchService',
   ($scope, $routeParams, getUser, getPosts, sendRating, getHighRate, SearchService) ->
 
-    console.log($routeParams.destination)
     $scope.destination = $routeParams.destination
     $scope.posts = []
     $scope.predicate = 'score'
     $scope.user = null
     userId = if $scope.destination is 'id' then $routeParams.param else null
     getUser(userId).then (data) ->
-      console.log "USERDATA", userId, data.data
       $scope.user = data.data
     .then ->
       $scope.checkPosts()
@@ -51,7 +47,6 @@ app.controller 'mainCtrl', [
           console.log("CHANGED")
           post.createdAt = Date.parse(post.createdAt)
         $scope.posts = posts.data
-        console.log "performing action", $scope.destination, $scope.filteringCategory, $scope.filteringTag, posts.data, (posts.data is $scope.posts)
         return
       ,
         (err) ->

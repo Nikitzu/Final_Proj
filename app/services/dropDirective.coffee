@@ -40,7 +40,6 @@ app.directive 'dropDirective', [
                   base64: reader.result
 
                 ImageService.image = ImageService.imagelist[ImageService.imagelist.length - 1]
-                console.log ImageService.image
                 scope.$apply()
                 return
             )(f)

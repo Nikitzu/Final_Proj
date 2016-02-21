@@ -36,7 +36,6 @@ app.controller 'mapCtrl',[
     $window.navigator.geolocation.getCurrentPosition (position) ->
       $scope.mapCoordinates.currentY = $scope.latitude = position.coords.latitude
       $scope.mapCoordinates.currentX = $scope.longitude = position.coords.longitude
-      console.log($scope.latitude, $scope.longitude)
     $scope.showMap = false
 
     $scope.mapReady = () ->
@@ -46,8 +45,6 @@ app.controller 'mapCtrl',[
           center:
             latitude: $scope.latitude,
             longitude: $scope.longitude
-#            latitude: 36.990282103105066,
-#            longitude: -122.06149578094482
           zoom: 5
           markers: []
           events: click: (map, eventName, originalEventArgs) ->
@@ -60,7 +57,6 @@ app.controller 'mapCtrl',[
                 latitude: lat
                 longitude: lon
             $scope.map.markers[0] = marker
-            console.log $scope.map.markers
             $scope.$apply()
             return
         $scope.options = scrollwheel: false
