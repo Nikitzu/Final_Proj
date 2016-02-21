@@ -33,9 +33,13 @@
           $scope.reviews = comments.data;
         });
       });
-      $scope.like = function(id) {
-        console.log('LIKE');
-        likeComment(id).then(function() {
+      $scope.like = function(review) {
+        if (!review.likeable) {
+          return;
+        }
+        review.likes += 1;
+        review.likeable = false;
+        likeComment(review.id).then(function() {
           return console.log('LIKE NEBEDA');
         }, function() {
           console.log('LIKE BEDA');

@@ -71,6 +71,10 @@
       };
       $scope.changeRating = function(post, inc) {
         var rating;
+        if (!post.ratable) {
+          return;
+        }
+        post.ratable = false;
         rating = {
           id: post.id,
           score: inc

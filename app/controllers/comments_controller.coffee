@@ -16,9 +16,12 @@ app.controller 'viewCommentCtrl', ['$scope', 'getComments', 'likeComment', ($sco
     getComments($scope.post.id).then (comments)->
       $scope.reviews = comments.data
       return
-  $scope.like = (id) ->
-    console.log('LIKE')
-    likeComment(id).then ->
+  $scope.like = (review) ->
+    if !review.likeable
+    then return
+    review.likes += 1
+    review.likeable = false
+    likeComment(review.id).then ->
       console.log('LIKE NEBEDA')
     , ->
       console.log('LIKE BEDA')

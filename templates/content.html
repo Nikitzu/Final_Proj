@@ -37,9 +37,9 @@
                             </p>
                         </div>
                         <div class="col-md-1 col-sm-3 col-xs-5">
-                            <input ng-class="myCssVar" ng-init="myCssVar='classup'" ng-mousedown="myCssVar='up'" ng-mouseup="myCssVar='classup'" ng-click="changeRating(post, +1)">
+                            <input ng-class="myCssVar" ng-init="myCssVar='classup'" ng-mousedown="myCssVar = post.ratable ? 'up' : 'errorup'" ng-mouseup="myCssVar='classup'" ng-click="changeRating(post, +1)">
                             <h5 class="rating">{{ post.score }}</h5>
-                            <input ng-class="myCss" ng-init="myCss='classdown'" ng-mousedown="myCss='down'" ng-mouseup="myCss='classdown'" ng-click="changeRating(post, -1)">
+                            <input ng-class="myCss" ng-init="myCss='classdown'" ng-mousedown="myCss = post.ratable ? 'down' : 'errordown'" ng-mouseup="myCss='classdown'" ng-click="changeRating(post, -1)">
                         </div>
                         <div class="col-md-1 col-sm-3 col-xs-5"><button ng-if="destination == 'user'" class="btn-change btn-xs" ng-click="removePost(post)">Delete</button></div>
                         <div class="col-md-10 col-sm-11 col-xs-12 col-md-push-3">

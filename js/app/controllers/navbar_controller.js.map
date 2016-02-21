@@ -1,7 +1,7 @@
 {
   "version": 3,
   "file": "navbar_controller.js",
-  "sourceRoot": "..\\..\\..\\app\\controllers",
+  "sourceRoot": "../../../app/controllers",
   "sources": [
     "navbar_controller.coffee"
   ],

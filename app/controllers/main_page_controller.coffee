@@ -55,6 +55,9 @@ app.controller 'mainCtrl', [
       return
 
     $scope.changeRating = (post, inc) ->
+      if !post.ratable
+      then return
+      post.ratable = false
       rating =
         id : post.id
         score : inc
