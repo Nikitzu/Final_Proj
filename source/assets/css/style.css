@@ -3,6 +3,22 @@
 /*=======================================================================
 						Navigation menu
 =========================================================================*/
+img.big {
+	cursor: pointer;
+	-webkit-transition:  width 0.5s;
+	-moz-transition:  width 1s;
+	-o-transition:  width 1s;
+	transition: width 1s
+}
+img.big:hover {
+	z-index: 100;
+	width: 200px;
+	-webkit-transition:  width 0.5s;
+	-moz-transition:  width 1s;
+	-o-transition:  width 1s;
+	transition: width 1s;
+}
+
 .errorup{
 	background: transparent;
 	width: 0;
