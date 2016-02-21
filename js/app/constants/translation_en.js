@@ -34,7 +34,7 @@
     "SIGN_IN": "Sign in",
     "SIGN_UP": "Sign up",
     "HOME": "Home",
-    "RATE": "Rate",
+    "RATE": "Rating",
     "COLOR": "Color",
     "light": "Light",
     "dark": "Dark",
@@ -58,7 +58,8 @@
     "CHANGE_IMAGE": "Change image",
     "REMOVE_IMAGE": "Remove image",
     "SELECT_THEME": "Select theme",
-    "INCORRECT_DATA": "Incorrect login or password"
+    "INCORRECT_DATA": "Incorrect login or password",
+    "ACHIVEMENTS": "Your achivements: "
   });
 
 }).call(this);

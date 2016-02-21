@@ -53,4 +53,5 @@ app.constant "translation_ru",
   "CHANGE_IMAGE" : "Изменить",
   "REMOVE_IMAGE" : "Удалить",
   "SELECT_THEME": "Выберите тему",
-  "INCORRECT_DATA" : "Неверный логин или пароль"
+  "INCORRECT_DATA" : "Неверный логин или пароль",
+  "ACHIVEMENTS": "Ваши достижения: "

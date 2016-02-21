@@ -30,6 +30,7 @@
     '$scope', 'getComments', 'likeComment', function($scope, getComments, likeComment) {
       $scope.postPromise.then(function() {
         getComments($scope.post.id).then(function(comments) {
+          console.log("AAAAAA", comments.data);
           $scope.reviews = comments.data;
         });
       });

@@ -14,10 +14,13 @@
             </li>
             <li>
                 <div class="col-md-12">
-                    <p>{{translation.RATE}}</p>
+                    <p>{{translation.RATE}}: {{user.rating}}</p>
                 </div>
             </li>
             <li>
+                <div class="col-md-12">
+                    <p>{{translation.ACHIVEMENTS}}</p>
+                </div>
                 <div class="col-md-6" ng-repeat="medal in user.medals">
                     <img class="col-md-12 big" src="{{medal.link}}">
                 </div>

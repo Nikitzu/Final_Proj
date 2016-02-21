@@ -14,6 +14,7 @@ app.factory 'likeComment', ($http) ->
 app.controller 'viewCommentCtrl', ['$scope', 'getComments', 'likeComment', ($scope, getComments, likeComment) ->
   $scope.postPromise.then ->
     getComments($scope.post.id).then (comments)->
+      console.log("AAAAAA",comments.data)
       $scope.reviews = comments.data
       return
     return
