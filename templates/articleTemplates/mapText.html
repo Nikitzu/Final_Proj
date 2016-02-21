@@ -1,38 +1,38 @@
 <fieldset ng-controller="mapCtrl">
     <div class="form-group">
-        <label for="title_" class="col-md-2 control-label">{{translation.TITLE}}</label>
-        <div class="col-md-10">
+        <label for="title_" class="col-md-2 col-sm-4 col-xs-6 control-label">{{translation.TITLE}}</label>
+        <div class="col-md-10 col-sm-11 col-xs-12">
             <input ng-model="title_" type="text" id="title_" class="form-control" placeholder="{{translation.TITLE_PLACEHOLDER}}">
         </div>
     </div>
     <div class="form-group">
-        <label for="description_" class="col-md-2 control-label">{{translation.DESCRIPTION}}</label>
-        <div class="col-md-10">
+        <label for="description_" class="col-md-2 col-sm-4 col-xs-6 control-label">{{translation.DESCRIPTION}}</label>
+        <div class="col-md-10 col-sm-11 col-xs-12">
             <input ng-model="description_" type="text" id="description_" class="form-control" placeholder="{{translation.DESCRIPTION_PLACEHOLDER}}">
         </div>
     </div>
     <div class="form-group">
-        <label class="col-md-2 control-label">{{translation.IMAGE}}</label>
-        <div class="col-md-10 img_div"  ng-controller="ImageListController">
-            <div drop-directive class="col-md-12">
-                <div class="col-md-offset-3 col-md-6 img_container">
+        <label class="col-md-2 col-sm-4 col-xs-6 control-label">{{translation.IMAGE}}</label>
+        <div class="col-md-10 col-sm-11 col-xs-12 img_div"  ng-controller="ImageListController">
+            <div drop-directive class="col-md-12 col-xs-12 col-sm-12">
+                <div class="col-md-offset-3 col-md-6 col-xs-12 col-sm-9 img_container">
                     <image-directive></image-directive>
                 </div>
             </div>
         </div>
     </div>
     <div class="form-group">
-        <label for="textArea" class="col-md-2 control-label">{{translation.ARTICLE}}</label>
-        <div class="col-md-6">
+        <label for="textArea" class="col-md-2 col-sm-4 col-xs-6 control-label">{{translation.ARTICLE}}</label>
+        <div class="col-md-6 col-sm-8 col-xs-10">
             <textarea ng-model="article" class="form-control" rows="30" id="textArea" placeholder="{{translation.ARTICLE_PLACEHOLDER}}"></textarea>
         </div>
         <div class="marked" marked="article"></div>
     </div>
     <div class="form-group">
-        <button ng-click="mapReady()" ng-hide="showMap" class="col-md-5 col-md-push-3 btn-change">Show Map</button>
+        <button ng-click="mapReady()" ng-hide="showMap" class="col-md-5 col-sm-7 col-xs-9 col-md-push-3 btn-change">Show Map</button>
     </div>
-    <div class="form-group col-md-12" ng-show="showMap">
-        <div class="col-md-10 col-md-offset-2">
+    <div class="form-group col-md-12 col-xs-12 col-sm-12" ng-show="showMap">
+        <div class="col-md-10 col-sm-11 col-xs-12 col-md-offset-2">
             <ui-gmap-google-map center='map.center' zoom='map.zoom' events="map.events">
                 <ui-gmap-marker coords="marker.coords" options="marker.options" idkey="marker.id"></ui-gmap-marker>
                 <ui-gmap-marker ng-repeat="m in map.markers" coords="m.coords" icon="m.icon" idkey="m.id"></ui-gmap-marker>
@@ -40,12 +40,12 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="states" class="col-md-2 control-label">{{translation.TAGS}}</label>
-        <div class="col-md-10">
+        <label for="states" class="col-md-2 col-sm-4 col-xs-6 control-label">{{translation.TAGS}}</label>
+        <div class="col-md-10 col-sm-11 col-xs-12">
             <input name="states" id="states" type="text" placeholder="{{translation.TAGS}}" ng-model="tags" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
         </div>
     </div>
-    <button ng-click="postMap()" class="col-md-5 col-md-push-3 btn-change post_button">{{translation.ADD}}</button>
+    <button ng-click="postMap()" class="col-md-5 col-sm-7 col-xs-9 col-md-push-3 btn-change post_button">{{translation.ADD}}</button>
 </fieldset>
 
 

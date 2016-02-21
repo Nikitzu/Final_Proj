@@ -11,40 +11,40 @@
 <div ng-controller="userDataCtrl">
 <div ng-include="'../templates/navbar.html'"></div>
 <main>
-    <div class="col-md-2" ng-include="'../templates/user_side.html'"></div>
-    <button ng-show="!showSettings && !templatePanel" class="col-md-1 btn-change" ng-click="changeSettings()">{{translation.SETTINGS}}</button>
-    <button ng-show="showSettings" ng-click="saveUserSettings()" class="col-md-1 btn-change">{{translation.SAVE}}</button>
-    <div class="col-md-10" ng-show="showInfo && !showPost">
-        <form class="form-horizontal col-md-12">
+    <div class="col-md-2 col-sm-2 col-xs-2" ng-include="'../templates/user_side.html'"></div>
+    <button ng-show="!showSettings && !templatePanel" class="col-md-1 col-sm-3 col-xs-5 btn-change" ng-click="changeSettings()">{{translation.SETTINGS}}</button>
+    <button ng-show="showSettings" ng-click="saveUserSettings()" class="col-md-1 col-sm-3 col-xs-5 btn-change">{{translation.SAVE}}</button>
+    <div class="col-md-10 col-sm-11 col-xs-12" ng-show="showInfo && !showPost">
+        <form class="form-horizontal col-md-12 col-sm-12 col-xs-12">
             <fieldset>
                 <div class="form-group">
-                    <label for="inputName" class="col-lg-1 control-label">{{translation.NAME}}</label>
-                    <div class="col-lg-4">
+                    <label for="inputName" class="col-lg-1 col-md-4 col-sm-7 col-xs-10 control-label">{{translation.NAME}}</label>
+                    <div class="col-lg-4 col-md-6 col-sm-8 col-xs-10">
                         <h4 id="inputName">{{user.firstName}}</h4>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputSurname" class="col-lg-1 control-label">{{translation.SURNAME}}</label>
-                    <div class="col-lg-4">
+                    <label for="inputSurname" class="col-lg-1 col-md-4 col-sm-7 col-xs-10 control-label">{{translation.SURNAME}}</label>
+                    <div class="col-lg-4 col-md-6 col-sm-8 col-xs-10">
                         <h4 id="inputSurname">{{user.lastName}}</h4>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputEmail" class="col-lg-1 control-label">{{translation.EMAIL}}</label>
-                    <div class="col-lg-4">
+                    <label for="inputEmail" class="col-lg-1 col-md-4 col-sm-7 col-xs-10 control-label">{{translation.EMAIL}}</label>
+                    <div class="col-lg-4 col-md-6 col-sm-8 col-xs-10">
                         <h4 id="inputEmail">{{user.email}}</h4>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="textArea" class="col-lg-1 control-label" >{{translation.ABOUT}}</label>
-                    <div class="col-lg-10">
+                    <label for="textArea" class="col-lg-1 col-md-4 col-sm-7 col-xs-10 control-label" >{{translation.ABOUT}}</label>
+                    <div class="col-lg-10 col-md-11 col-sm-12 col-xs-12">
                         <textarea disabled class="form-control" rows="7" id="textArea" placeholder="userInfo.about">{{user.about}}</textarea>
                     </div>
                 </div>
             </fieldset>
         </form>
     </div>
-    <form ng-show="showSettings" ng-include="'../templates/user_form.html'" class="form-horizontal col-md-10" method="post" action="http://local.host:3000/registry"></form>
+    <form ng-show="showSettings" ng-include="'../templates/user_form.html'" class="form-horizontal col-md-10 col-sm-11 col-xs-12" method="post" action="http://local.host:3000/registry"></form>
 </main>
 
 </div>

@@ -1,4 +1,4 @@
-<div class="navbar navbar-default navbar-fixed-top col-md-12" ng-controller="NavBarController">
+<div class="navbar navbar-default navbar-fixed-top col-md-12 col-sm-12 col-xs-12" ng-controller="NavBarController">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
             <span class="sr-only">Toggle navigation</span>
@@ -7,8 +7,8 @@
             <span class="icon-bar"></span>
         </button>
     </div>
-    <div class="collapse navbar-collapse col-md-12" id="bs-example-navbar-collapse-2">
-        <ul class="nav navbar-nav navbar-left col-md-9">
+    <div class="collapse navbar-collapse col-md-12 col-sm-12 col-xs-12" id="bs-example-navbar-collapse-2">
+        <ul class="nav navbar-nav navbar-left col-md-9 col-sm-11 col-xs-12">
             <li ng-class="{active : destination == 'all'}"><a href="#/main">{{translation.MAIN}}</a></li>
             <li ng-class="{active : destination == 'user'}" ng-if="user"><a href="#/main/user/all">{{translation.USERPUBLICATIONS}}</a></li>
             <li ng-class="{active : action == 'signup'}" ng-if="!user"><a href="#/login/signup">{{translation.SIGN_UP}}</a></li>
@@ -30,9 +30,9 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right col-md-3">
+        <ul class="nav navbar-nav navbar-right col-md-3 col-sm-5 col-xs-7">
             <li>
-                <div class="search-widget col-md-12">
+                <div class="search-widget col-md-12 col-sm-12 col-xs-12">
                     <div class="input-group margin-bottom-sm">
                         <input class="form-control" type="text" ng-model="searchText" placeholder="{{translation.SEARCH}}">
                         <a href="" class="input-group-addon" ng-click="searching()">

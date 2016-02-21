@@ -1,4 +1,4 @@
-<div class="col-md-10 col-md-push-1 postborder">
+<div class="col-md-10 col-xs-12 col-sm-11 col-md-push-1 postborder">
     <div class="bordgr">
         <p class="posttitle">{{post.title}}</p>
     </div>
@@ -6,16 +6,15 @@
         <em>{{post.description}}<br><br></em>
     </div><br>
     <div>
-        <img class="col-md-6" src="{{post.url}}"/>
+        <img class="col-md-6 col-xs-12 col-sm-8" src="{{post.url}}"/>
     </div>
     <div>
         <div class="marked" marked="post.article"></div>
     </div>
-    <div class="col-md-12">
-        <div class="col-md-1" ng-repeat="tag in post.tags">
+    <div class="col-md-12 col-xs-12 col-sm-12">
+        <div class="col-md-1 col-xs-5 col-sm-3" ng-repeat="tag in post.tags">
             <ul><li><a class="btn-xs tagbutton" href="#/main/tag/{{tag.name}}">{{tag.name}}</a></li></ul>
-
         </div>
     </div>
 </div>
-<div class="col-md-10 col-md-push-1" ng-include="'../../templates/comments.html'"></div>
+<div class="col-md-10 col-md-push-1 col-xs-12 col-sm-11" ng-include="'../../templates/comments.html'"></div>

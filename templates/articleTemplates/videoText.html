@@ -1,35 +1,35 @@
 <fieldset ng-controller="videoCtrl">
     <div class="form-group">
-        <label for="title" class="col-md-2 control-label">{{translation.TITLE}}</label>
-        <div class="col-md-10">
+        <label for="title" class="col-md-2 col-sm-4 col-xs-6 control-label">{{translation.TITLE}}</label>
+        <div class="col-md-10 col-sm-11 col-xs-12">
             <input ng-model="title" type="text" id="description" class="form-control" placeholder="{{translation.TITLE_PLACEHOLDER}}">
         </div>
     </div>
     <div class="form-group">
-        <label for="description" class="col-md-2 control-label">{{translation.DESCRIPTION}}</label>
-        <div class="col-md-10">
+        <label for="description" class="col-md-2 col-sm-4 col-xs-6 control-label">{{translation.DESCRIPTION}}</label>
+        <div class="col-md-10 col-sm-11 col-xs-12">
             <input ng-model="description" type="text" id="title" class="form-control" placeholder="{{translation.DESCRIPTION_PLACEHOLDER}}">
         </div>
     </div>
     <div class="form-group">
-        <label for="description" class="col-md-2 control-label">{{translation.ARTICLE}}</label>
-        <div class="col-md-6">
+        <label for="description" class="col-md-2 col-sm-4 col-xs-6 control-label">{{translation.ARTICLE}}</label>
+        <div class="col-md-6 col-sm-8 col-xs-10">
             <textarea ng-model="article" class="form-control" rows="17" placeholder="{{translation.ARTICLE_PLACEHOLDER}}"></textarea>
         </div>
         <div class="marked" marked="article"></div>
     </div>
     <div class="form-group">
-        <label for="description" class="col-md-2 control-label">{{translation.YOUTUBE_VIDEO}}</label>
-        <div class="col-md-10">
+        <label for="description" class="col-md-2 col-sm-4 col-xs-6 control-label">{{translation.YOUTUBE_VIDEO}}</label>
+        <div class="col-md-10 col-sm-11 col-xs-12">
             <input class="form-control" placeholder="URL" ng-model="videoUrl">
             <iframe ng-show="videoUrl" width="100%" height="440"  ng-src="{{embeddify(videoUrl) | trustAsResourceUrl}}" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
     <div class="form-group">
-        <label for="states" class="col-md-2 control-label">{{translation.TAGS}}</label>
-        <div class="col-md-10">
+        <label for="states" class="col-md-2 col-sm-4 col-xs-6 control-label">{{translation.TAGS}}</label>
+        <div class="col-md-10 col-sm-11 col-xs-12">
             <input name="states" id="states" type="text" placeholder="{{translation.TAGS}}" ng-model="tags" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
         </div>
     </div>
-    <button ng-click="postVideo()" class="col-md-5 col-md-push-3 btn-change post_button">{{translation.ADD}}</button>
+    <button ng-click="postVideo()" class="col-md-5 col-sm-7 col-xs-9 col-md-push-3 btn-change post_button">{{translation.ADD}}</button>
 </fieldset>

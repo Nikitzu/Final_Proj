@@ -6,4 +6,11 @@ app.controller 'infiniteScrolCtrl', ($scope) ->
     if $scope.posts.length > $scope.limit
       $scope.limit += 1
     return
+
+  $scope.limitCom = 6
+  $scope.loadMoreComments = ->
+    $scope.commentsPromise.then ->
+      if $scope.reviews.length > $scope.limitCom
+        $scope.limitCom += 1
+      return
   return

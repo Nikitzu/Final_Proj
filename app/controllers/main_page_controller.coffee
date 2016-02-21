@@ -44,10 +44,12 @@ app.controller 'mainCtrl', [
     , ->
       $scope.checkPosts()
 
-
     $scope.action = ->
       $scope.destinations[$scope.destination].get()
       .then (posts)->
+        posts.data.map (post) ->
+          console.log("CHANGED")
+          post.createdAt = Date.parse(post.createdAt)
         $scope.posts = posts.data
         console.log "performing action", $scope.destination, $scope.filteringCategory, $scope.filteringTag, posts.data, (posts.data is $scope.posts)
         return
@@ -88,6 +90,7 @@ app.controller 'mainCtrl', [
       return
 
     $scope.order = (predicate) ->
+      console.log "Done"
       $scope.predicate = predicate
     return
 ]

@@ -1,38 +1,38 @@
 <fieldset ng-controller="PhotoTemplateCtrl">
     <div class="form-group">
-        <label for="title" class="col-md-2 control-label">{{translation.TITLE}}</label>
-        <div class="col-md-10">
+        <label for="title" class="col-md-2 col-sm-4 col-xs-6 control-label">{{translation.TITLE}}</label>
+        <div class="col-md-10 col-sm-11 col-xs-12">
             <input ng-model="title" type="text" id="title" class="form-control" placeholder="{{translation.TITLE_PLACEHOLDER}}">
         </div>
     </div>
     <div class="form-group">
-        <label for="description" class="col-md-2 control-label">{{translation.DESCRIPTION}}</label>
-        <div class="col-md-10">
+        <label for="description" class="col-md-2 col-sm-4 col-xs-6 control-label">{{translation.DESCRIPTION}}</label>
+        <div class="col-md-10 col-sm-11 col-xs-12">
             <input ng-model="description" type="text" id="description" class="form-control" placeholder="{{translation.DESCRIPTION_PLACEHOLDER}}">
         </div>
     </div>
     <div class="form-group">
-        <label class="col-md-2 control-label">{{translation.IMAGE}}</label>
+        <label class="col-md-2 col-sm-4 col-xs-6 control-label">{{translation.IMAGE}}</label>
         <div class="col-md-10 img_div"  ng-controller="ImageListController">
-            <div drop-directive class="col-md-12">
-                <div class="col-md-offset-3 col-md-6 img_container">
+            <div drop-directive class="col-md-12 col-xs-12 col-sm-12">
+                <div class="col-md-offset-3 col-md-6 col-xs-12 col-sm-9 img_container">
                     <image-directive></image-directive>
                 </div>
             </div>
         </div>
     </div>
     <div class="form-group">
-        <label for="textArea" class="col-md-2 control-label">{{translation.ARTICLE}}</label>
-        <div class="col-md-6">
+        <label for="textArea" class="col-md-2 col-sm-4 col-xs-6 control-label">{{translation.ARTICLE}}</label>
+        <div class="col-md-6 col-sm-8 col-xs-10">
             <textarea ng-model="article" class="form-control" rows="30" id="textArea" placeholder="{{translation.ARTICLE_PLACEHOLDER}}"></textarea>
         </div>
         <div class="marked" marked="article"></div>
     </div>
     <div class="form-group">
-        <label for="states" class="col-md-2 control-label">{{translation.TAGS}}</label>
-        <div class="col-md-10">
+        <label for="states" class="col-md-2 col-sm-4 col-xs-6 control-label">{{translation.TAGS}}</label>
+        <div class="col-md-10 col-sm-11 col-xs-12">
             <input ng-model="tags" name="states" id="states" data-items="4" type="text" placeholder="{{translation.TAGS}}" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
         </div>
     </div>
-    <button ng-click="postPhoto()" class="col-md-5 col-md-push-3 btn-change post_button">{{translation.ADD}}</button>
+    <button ng-click="postPhoto()" class="col-md-5 col-sm-7 col-xs-9 col-md-push-3 btn-change post_button">{{translation.ADD}}</button>
 </fieldset>

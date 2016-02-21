@@ -62,6 +62,10 @@
       });
       $scope.action = function() {
         $scope.destinations[$scope.destination].get().then(function(posts) {
+          posts.data.map(function(post) {
+            console.log("CHANGED");
+            return post.createdAt = Date.parse(post.createdAt);
+          });
           $scope.posts = posts.data;
           console.log("performing action", $scope.destination, $scope.filteringCategory, $scope.filteringTag, posts.data, posts.data === $scope.posts);
         }, function(err) {
@@ -102,6 +106,7 @@
         }
       };
       $scope.order = function(predicate) {
+        console.log("Done");
         return $scope.predicate = predicate;
       };
     }

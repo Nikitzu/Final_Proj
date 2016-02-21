@@ -11,6 +11,14 @@
         $scope.limit += 1;
       }
     };
+    $scope.limitCom = 6;
+    $scope.loadMoreComments = function() {
+      return $scope.commentsPromise.then(function() {
+        if ($scope.reviews.length > $scope.limitCom) {
+          $scope.limitCom += 1;
+        }
+      });
+    };
   });
 
 }).call(this);
