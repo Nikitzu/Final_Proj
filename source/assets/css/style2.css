@@ -98,6 +98,14 @@ ul{
 .bordgr{
 	border-bottom: 1px solid white;
 }
+.likeerror{
+	border: transparent;
+	outline: none;
+	width: 24px;
+	background-image: url(/source/assets/img/hand_pro.png);
+	background-color: #1E1E1E;
+	background-repeat: no-repeat
+}
 
 .like{
 	border: transparent;
