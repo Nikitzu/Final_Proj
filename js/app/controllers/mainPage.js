@@ -61,12 +61,9 @@
       $scope.action = function() {
         $scope.destinations[$scope.destination].get().then(function(posts) {
           posts.data.map(function(post) {
-            console.log("CHANGED");
             return post.createdAt = Date.parse(post.createdAt);
           });
           $scope.posts = posts.data;
-        }, function(err) {
-          console.log(err.data);
         });
       };
       $scope.changeRating = function(post, inc) {
@@ -81,8 +78,6 @@
         };
         rateCreative(rating).success(function(res) {
           post.score = res.score;
-        }).error(function() {
-          return console.log("already rated");
         });
       };
       $scope.checkPosts = function() {
@@ -107,7 +102,6 @@
         }
       };
       $scope.order = function(predicate) {
-        console.log("Done");
         return $scope.predicate = predicate;
       };
     }

@@ -1,10 +1,9 @@
 app = angular.module('myApp')
 
 app.controller 'userImage',['$scope', 'avatarFactory', 'getUserData',($scope, avatarFactory,getUserData ) ->
-  defaultAvatar = 'http://bygaga.com.ua/uploads/posts/1350145508_prikolnie_kartinki_skuchayu_567_2657-27.jpg'
+  defaultAvatar = 'http://rarebyte.com/images/ra.png'
   $scope.imageStrings = defaultAvatar
   getUserData().then (data) ->
-    console.log("AAAA",data)
     $scope.imageStrings = if data.data.avatar then data.data.avatar.url else defaultAvatar
 
   $scope.processFiles = (files) ->

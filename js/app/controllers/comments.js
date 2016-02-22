@@ -17,11 +17,7 @@
         }
         review.likes += 1;
         review.likeable = false;
-        likeComment(review.id).then(function() {
-          return console.log('LIKE NEBEDA');
-        }, function() {
-          console.log('LIKE BEDA');
-        });
+        likeComment(review.id);
       };
     }
   ]);
@@ -40,11 +36,9 @@
           return $scope.createNewReview();
         });
         return $scope.addReview = function() {
-          postComment($scope.viewComment).then(function(comment) {
+          return postComment($scope.viewComment).then(function(comment) {
             $scope.reviews.push(comment.data);
             $scope.createNewReview();
-          }, function() {
-            return console.log("BEDA");
           });
         };
       });

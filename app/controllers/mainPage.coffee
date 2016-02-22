@@ -44,14 +44,9 @@ app.controller 'mainController', [
       $scope.destinations[$scope.destination].get()
       .then (posts)->
         posts.data.map (post) ->
-          console.log("CHANGED")
           post.createdAt = Date.parse(post.createdAt)
         $scope.posts = posts.data
         return
-      ,
-        (err) ->
-          console.log(err.data)
-          return
       return
 
     $scope.changeRating = (post, inc) ->
@@ -65,8 +60,6 @@ app.controller 'mainController', [
       .success (res) ->
         post.score = res.score
         return
-      .error ->
-        console.log "already rated"
       return
 
     $scope.checkPosts = () ->
@@ -88,7 +81,6 @@ app.controller 'mainController', [
       return
 
     $scope.order = (predicate) ->
-      console.log "Done"
       $scope.predicate = predicate
     return
 ]

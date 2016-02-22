@@ -7,10 +7,9 @@
   app.controller('userImage', [
     '$scope', 'avatarFactory', 'getUserData', function($scope, avatarFactory, getUserData) {
       var defaultAvatar;
-      defaultAvatar = 'http://bygaga.com.ua/uploads/posts/1350145508_prikolnie_kartinki_skuchayu_567_2657-27.jpg';
+      defaultAvatar = 'http://rarebyte.com/images/ra.png';
       $scope.imageStrings = defaultAvatar;
       getUserData().then(function(data) {
-        console.log("AAAA", data);
         return $scope.imageStrings = data.data.avatar ? data.data.avatar.url : defaultAvatar;
       });
       $scope.processFiles = function(files) {

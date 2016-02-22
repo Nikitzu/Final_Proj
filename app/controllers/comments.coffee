@@ -10,11 +10,7 @@ app.controller 'viewComments', ['$scope', 'getComments', 'likeComment', ($scope,
     then return
     review.likes += 1
     review.likeable = false
-    likeComment(review.id).then ->
-      console.log('LIKE NEBEDA')
-    , ->
-      console.log('LIKE BEDA')
-      return
+    likeComment(review.id)
     return
   return
 ]
@@ -37,9 +33,5 @@ app.controller 'addComments', ['$scope','getUserData', 'postComment', ($scope, g
         $scope.reviews.push comment.data
         $scope.createNewReview()
         return
-      , ->
-        console.log "BEDA"
-      return
-
   return
 ]

@@ -9,6 +9,7 @@ app = angular.module('myApp', [
   'flow'
   'infinite-scroll'
 ])
+
 app.config ($httpProvider) ->
   $httpProvider.defaults.useXDomain = true
   $httpProvider.defaults.withCredentials = true
