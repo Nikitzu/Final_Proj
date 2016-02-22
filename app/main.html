@@ -12,7 +12,7 @@
 <main>
     <div ng-if="destination == 'user' || destination == 'id'" class="col-md-2" ng-include="'../templates/user_side.html'"></div>
     <div ng-if="destination != 'user' && destination != 'id'"  class="col-md-3" ng-include="'../templates/tagsCloud.html'"></div>
-    <div class="col-md-9 col-xs-12 col-sm-10" ng-show="(['all', 'user','id'].indexOf(destination) !== -1)" ng-include="'../templates/content.html'"></div>
+    <div class="col-md-9 col-xs-12 col-sm-12" ng-show="(['all', 'user','id'].indexOf(destination) !== -1)" ng-include="'../templates/content.html'"></div>
 </main>
 <script src="components/version/version.js"></script>
 <script src="components/version/version-directive.js"></script>

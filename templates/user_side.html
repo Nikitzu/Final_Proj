@@ -2,8 +2,8 @@
     <div flow-init="{target: '/upload'}" flow-files-submitted="$flow.upload()" flow-file-success="$file.msg = $message" flow-name="uploader.flow" flow-files-added="processFiles($files)">
         <ul class="nav" ng-if="user">
             <li>
-                <div class="col-md-12 col-sm-4 col-xs-2">
-                    <img class="col-md-12 col-sm-10 col-xs-8" class="preview" ng-src="{{imageStrings}}"/>
+                <div class="col-md-12 col-sm-10 col-xs-8">
+                    <img class="col-md-12 col-sm-12 col-xs-12" class="preview" ng-src="{{imageStrings}}"/>
                 </div>
             </li>
             <li>
@@ -21,8 +21,8 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <p>{{translation.ACHIVEMENTS}}</p>
                 </div>
-                <div class="col-md-6 col-sm-4 col-xs-2" ng-repeat="medal in user.medals">
-                    <img class="col-md-12 col-sm-3 col-xs-1 big" src="{{medal.link}}">
+                <div class="col-md-6 col-sm-2 col-xs-3" ng-repeat="medal in user.medals">
+                    <img class="col-md-12 col-sm-12 col-xs-12 big" src="{{medal.link}}">
                 </div>
             </li>
         </ul>
