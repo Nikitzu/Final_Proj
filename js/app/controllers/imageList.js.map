@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "imageList.js",
+  "sourceRoot": "../../../app/controllers",
+  "sources": [
+    "imageList.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EAEN,GAAG,CAAC,UAAJ,CAAe,WAAf,EAA4B,SAAC,MAAD,EAAS,YAAT;IAC1B,MAAM,CAAC,MAAP,GAAgB,YAAY,CAAC;IAC7B,MAAM,CAAC,KAAP,GAAe,YAAY,CAAC;IAC5B,MAAM,CAAC,MAAP,GAAgB,SAAA;MACd,YAAY,CAAC,SAAU,CAAA,CAAA,CAAvB,GAA2B;IADb;IAIhB,MAAM,CAAC,QAAP,GAAkB;EAPQ,CAA5B;AAFA"
+}

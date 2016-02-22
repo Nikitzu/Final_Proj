@@ -4,7 +4,7 @@
 
   app = angular.module('myApp');
 
-  app.factory('sendRating', function($http) {
+  app.factory('rateCreative', function($http) {
     return function(rating) {
       return $http.post('http://localhost:3000/rate', rating);
     };

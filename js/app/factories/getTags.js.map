@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "getTags.js",
+  "sourceRoot": "../../../app/factories",
+  "sources": [
+    "getTags.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EAEN,GAAG,CAAC,OAAJ,CAAY,SAAZ,EAAuB,SAAC,KAAD;WACrB,KAAK,CAAC,GAAN,CAAU,4BAAV,CACA,CAAC,IADD,CACM,SAAC,IAAD;aACJ,IAAI,CAAC;IADD,CADN;EADqB,CAAvB;AAFA"
+}

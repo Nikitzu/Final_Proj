@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "translationService.js",
+  "sourceRoot": "../../../app/services",
+  "sources": [
+    "translationService.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EAEN,GAAG,CAAC,OAAJ,CAAY,oBAAZ,EAAkC,SAAC,eAAD;IAChC,IAAC,CAAA,WAAD,GAAe;IACf,IAAC,CAAA,cAAD,GAAkB,SAAC,IAAD;MAChB,IAAC,CAAA,WAAD,GAAe,eAAA,CAAgB,IAAhB;IADC;EAFc,CAAlC;AAFA"
+}

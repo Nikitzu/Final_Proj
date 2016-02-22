@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "tags.js",
+  "sourceRoot": "../../../app/controllers",
+  "sources": [
+    "tags.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EAEN,GAAG,CAAC,UAAJ,CAAe,MAAf,EAAsB;IAAC,QAAD,EAAW,UAAX,EAAuB,SAAvB,EAAkC,SAAC,MAAD,EAAS,QAAT,EAAmB,OAAnB;AACtD,UAAA;MAAA,IAAA,GAAO,SAAA;QACL,OAAO,CAAC,IAAR,CAAa,SAAC,IAAD;iBACX,MAAM,CAAC,KAAP,GAAe;QADJ,CAAb;MADK;MAIP,IAAA,CAAA;MACA,QAAA,CAAS,IAAT,EAAe,IAAf;IANsD,CAAlC;GAAtB;AAFA"
+}

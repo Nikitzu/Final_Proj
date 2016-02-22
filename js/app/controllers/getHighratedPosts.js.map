@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "getHighratedPosts.js",
+  "sourceRoot": "../../../app/controllers",
+  "sources": [
+    "getHighratedPosts.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EAEN,GAAG,CAAC,UAAJ,CAAe,UAAf,EAA2B;IAAC,QAAD,EAAW,aAAX,EAA0B,SAAC,MAAD,EAAS,WAAT;MACnD,WAAW,CAAC,OAAZ,CAAoB,SAAC,IAAD;QAClB,MAAM,CAAC,QAAP,GAAkB;MADA,CAApB;IADmD,CAA1B;GAA3B;AAFA"
+}

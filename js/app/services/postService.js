@@ -5,7 +5,7 @@
   app = angular.module('myApp');
 
   app.service('PostService', [
-    'savePost', 'delPost', function(savePost, delPost) {
+    'savePost', 'delPostFactory', function(savePost, delPostFactory) {
       this.saveNewPost = function(post) {
         return savePost(post).then(function(data) {
           return data.data;

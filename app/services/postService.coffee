@@ -1,6 +1,6 @@
 app = angular.module('myApp')
 
-app.service 'PostService', ['savePost', 'delPost',(savePost, delPost)->
+app.service 'PostService', ['savePost', 'delPostFactory',(savePost, delPostFactory)->
   this.saveNewPost = (post) ->
     return savePost(post).then (data) ->
       return data.data

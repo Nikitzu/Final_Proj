@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "postView.js",
+  "sourceRoot": "../../../app/controllers",
+  "sources": [
+    "postView.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EACN,GAAG,CAAC,UAAJ,CAAe,UAAf,EAA2B;IACzB,QADyB,EAEzB,cAFyB,EAGzB,SAHyB,EAIzB,SAAC,MAAD,EAAS,YAAT,EAAuB,OAAvB;MACE,MAAM,CAAC,WAAP,GAAqB,OAAA,CAAQ,YAAY,CAAC,MAArB,CAA4B,CAAC,GAA7B,CAAA,CAAkC,CAAC,IAAnC,CAAwC,SAAC,IAAD;eAC3D,MAAM,CAAC,IAAP,GAAc,IAAI,CAAC;MADwC,CAAxC;IADvB,CAJyB;GAA3B;AADA"
+}

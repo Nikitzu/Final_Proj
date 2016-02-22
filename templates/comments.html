@@ -1,12 +1,12 @@
-<div ng-controller="viewCommentCtrl" class="comments_div">
+<div ng-controller="viewComments" class="comments_div">
     <h4>{{translation.COMMENTS}}:</h4>
     <div class="col-md-12 col-sm-12 col-xs-12">
-        <form ng-controller="addCommentCtrl" ng-submit="addReview()">
+        <form ng-controller="addComments" ng-submit="addReview()">
             <textarea class="form-control input-lg" ng-model="viewComment.body" rows="5" placeholder="{{translation.COMMENTS_PLACEHOLDER}}" required></textarea>
             <input class="btn-change col-md-1 col-sm-3 col-xs-5" type="submit" value="{{translation.SEND}}" />
         </form>
     </div>
-    <div class="col-md-12 col-sm-12 col-xs-12" ng-controller="infiniteScrolCtrl">
+    <div class="col-md-12 col-sm-12 col-xs-12" ng-controller="infiniteScroll">
         <div infinite-scroll="loadMoreComments()">
             <div ng-repeat="review in reviews | limitTo: limitCom">
                 <textarea disabled class="col-md-11 col-sm-12 col-xs-12 comments" rows="">{{review.body}}</textarea>

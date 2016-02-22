@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "updateUserData.js",
+  "sourceRoot": "../../../app/factories",
+  "sources": [
+    "updateUserData.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;;EAEN,GAAG,CAAC,OAAJ,CAAY,eAAZ,EAA6B,SAAC,KAAD;WAC3B,SAAC,IAAD;aACE,KAAK,CAAC,IAAN,CAAW,8BAAX,EAA2C,IAA3C;IADF;EAD2B,CAA7B;;EAIA,GAAG,CAAC,OAAJ,CAAY,uBAAZ,EAAqC,SAAC,KAAD;WACnC,SAAC,QAAD;aACE,KAAK,CAAC,IAAN,CAAW,kCAAX,EAA+C,QAA/C;IADF;EADmC,CAArC;AANA"
+}

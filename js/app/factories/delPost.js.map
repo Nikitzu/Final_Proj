@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "delPost.js",
+  "sourceRoot": "../../../app/factories",
+  "sources": [
+    "delPost.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,GAAA,GAAM,OAAO,CAAC,MAAR,CAAe,OAAf;AAAN"
+}

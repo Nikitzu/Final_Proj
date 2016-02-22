@@ -1,4 +1,4 @@
-<div class="col-md-12 col-sm-12 col-xs-12" ng-controller="avatarCtrl">
+<div class="col-md-12 col-sm-12 col-xs-12" ng-controller="userImage">
     <div flow-init="{target: '/upload'}" flow-files-submitted="$flow.upload()" flow-file-success="$file.msg = $message" flow-name="uploader.flow" flow-files-added="processFiles($files)">
         <ul class="nav" ng-if="user">
             <li>

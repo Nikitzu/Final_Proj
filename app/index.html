@@ -28,47 +28,42 @@
   <script src="../js/app/constants/translation_en.js"></script>
   <script src="../js/app/constants/translation_ru.js"></script>
 
-  <script src="../js/app/services/langFactory.js"></script>
-  <script src="../js/app/services/TranslationService.js"></script>
-  <script src="../js/app/services/mainRoute.js"></script>
+  <script src="../js/app/factories/language.js"></script>
+  <script src="../js/app/services/translationService.js"></script>
+  <script src="../js/app/services/routes.js"></script>
   <script src="../js/app/services/dropDirective.js"></script>
   <script src="../js/app/services/imageService.js"></script>
   <script src="../js/app/services/imageDirective.js"></script>
-  <script src="../js/app/services/getUser.js"></script>
-  <script src="../js/app/services/getPosts.js"></script>
-  <script src="../js/app/services/savePost.js"></script>
-  <script src="../js/app/services/loginUser.js"></script>
-  <script src="../js/app/services/logoutUser.js"></script>
-  <script src="../js/app/services/signupUser.js"></script>
-  <script src="../js/app/services/highRatePublications.js"></script>
-  <script src="../js/app/services/sendRating.js"></script>
-  <script src="../js/app/services/searchFactory.js"></script>
   <script src="../js/app/services/searchService.js"></script>
   <script src="../js/app/services/postService.js"></script>
-  <script src="../js/app/services/downloadPhotoFactory.js"></script>
-  <script src="../js/app/services/getTags.js"></script>
-  <script src="../js/app/services/changeFactory.js"></script>
-  <script src="../js/app/services/deletePost.js"></script>
-  <script src="../js/app/services/updateUserDataFactory.js"></script>
 
-  <script src="../js/app/controllers/main_page_controller.js"></script>
-  <script src="../js/app/controllers/registration_controller.js"></script>
-  <script src="../js/app/controllers/content_controller.js"></script>
-  <script src="../js/app/controllers/user_data_controller.js"></script>
-  <script src="../js/app/controllers/photo_template_controller.js"></script>
-  <script src="../js/app/controllers/video_controller.js"></script>
-  <script src="../js/app/controllers/image_list_controller.js"></script>
-  <script src="../js/app/controllers/navbar_controller.js"></script>
-  <script src="../js/app/controllers/tag_controller.js"></script>
+  <script src="../js/app/factories/getUserData.js"></script>
+  <script src="../js/app/factories/posts.js"></script>
+  <script src="../js/app/factories/authUser.js"></script>
+  <script src="../js/app/factories/getHighRate.js"></script>
+  <script src="../js/app/factories/rateCreative.js"></script>
+  <script src="../js/app/factories/search.js"></script>
+  <script src="../js/app/factories/getTags.js"></script>
+  <script src="../js/app/factories/updateUserData.js"></script>
+  <script src="../js/app/factories/forComment.js"></script>
+
+  <script src="../js/app/controllers/mainPage.js"></script>
+  <script src="../js/app/controllers/registration.js"></script>
+  <script src="../js/app/controllers/publications.js"></script>
+  <script src="../js/app/controllers/dataOfUser.js"></script>
+  <script src="../js/app/controllers/postPhoto.js"></script>
+  <script src="../js/app/controllers/postVideo.js"></script>
+  <script src="../js/app/controllers/imageList.js"></script>
+  <script src="../js/app/controllers/navigationPanel.js"></script>
+  <script src="../js/app/controllers/tags.js"></script>
   <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-  <script src="../js/app/controllers/map_controller.js"></script>
-  <script src="../js/app/controllers/map_view_controller.js"></script>
-  <script src="../js/app/controllers/infinte_scroll_controller.js"></script>
-  <script src="../js/app/controllers/change_controller.js"></script>
-  <script src="../js/app/controllers/view_controller.js"></script>
-  <script src="../js/app/controllers/comments_controller.js"></script>
-  <script src="../js/app/controllers/avatar_controller.js"></script>
-  <script src="../js/app/controllers/tag_controller.js"></script>
+  <script src="../js/app/controllers/googleMap.js"></script>
+  <script src="../js/app/controllers/googleMapView.js"></script>
+  <script src="../js/app/controllers/infinteScroll.js"></script>
+  <script src="../js/app/controllers/changeSettings.js"></script>
+  <script src="../js/app/controllers/postView.js"></script>
+  <script src="../js/app/controllers/comments.js"></script>
+  <script src="../js/app/controllers/userImage.js"></script>
 
 
   <script src="bower_components/jqcloud2/dist/jqcloud.min.js"></script>
@@ -83,7 +78,7 @@
   <script src='bower_components/angular-simple-logger/dist/angular-simple-logger.js'></script>
   <script src='bower_components/angular-google-maps/dist/angular-google-maps.js'></script>
 </head>
-<body ng-view  ng-controller="changeCtrl as lang">
+<body ng-view  ng-controller="changeSettings as lang">
 
 </body>
 </html>

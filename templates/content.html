@@ -1,4 +1,4 @@
-<div><div class="col-md-12 col-sm-12 col-xs-12" ng-controller="contentCtrl">
+<div><div class="col-md-12 col-sm-12 col-xs-12" ng-controller="publicationsController">
     <div class="col-md-12 col-sm-12 col-xs-12">
         <button ng-show="!templatePanel && !showSettings && destination == 'user' " class="col-md-5 col-sm-7 col-xs-9 col-md-push-3 btn-change" ng-click="createPost()">{{translation.CREATE}}</button>
         <div ng-show="templatePanel" class="col-md-7 col-sm-9 col-xs-11 col-md-push-3" ng-include="'../templates/articleTemplates/templatesExample.html'"></div>
@@ -7,7 +7,7 @@
         <form ng-show="firstPost" ng-include="'../templates/articleTemplates/photoText.html'" class="form-horizontal col-md-12 col-sm-12 col-xs-12"></form>
         <form ng-show="secondPost" ng-include="'../templates/articleTemplates/videoText.html'" class="form-horizontal col-md-12 col-sm-12 col-xs-12"></form>
     </div>
-    <div class="row container col-md-12 col-sm-12 col-xs-12" ng-controller="infiniteScrolCtrl">
+    <div class="row container col-md-12 col-sm-12 col-xs-12" ng-controller="infiniteScroll">
         <section class="col-md-12 col-sm-12 col-xs-12">
             <label>{{translation.SORTBY}}</label>
             <select onmousedown="$(':first-child', this).remove(); this.onmousedown = null;" class="select" role="menu" ng-model="predicate">
